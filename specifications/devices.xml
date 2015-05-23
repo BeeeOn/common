@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE devices [
+<!ELEMENT devices (device+)>
+<!ELEMENT device (name+,refresh,led?,manufacturer+,module+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT led (#PCDATA)>
+<!ELEMENT refresh (#PCDATA)>
+<!ELEMENT manufacturer (#PCDATA)>
+<!ELEMENT module (name+,values*,hide*)>
+<!ELEMENT values (value+)>
+<!ELEMENT value (#PCDATA)>
+<!ELEMENT hide (if-value+)>
+<!ELEMENT if-value (module-id+)>
+<!ELEMENT module-id (#PCDATA)>
+
+<!ATTLIST device
+   idtype        CDATA    #REQUIRED
+   name          CDATA    #REQUIRED
+>
+
+<!ATTLIST manufacturer
+    language     CDATA    #REQUIRED
+>
+
+<!ATTLIST module
+   id            CDATA    #REQUIRED
+   type          CDATA    #REQUIRED
+   offset        CDATA    #REQUIRED
+   order         CDATA    #REQUIRED
+   min           CDATA    #IMPLIED
+   max           CDATA    #IMPLIED
+   granularity   CDATA    #REQUIRED
+   vstrings      (yes|no) "no"
+>
+
+<!ATTLIST name
+   language      CDATA    #REQUIRED
+>
+
+<!ATTLIST values 
+   language      CDATA    #REQUIRED
+>
+<!ATTLIST value
+   state         CDATA    #REQUIRED
+>
+
+<!ATTLIST if-value
+   state         CDATA    #REQUIRED
+>
+
+]>
+
+<devices>
+
+<device idtype="0" name="BeeeOn v1.0">
+   <name language="cz">Senzor teploty a vlhkosti</name>
+   <name language="en">Temperature and humidity sensor</name>
+   <name language="sk">Senzor teploty a vlhkosti</name>
+   <refresh>30</refresh>
+   <led>true</led>
+   <manufacturer language="cz">VUT</manufacturer>
+   <manufacturer language="en">BUT</manufacturer>
+   <manufacturer language="sk">VUT</manufacturer>                                                           
+ 
+   <module id="0" type="0x0A" offset="0" order="0" min="-50" max="100" granularity="0.01" vstrings="no"> 
+      <name language="cz">Teplota místnosti</name>
+      <name language="en">Room temperature</name>
+      <name language="sk">Teplota miestnosti</name>
+   </module>
+   <module id="1" type="0x0A" offset="1" order="1" min="-50" max="100" granularity="0.01" vstrings="no"> 
+      <name language="cz">Teplota venkovní</name>
+      <name language="en">Outside temperature</name>
+      <name language="sk">Teplota venkovní</name>
+   </module>
+   <module id="2" type="0x01" offset="0" order="2" min="0" max="100" granularity="0.01" vstrings="no"> 
+      <name language="cz">Vlhkost v mísnosti</name>
+      <name language="en">Room humidity</name>
+      <name language="sk">Vlhkost v miesnosti</name>
+   </module>
+ 
+</device>
+
+<device idtype="1" name="Regulator VPT v1.0">
+   <name language="cz">Regulátor VPT</name>
+   <name language="en">Regulator VPT</name>
+   <name language="sk">Regulator VPT</name>
+   <refresh>30</refresh>
+   <led>false</led>
+   <manufacturer language="cz">Thermona</manufacturer>
+   <manufacturer language="en">Thermona</manufacturer>
+   <manufacturer language="sk">Thermona</manufacturer>                                                               <!-- pocitat s jinymi abecedami, napr. azbuka  -->
+   <module id="0" type="0xA3" offset="0" order="0" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+      <name language="cz">Zóna 1 - Typ provozu</name>
+      <name language="en">Zone 1 - Boiler operation type</name>
+      <name language="sk">Zona 1 - Typ prevadzky</name>
+      <values language="cz">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulace</value>
+         <value state="3">regulace na stálou teplotu vody</value>
+         <value state="4">ohřev TUV</value>
+      </values>
+      <values language="en">
+         <value state="0">off</value>
+         <value state="1">room regulator</value>
+         <value state="2">equiterm regulator</value>
+         <value state="3">constant water temperature</value>
+         <value state="4">hot water</value>
+      </values>
+      <values language="sk">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulacia</value>
+         <value state="3">regulacia na stálou teplotu vody</value>
+         <value state="4">ohrev TUV</value>
+      </values>
+	  <hide>
+	      <if-value state="1">
+		      <module-id>4</module-id>
+		      <module-id>5</module-id>
+		  </if-value>
+	      <if-value state="2">
+		      <module-id>4</module-id>
+		      <module-id>5</module-id>
+		  </if-value>
+	      <if-value state="3">
+		      <module-id>2</module-id>
+		      <module-id>3</module-id>
+		  </if-value>
+	      <if-value state="4">
+		      <module-id>2</module-id>
+		      <module-id>3</module-id>
+		  </if-value>
+	  </hide>
+   </module>
+   <module id="1" type="0xA3" offset="1" order="1" min="0" max="2" granularity="1" vstrings="yes">
+      <name language="cz">Zóna 1 - Režim provozu</name>
+      <name language="en">Zone 1 - Boiler operation mode</name>
+      <name language="sk">Zona 1 - Režim prevadzky</name>
+      <values language="cz">
+         <value state="0">automaticky</value>
+         <value state="1">manuální</value>
+         <value state="2">dovolená</value>
+      </values>
+      <values language="en">
+         <value state="0">automatic</value>
+         <value state="1">manual</value>
+         <value state="2">vacation</value>
+      </values>
+      <values language="sk">
+         <value state="0">automaticky</value>
+         <value state="1">manualní</value>
+         <value state="2">dovolená</value>
+      </values>
+   </module>
+   <module id="2" type="0xA5" offset="0" order="2" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 1 - Žádaná teplota místnosti</name>
+      <name language="en">Zone 1 - Requested room temperature</name>
+      <name language="sk">Zona 1 - Žádaná teplota místnosti</name>
+   </module>
+   <module id="3" type="0x0A" offset="0" order="3" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 1 - Aktuální teplota místnosti</name>
+      <name language="en">Zone 1 - Current room temperature</name>
+      <name language="sk">Zona 1 - Aktuálná teplota místnosti</name>
+   </module>
+   <module id="4" type="0xA5" offset="1" order="4" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 1 - Žádaná teplota vody</name>
+      <name language="en">Zone 1 - Requested water temperature</name>
+      <name language="sk">Zona 1 - Žádaná teplota vody</name>
+   </module>
+   <module id="5" type="0x0A" offset="1" order="5" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 1 - Aktuální teplota vody </name>
+      <name language="en">Zone 1 - Current water temperature</name>
+      <name language="sk">Zona 1 - Aktuálná teplota vody</name>
+   </module>
+
+
+   <module id="6" type="0xA3" offset="2" order="6" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+      <name language="cz">Zóna 2 - Typ provozu</name>
+      <name language="en">Zone 2 - Boiler operation type</name>
+      <name language="sk">Zona 2 - Typ prevadzky</name>
+      <values language="cz">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulace</value>
+         <value state="3">regulace na stálou teplotu vody</value>
+         <value state="4">ohřev TUV</value>
+      </values>
+      <values language="en">
+         <value state="0">off</value>
+         <value state="1">room regulator</value>
+         <value state="2">equiterm regulator</value>
+         <value state="3">constant water temperature</value>
+         <value state="4">hot water</value>
+      </values>
+      <values language="sk">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulacia</value>
+         <value state="3">regulacia na stálou teplotu vody</value>
+         <value state="4">ohrev TUV</value>
+      </values>
+	  <hide>
+	      <if-value state="1">
+		      <module-id>10</module-id>
+		      <module-id>11</module-id>
+		  </if-value>
+	      <if-value state="2">
+		      <module-id>10</module-id>
+		      <module-id>11</module-id>
+		  </if-value>
+	      <if-value state="3">
+		      <module-id>8</module-id>
+		      <module-id>9</module-id>
+		  </if-value>
+	      <if-value state="4">
+		      <module-id>8</module-id>
+		      <module-id>9</module-id>
+		  </if-value>
+	  </hide>
+   </module>
+   <module id="7" type="0xA3" offset="3" order="7" min="0" max="2" granularity="1" vstrings="yes">
+      <name language="cz">Zóna 2 - Režim provozu</name>
+      <name language="en">Zone 2 - Boiler operation mode</name>
+      <name language="sk">Zona 2 - Režim prevadzky</name>
+      <values language="cz">
+         <value state="0">automaticky</value>
+         <value state="1">manuální</value>
+         <value state="2">dovolená</value>
+      </values>
+      <values language="en">
+         <value state="0">automatic</value>
+         <value state="1">manual</value>
+         <value state="2">vacation</value>
+      </values>
+      <values language="sk">
+         <value state="0">automaticky</value>
+         <value state="1">manualní</value>
+         <value state="2">dovolená</value>
+      </values>
+   </module>
+   <module id="8" type="0xA5" offset="2" order="8" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 2 - Žádaná teplota místnosti</name>
+      <name language="en">Zone 2 - Requested room temperature</name>
+      <name language="sk">Zona 2 - Žádaná teplota místnosti</name>
+   </module>
+   <module id="9" type="0x0A" offset="2" order="9" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 2 - Aktuální teplota místnosti</name>
+      <name language="en">Zone 2 - Current room temperature</name>
+      <name language="sk">Zona 2 - Aktuálná teplota místnosti</name>
+   </module>
+   <module id="10" type="0xA5" offset="3" order="10" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 2 - Žádaná teplota vody</name>
+      <name language="en">Zone 2 - Requested water temperature</name>
+      <name language="sk">Zona 2 - Žádaná teplota vody</name>
+   </module>
+   <module id="11" type="0x0A" offset="3" order="11" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 2 - Aktuální teplota vody </name>
+      <name language="en">Zone 2 - Current water temperature</name>
+      <name language="sk">Zona 2 - Aktuálná teplota vody</name>
+   </module>
+
+
+   <module id="12" type="0xA3" offset="4" order="12" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+      <name language="cz">Zóna 3 - Typ provozu</name>
+      <name language="en">Zone 3 - Boiler operation type</name>
+      <name language="sk">Zona 3 - Typ prevadzky</name>
+      <values language="cz">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulace</value>
+         <value state="3">regulace na stálou teplotu vody</value>
+         <value state="4">ohřev TUV</value>
+      </values>
+      <values language="en">
+         <value state="0">off</value>
+         <value state="1">room regulator</value>
+         <value state="2">equiterm regulator</value>
+         <value state="3">constant water temperature</value>
+         <value state="4">hot water</value>
+      </values>
+      <values language="sk">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulacia</value>
+         <value state="3">regulacia na stálou teplotu vody</value>
+         <value state="4">ohrev TUV</value>
+      </values>
+	  <hide>
+	      <if-value state="1">
+		      <module-id>16</module-id>
+		      <module-id>17</module-id>
+		  </if-value>
+	      <if-value state="2">
+		      <module-id>16</module-id>
+		      <module-id>17</module-id>
+		  </if-value>
+	      <if-value state="3">
+		      <module-id>14</module-id>
+		      <module-id>15</module-id>
+		  </if-value>
+	      <if-value state="4">
+		      <module-id>14</module-id>
+		      <module-id>15</module-id>
+		  </if-value>
+	  </hide>
+   </module>
+   <module id="13" type="0xA3" offset="5" order="13" min="0" max="2" granularity="1" vstrings="yes">
+      <name language="cz">Zóna 3 - Režim provozu</name>
+      <name language="en">Zone 3 - Boiler operation mode</name>
+      <name language="sk">Zona 3 - Režim prevadzky</name>
+      <values language="cz">
+         <value state="0">automaticky</value>
+         <value state="1">manuální</value>
+         <value state="2">dovolená</value>
+      </values>
+      <values language="en">
+         <value state="0">automatic</value>
+         <value state="1">manual</value>
+         <value state="2">vacation</value>
+      </values>
+      <values language="sk">
+         <value state="0">automaticky</value>
+         <value state="1">manualní</value>
+         <value state="2">dovolená</value>
+      </values>
+   </module>
+   <module id="14" type="0xA5" offset="4" order="14" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 3 - Žádaná teplota místnosti</name>
+      <name language="en">Zone 3 - Requested room temperature</name>
+      <name language="sk">Zona 3 - Žádaná teplota místnosti</name>
+   </module>
+   <module id="15" type="0x0A" offset="4" order="15" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 3 - Aktuální teplota místnosti</name>
+      <name language="en">Zone 3 - Current room temperature</name>
+      <name language="sk">Zona 3 - Aktuálná teplota místnosti</name>
+   </module>
+   <module id="16" type="0xA5" offset="5" order="16" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 3 - Žádaná teplota vody</name>
+      <name language="en">Zone 3 - Requested water temperature</name>
+      <name language="sk">Zona 3 - Žádaná teplota vody</name>
+   </module>
+   <module id="17" type="0x0A" offset="5" order="17" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 3 - Aktuální teplota vody </name>
+      <name language="en">Zone 3 - Current water temperature</name>
+      <name language="sk">Zona 3 - Aktuálná teplota vody</name>
+   </module>
+
+
+   <module id="18" type="0xA3" offset="6" order="18" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+      <name language="cz">Zóna 4 - Typ provozu</name>
+      <name language="en">Zone 4 - Boiler operation type</name>
+      <name language="sk">Zona 4 - Typ prevadzky</name>
+      <values language="cz">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulace</value>
+         <value state="3">regulace na stálou teplotu vody</value>
+         <value state="4">ohřev TUV</value>
+      </values>
+      <values language="en">
+         <value state="0">off</value>
+         <value state="1">room regulator</value>
+         <value state="2">equiterm regulator</value>
+         <value state="3">constant water temperature</value>
+         <value state="4">hot water</value>
+      </values>
+      <values language="sk">
+         <value state="0">vypnuto</value>
+         <value state="1">pokojový regulátor</value>
+         <value state="2">ekvitermní regulacia</value>
+         <value state="3">regulacia na stálou teplotu vody</value>
+         <value state="4">ohrev TUV</value>
+      </values>
+	  <hide>
+	      <if-value state="1">
+		      <module-id>16</module-id>
+		      <module-id>17</module-id>
+		  </if-value>
+	      <if-value state="2">
+		      <module-id>16</module-id>
+		      <module-id>17</module-id>
+		  </if-value>
+	      <if-value state="3">
+		      <module-id>14</module-id>
+		      <module-id>15</module-id>
+		  </if-value>
+	      <if-value state="4">
+		      <module-id>14</module-id>
+		      <module-id>15</module-id>
+		  </if-value>
+	  </hide>
+   </module>
+   <module id="19" type="0xA3" offset="7" order="19" min="0" max="2" granularity="1" vstrings="yes">
+      <name language="cz">Zóna 4 - Režim provozu</name>
+      <name language="en">Zone 4 - Boiler operation mode</name>
+      <name language="sk">Zona 4 - Režim prevadzky</name>
+      <values language="cz">
+         <value state="0">automaticky</value>
+         <value state="1">manuální</value>
+         <value state="2">dovolená</value>
+      </values>
+      <values language="en">
+         <value state="0">automatic</value>
+         <value state="1">manual</value>
+         <value state="2">vacation</value>
+      </values>
+      <values language="sk">
+         <value state="0">automaticky</value>
+         <value state="1">manualní</value>
+         <value state="2">dovolená</value>
+      </values>
+   </module>
+   <module id="20" type="0xA5" offset="6" order="20" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 4 - Žádaná teplota místnosti</name>
+      <name language="en">Zone 4 - Requested room temperature</name>
+      <name language="sk">Zona 4 - Žádaná teplota místnosti</name>
+   </module>
+   <module id="21" type="0x0A" offset="6" order="21" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 4 - Aktuální teplota místnosti</name>
+      <name language="en">Zone 4 - Current room temperature</name>
+      <name language="sk">Zona 4 - Aktuálná teplota místnosti</name>
+   </module>
+   <module id="22" type="0xA5" offset="7" order="22" min="-20" max="100" granularity="0.5">
+      <name language="cz">Zóna 4 - Žádaná teplota vody</name>
+      <name language="en">Zone 4 - Requested water temperature</name>
+      <name language="sk">Zona 4 - Žádaná teplota vody</name>
+   </module>
+   <module id="23" type="0x0A" offset="7" order="23" min="-20" max="100" granularity="0.01">
+      <name language="cz">Zóna 4 - Aktuální teplota vody </name>
+      <name language="en">Zone 4 - Current water temperature</name>
+      <name language="sk">Zona 4 - Aktuálná teplota vody</name>
+   </module>
+
+   <module id="24" type="0x0B" offset="8" order="24" min="0" max="4" granularity="1" vstrings="yes">
+      <name language="cz">Stav kotle</name>
+      <name language="en">Boiler status</name>
+      <name language="sk">Stav kotla</name>
+      <values language="cz">
+         <value state="0">nezjištěno</value>
+         <value state="1">topení</value>
+         <value state="2">ohřev TUV</value>
+         <value state="3">porucha</value>
+         <value state="4">odstaveno</value>
+      </values>
+      <values language="en">
+         <value state="0">undefined</value>
+         <value state="1">heating</value>
+         <value state="2">hot water</value>
+         <value state="3">failure</value>
+         <value state="4">shutdown</value>
+      </values>
+      <values language="sk">
+         <value state="0">nezjištěno</value>
+         <value state="1">topenie</value>
+         <value state="2">ohrev TUV</value>
+         <value state="3">porucha</value>
+         <value state="4">odstaveno</value>
+      </values>
+   </module>
+</device>
+</devices>
+
