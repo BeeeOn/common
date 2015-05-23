@@ -1,0 +1,46 @@
+<language code="en">
+	<string name="manufacturer_but">BUT</string>
+	<string name="manufacturer_thermona">Thermona</string>
+	
+	<string name="dev_temperature_humidity">Temperature and humidity sensor</string>
+	<string name="dev_regulator_vpt">Regulator VPT</string>
+	
+	<string name="mod_room_temperature">Room temperature</string>
+	<string name="mod_outside_temperature">Outside temperature</string>
+	<string name="mod_room_humidity">Room humidity</string>
+	
+	<string name="mod_boiler_status">Boiler status</string>
+	<values name="val_boiler_status">
+		<string name="undefined">Undefined</string>
+		<string name="heating">Heating</string>
+		<string name="hot_water">Hot water</string>
+		<string name="failure">Failure</string>
+		<string name="shutdown">Shutdown</string>
+	</values>
+	
+	<string name="mod_boiler_operation_type">Boiler operation type</string>
+	<values name="val_boiler_operation_type">
+		<string name="off">Off</string>
+		<string name="room_regulator">Room regulator</string>
+		<string name="equiterm_regulator">Equiterm regulator</string>
+		<string name="constant_water_temperature">Constant water temperature</string>
+		<string name="hot_water">Hot water</string>
+	</values>
+	
+	<string name="mod_boiler_operation_mode">Boiler operation mode</string>
+	<values name="val_boiler_operation_mode">
+		<string name="automatic">Automatic</string>
+		<string name="manual">Manual</string>
+		<string name="vacation">Vacation</string>
+	</values>
+	
+	<string name="mod_requested_room_temperature">Requested room temperature</string>
+	<string name="mod_current_room_temperature">Current room temperature</string>
+	<string name="mod_requested_water_temperature">Requested water temperature</string>
+	<string name="mod_current_water_temperature">Current water temperature</string>
+	
+	<string name="zone_1">Zone 1 - </string>
+	<string name="zone_2">Zone 2 - </string>
+	<string name="zone_3">Zone 3 - </string>
+	<string name="zone_4">Zone 4 - </string>
+</language>
