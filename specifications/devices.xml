@@ -5,6 +5,7 @@
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT led (#PCDATA)>
 <!ELEMENT refresh (#PCDATA)>
+<!ELEMENT battery (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
 <!ELEMENT module (name+,values*,hide*)>
 <!ELEMENT values (value+)>
@@ -13,13 +14,17 @@
 <!ELEMENT if-value (module-id+)>
 <!ELEMENT module-id (#PCDATA)>
 
+<!ATTLIST devices
+	version       CDATA    #REQUIRED
+>
+
 <!ATTLIST device
 	idtype        CDATA    #REQUIRED
 	name          CDATA    #REQUIRED
 >
 
 <!ATTLIST manufacturer
-	language     CDATA    #REQUIRED
+	language      CDATA    #REQUIRED
 >
 
 <!ATTLIST module
@@ -40,6 +45,7 @@
 <!ATTLIST values 
 	language      CDATA    #REQUIRED
 >
+
 <!ATTLIST value
 	state         CDATA    #REQUIRED
 >
@@ -50,7 +56,7 @@
 
 ]>
 
-<devices>
+<devices version="1">
 
 <device idtype="0" name="BeeeOn v1.0">
 	<name language="cz">Senzor teploty a vlhkosti</name>
@@ -58,6 +64,7 @@
 	<name language="sk">Senzor teploty a vlhkosti</name>
 	<refresh>30</refresh>
 	<led>true</led>
+	<battery>true</battery>
 	<manufacturer language="cz">VUT</manufacturer>
 	<manufacturer language="en">BUT</manufacturer>
 	<manufacturer language="sk">VUT</manufacturer>                                                           
@@ -85,6 +92,7 @@
 	<name language="sk">Regulator VPT</name>
 	<refresh>30</refresh>
 	<led>false</led>
+	<battery>false</battery>
 	<manufacturer language="cz">Thermona</manufacturer>
 	<manufacturer language="en">Thermona</manufacturer>
 	<manufacturer language="sk">Thermona</manufacturer>                                                               <!-- pocitat s jinymi abecedami, napr. azbuka  -->
