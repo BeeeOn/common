@@ -3,8 +3,8 @@
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
-<!ELEMENT refresh (#PCDATA)>
-<!ELEMENT features (battery?, led?)>
+<!ELEMENT features (refresh?, battery?, led?)>
+<!ELEMENT refresh EMPTY>
 <!ELEMENT battery EMPTY>
 <!ELEMENT led EMPTY>
 
@@ -24,6 +24,10 @@
 <!ELEMENT if (hide-module+)>
 
 <!ELEMENT hide-module (#PCDATA)>
+
+<!ATTLIST refresh
+        default         CDATA   #REQUIRED
+        >
 
 <!ATTLIST devices
         version         CDATA   #REQUIRED

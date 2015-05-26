@@ -8,8 +8,8 @@
 <device id="0" name="BeeeOn v1.0">
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
-	<refresh>30</refresh>
     <features>
+        <refresh default="30" />
         <battery />
         <led />
     </features>
@@ -29,7 +29,6 @@
 <device id="1" name="Regulator VPT v1.0">
 	<name>T:DEV_REGULATOR_VPT</name>
 	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
-	<refresh>30</refresh>
 	<modules>
 		<module id="0" type="0xA3" offset="0" order="0">
 			<name>T:ZONE_1:MOD_BOILER_OPERATION_TYPE</name>
