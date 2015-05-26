@@ -32,7 +32,7 @@
 	<modules>
 		<module id="0" type="0xA3" offset="0" order="0">
 			<name>T:ZONE_1:MOD_BOILER_OPERATION_TYPE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
 				<value id="1">T:ROOM_REGULATOR</value>
@@ -61,7 +61,7 @@
 		</module>
 		<module id="1" type="0xA3" offset="1" order="1">
 			<name>T:ZONE_1:MOD_BOILER_OPERATION_MODE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
 				<value id="1">T:MANUAL</value>
@@ -70,7 +70,7 @@
 		</module>
 		<module id="2" type="0xA5" offset="0" order="2">
 			<name>T:ZONE_1:MOD_REQUESTED_ROOM_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
@@ -82,7 +82,7 @@
 		</module>
 		<module id="4" type="0xA5" offset="1" order="4">
 			<name>T:ZONE_1:MOD_REQUESTED_WATER_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
@@ -96,7 +96,7 @@
 
 		<module id="6" type="0xA3" offset="2" order="6">
 			<name>T:ZONE_2:MOD_BOILER_OPERATION_TYPE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
 				<value id="1">T:ROOM_REGULATOR</value>
@@ -125,7 +125,7 @@
 		</module>
 		<module id="7" type="0xA3" offset="3" order="7">
 			<name>T:ZONE_2:MOD_BOILER_OPERATION_MODE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
 				<value id="1">T:MANUAL</value>
@@ -134,7 +134,7 @@
 		</module>
 		<module id="8" type="0xA5" offset="2" order="8">
 			<name>T:ZONE_2:MOD_REQUESTED_ROOM_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
@@ -146,7 +146,7 @@
 		</module>
 		<module id="10" type="0xA5" offset="3" order="10">
 			<name>T:ZONE_2:MOD_REQUESTED_WATER_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
@@ -160,7 +160,7 @@
 
 		<module id="12" type="0xA3" offset="4" order="12">
 			<name>T:ZONE_3:MOD_BOILER_OPERATION_TYPE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
 				<value id="1">T:ROOM_REGULATOR</value>
@@ -189,7 +189,7 @@
 		</module>
 		<module id="13" type="0xA3" offset="5" order="13">
 			<name>T:ZONE_3:MOD_BOILER_OPERATION_MODE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
 				<value id="1">T:MANUAL</value>
@@ -198,7 +198,7 @@
 		</module>
 		<module id="14" type="0xA5" offset="4" order="14">
 			<name>T:ZONE_3:MOD_REQUESTED_ROOM_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
@@ -210,7 +210,7 @@
 		</module>
 		<module id="16" type="0xA5" offset="5" order="16">
 			<name>T:ZONE_3:MOD_REQUESTED_WATER_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
@@ -224,7 +224,7 @@
 
 		<module id="18" type="0xA3" offset="6" order="18">
 			<name>T:ZONE_4:MOD_BOILER_OPERATION_TYPE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
 				<value id="1">T:ROOM_REGULATOR</value>
@@ -253,7 +253,7 @@
 		</module>
 		<module id="19" type="0xA3" offset="7" order="19">
 			<name>T:ZONE_4:MOD_BOILER_OPERATION_MODE</name>
-			<is-actor />
+			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
 				<value id="1">T:MANUAL</value>
@@ -262,7 +262,7 @@
 		</module>
 		<module id="20" type="0xA5" offset="6" order="20">
 			<name>T:ZONE_4:MOD_REQUESTED_ROOM_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
@@ -274,7 +274,7 @@
 		</module>
 		<module id="22" type="0xA5" offset="7" order="22">
 			<name>T:ZONE_4:MOD_REQUESTED_WATER_TEMPERATURE</name>
-			<is-actor />
+			<is-actuator />
 			<constraints>
 				<min>-20</min>
 				<max>100</max>
