@@ -1,19 +1,19 @@
 <!ELEMENT devices (device*)>
-<!ELEMENT device (name,refresh,led?,battery?,manufacturer,modules)>
+<!ELEMENT device (name,refresh,has-led?,has-battery?,manufacturer,modules)>
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
 <!ELEMENT refresh (#PCDATA)>
-<!ELEMENT led (#PCDATA)>
-<!ELEMENT battery (#PCDATA)>
+<!ELEMENT has-battery EMPTY>
+<!ELEMENT has-led EMPTY>
 
 <!ELEMENT modules (module+)
-<!ELEMENT module (name,actor,(constraints|values),rules?)>
+<!ELEMENT module (name,((is-actor,(constraints|values))|values),rules?)>
 
 <!ELEMENT values (value+)>
 <!ELEMENT value (#PCDATA)>
 <!ELEMENT constraints (min?, max?, granularity)>
-<!ELEMENT actor (#PCDATA)>
+<!ELEMENT is-actor EMPTY>
 
 <!ELEMENT min (#PCDATA)>
 <!ELEMENT max (#PCDATA)>

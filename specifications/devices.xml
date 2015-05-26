@@ -9,36 +9,18 @@
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
 	<refresh>30</refresh>
-	<led>true</led>
-	<battery>true</battery>
+	<has-battery />
+	<has-led />
 
 	<modules>
 		<module id="0" type="0x0A" offset="0" order="0">
 			<name>T:MOD_ROOM_TEMPERATURE</name>
-			<actor>false</actor>
-			<constraints>
-				<min>-50</min>
-				<max>100</max>
-				<granularity>0.01</granularity>
-			</constraints>
 		</module>
 		<module id="1" type="0x0A" offset="1" order="1">
 			<name>T:MOD_OUTSIDE_TEMPERATURE</name>
-			<actor>false</actor>
-			<constraints>
-				<min>-50</min>
-				<max>100</max>
-				<granularity>0.01</granularity>
-			</constraints>
 		</module>
 		<module id="2" type="0x01" offset="0" order="2">
 			<name>T:MOD_ROOM_HUMIDITY</name>
-			<actor>false</actor>
-			<constraints>
-				<min>0</min>
-				<max>100</max>
-				<granularity>0.01</granularity>
-			</constraints>
 		</module>
 	</modules>
 </device>
@@ -47,12 +29,11 @@
 	<name>T:DEV_REGULATOR_VPT</name>
 	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
 	<refresh>30</refresh>
-	<led>false</led>
 
 	<modules>
 		<module id="0" type="0xA3" offset="0" order="0">
 			<name>T:ZONE_1:MOD_BOILER_OPERATION_TYPE</name>
-			<actor>true</actor>
+			<is-actor />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
 				<value id="1">T:ROOM_REGULATOR</value>
@@ -332,7 +313,6 @@
 
 		<module id="24" type="0x0B" offset="8" order="24">
 			<name>T:MOD_BOILER_STATUS</name>
-			<actor>false</actor>
 			<values name="T:VAL_BOILER_STATUS">
 				<value id="0">T:UNDEFINED</value>
 				<value id="1">T:HEATING</value>
