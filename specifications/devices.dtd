@@ -1,0 +1,53 @@
+<!ELEMENT devices (device+)>
+<!ELEMENT device (name+,refresh,led?,manufacturer+,module+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT led (#PCDATA)>
+<!ELEMENT refresh (#PCDATA)>
+<!ELEMENT battery (#PCDATA)>
+<!ELEMENT manufacturer (#PCDATA)>
+<!ELEMENT module (name+,values*,hide*)>
+<!ELEMENT values (value+)>
+<!ELEMENT value (#PCDATA)>
+<!ELEMENT hide (if-value+)>
+<!ELEMENT if-value (module-id+)>
+<!ELEMENT module-id (#PCDATA)>
+
+<!ATTLIST devices
+	version       CDATA    #REQUIRED
+>
+
+<!ATTLIST device
+	idtype        CDATA    #REQUIRED
+	name          CDATA    #REQUIRED
+>
+
+<!ATTLIST manufacturer
+	language      CDATA    #REQUIRED
+>
+
+<!ATTLIST module
+	id            CDATA    #REQUIRED
+	type          CDATA    #REQUIRED
+	offset        CDATA    #REQUIRED
+	order         CDATA    #REQUIRED
+	min           CDATA    #IMPLIED
+	max           CDATA    #IMPLIED
+	granularity   CDATA    #REQUIRED
+	vstrings      (yes|no) "no"
+>
+
+<!ATTLIST name
+	language      CDATA    #REQUIRED
+>
+
+<!ATTLIST values 
+	language      CDATA    #REQUIRED
+>
+
+<!ATTLIST value
+	state         CDATA    #REQUIRED
+>
+
+<!ATTLIST if-value
+	state         CDATA    #REQUIRED
+>
