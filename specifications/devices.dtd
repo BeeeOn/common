@@ -1,5 +1,5 @@
 <!ELEMENT devices (device*)>
-<!ELEMENT device (name,manufacturer,refresh,features?,modules)>
+<!ELEMENT device (name,manufacturer,features?,modules)>
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
@@ -8,8 +8,8 @@
 <!ELEMENT battery EMPTY>
 <!ELEMENT led EMPTY>
 
-<!ELEMENT modules (module+)
-<!ELEMENT module (name,((is-actor,(constraints|values))|values),rules?)>
+<!ELEMENT modules (module+)>
+<!ELEMENT module (name,((is-actor,(constraints|values))|values)?,rules?)>
 
 <!ELEMENT values (value+)>
 <!ELEMENT value (#PCDATA)>
@@ -34,8 +34,8 @@
         >
 
 <!ATTLIST device
-        id              ID      #REQUIRED
-        name            ID      #REQUIRED
+        id              CDATA   #REQUIRED
+        name            CDATA   #REQUIRED
         >
 
 <!ATTLIST module
