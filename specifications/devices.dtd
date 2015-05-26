@@ -9,12 +9,13 @@
 <!ELEMENT led EMPTY>
 
 <!ELEMENT modules (module+)>
-<!ELEMENT module (name,((is-actuator,(constraints|values))|values)?,rules?)>
+<!ELEMENT module (group?, name,((is-actuator,(constraints|values))|values)?,rules?)>
 
+<!ELEMENT group (#PCDATA)>
+<!ELEMENT is-actuator EMPTY>
+<!ELEMENT constraints (min?, max?, granularity)>
 <!ELEMENT values (value+)>
 <!ELEMENT value (#PCDATA)>
-<!ELEMENT constraints (min?, max?, granularity)>
-<!ELEMENT is-actuator EMPTY>
 
 <!ELEMENT min (#PCDATA)>
 <!ELEMENT max (#PCDATA)>

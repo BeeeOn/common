@@ -2,8 +2,11 @@
 <!DOCTYPE devices SYSTEM "devices.dtd">
 <devices version="1">
 
-<!-- "T:" značí, že následuje identifikátor pro překlad, může jich být více, oddělených ":", ve výsledku se pak T:ZONE:NAME nahradí za překlad s name="ZONE" konkatenován s překladem s name="NAME" -->
-<!-- <values name="..."> je speciální, kdy name identifikuje v překladovém souboru element <values name="..."> až který obsahuje konkrétní názvy hodnot. Takže funguje jako jakýsi namespace. -->
+<!--
+Info k překladům: Řetězce začínající s "T:" značí, že následuje identifikátor pro překlad. Ten ukazuje do souboru
+s překladem na položku <string name="...">. Speciální případ je u elementu <values name="...">, kdy name identifikuje
+v překladovém souboru element <values name="..."> a až v něm jsou konkrétní překlady pro jeho hodnoty.
+-->
 
 <device id="0" name="BeeeOn v1.0">
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
@@ -31,7 +34,8 @@
 	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
 	<modules>
 		<module id="0" type="0xA3" offset="0" order="0">
-			<name>T:ZONE_1:MOD_BOILER_OPERATION_TYPE</name>
+			<group>T:ZONE_1</group>
+            <name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
@@ -60,7 +64,8 @@
 			</rules>
 		</module>
 		<module id="1" type="0xA3" offset="1" order="1">
-			<name>T:ZONE_1:MOD_BOILER_OPERATION_MODE</name>
+            <group>T:ZONE_1</group>
+            <name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
@@ -69,7 +74,8 @@
 			</values>
 		</module>
 		<module id="2" type="0xA5" offset="0" order="2">
-			<name>T:ZONE_1:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_1</group>
+            <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -78,10 +84,12 @@
 			</constraints>
 		</module>
 		<module id="3" type="0x0A" offset="0" order="3">
-			<name>T:ZONE_1:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_1</group>
+            <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
 		<module id="4" type="0xA5" offset="1" order="4">
-			<name>T:ZONE_1:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <group>T:ZONE_1</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -90,12 +98,14 @@
 			</constraints>
 		</module>
 		<module id="5" type="0x0A" offset="1" order="5">
-			<name>T:ZONE_1:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <group>T:ZONE_1</group>
+            <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
 
 		<module id="6" type="0xA3" offset="2" order="6">
-			<name>T:ZONE_2:MOD_BOILER_OPERATION_TYPE</name>
+            <group>T:ZONE_2</group>
+            <name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
@@ -124,7 +134,8 @@
 			</rules>
 		</module>
 		<module id="7" type="0xA3" offset="3" order="7">
-			<name>T:ZONE_2:MOD_BOILER_OPERATION_MODE</name>
+            <group>T:ZONE_2</group>
+            <name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
@@ -133,7 +144,8 @@
 			</values>
 		</module>
 		<module id="8" type="0xA5" offset="2" order="8">
-			<name>T:ZONE_2:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_2</group>
+            <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -142,10 +154,12 @@
 			</constraints>
 		</module>
 		<module id="9" type="0x0A" offset="2" order="9">
-			<name>T:ZONE_2:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_2</group>
+            <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
 		<module id="10" type="0xA5" offset="3" order="10">
-			<name>T:ZONE_2:MOD_REQUESTED_WATER_TEMPERATURE</name>
+			<group>T:ZONE_2</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -154,12 +168,14 @@
 			</constraints>
 		</module>
 		<module id="11" type="0x0A" offset="3" order="11">
-			<name>T:ZONE_2:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <group>T:ZONE_2</group>
+            <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
 
 		<module id="12" type="0xA3" offset="4" order="12">
-			<name>T:ZONE_3:MOD_BOILER_OPERATION_TYPE</name>
+            <group>T:ZONE_3</group>
+            <name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
@@ -188,7 +204,8 @@
 			</rules>
 		</module>
 		<module id="13" type="0xA3" offset="5" order="13">
-			<name>T:ZONE_3:MOD_BOILER_OPERATION_MODE</name>
+            <group>T:ZONE_3</group>
+            <name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
@@ -197,7 +214,8 @@
 			</values>
 		</module>
 		<module id="14" type="0xA5" offset="4" order="14">
-			<name>T:ZONE_3:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_3</group>
+            <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -206,10 +224,12 @@
 			</constraints>
 		</module>
 		<module id="15" type="0x0A" offset="4" order="15">
-			<name>T:ZONE_3:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_3</group>
+            <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
 		<module id="16" type="0xA5" offset="5" order="16">
-			<name>T:ZONE_3:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <group>T:ZONE_3</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -218,12 +238,14 @@
 			</constraints>
 		</module>
 		<module id="17" type="0x0A" offset="5" order="17">
-			<name>T:ZONE_3:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <group>T:ZONE_3</group>
+            <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
 
 		<module id="18" type="0xA3" offset="6" order="18">
-			<name>T:ZONE_4:MOD_BOILER_OPERATION_TYPE</name>
+            <group>T:ZONE_4</group>
+            <name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
 				<value id="0">T:OFF</value>
@@ -252,7 +274,8 @@
 			</rules>
 		</module>
 		<module id="19" type="0xA3" offset="7" order="19">
-			<name>T:ZONE_4:MOD_BOILER_OPERATION_MODE</name>
+            <group>T:ZONE_4</group>
+            <name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
 			<values name="T:VAL_BOILER_OPERATION_MODE">
 				<value id="0">T:AUTOMATIC</value>
@@ -261,7 +284,8 @@
 			</values>
 		</module>
 		<module id="20" type="0xA5" offset="6" order="20">
-			<name>T:ZONE_4:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_4</group>
+            <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -270,10 +294,12 @@
 			</constraints>
 		</module>
 		<module id="21" type="0x0A" offset="6" order="21">
-			<name>T:ZONE_4:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <group>T:ZONE_4</group>
+            <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
 		<module id="22" type="0xA5" offset="7" order="22">
-			<name>T:ZONE_4:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <group>T:ZONE_4</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
 				<min>-20</min>
@@ -282,7 +308,8 @@
 			</constraints>
 		</module>
 		<module id="23" type="0x0A" offset="7" order="23">
-			<name>T:ZONE_4:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <group>T:ZONE_4</group>
+            <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
 		<module id="24" type="0x0B" offset="8" order="24">
