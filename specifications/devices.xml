@@ -5,240 +5,340 @@
 <!-- "T:" značí, že následuje identifikátor pro překlad, může jich být více, oddělených ":", ve výsledku se pak T:ZONE:NAME nahradí za překlad s name="ZONE" konkatenován s překladem s name="NAME" -->
 <!-- <values name="..."> je speciální, kdy name identifikuje v překladovém souboru element <values name="..."> až který obsahuje konkrétní názvy hodnot. Takže funguje jako jakýsi namespace. -->
 
-<device idtype="0" name="BeeeOn v1.0">
+<device id="0" name="BeeeOn v1.0">
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
+	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
 	<refresh>30</refresh>
 	<led>true</led>
 	<battery>true</battery>
-	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
-	
+
 	<modules>
-		<module id="0" type="0x0A" offset="0" order="0" min="-50" max="100" granularity="0.01" vstrings="no">
+		<module id="0" type="0x0A" offset="0" order="0">
 			<name>T:MOD_ROOM_TEMPERATURE</name>
+			<actor>false</actor>
+			<constraints>
+				<min>-50</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
-		<module id="1" type="0x0A" offset="1" order="1" min="-50" max="100" granularity="0.01" vstrings="no"> 
+		<module id="1" type="0x0A" offset="1" order="1">
 			<name>T:MOD_OUTSIDE_TEMPERATURE</name>
+			<actor>false</actor>
+			<constraints>
+				<min>-50</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
-		<module id="2" type="0x01" offset="0" order="2" min="0" max="100" granularity="0.01" vstrings="no">
+		<module id="2" type="0x01" offset="0" order="2">
 			<name>T:MOD_ROOM_HUMIDITY</name>
+			<actor>false</actor>
+			<constraints>
+				<min>0</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
 	</modules>
 </device>
 
-<device idtype="1" name="Regulator VPT v1.0">
+<device id="1" name="Regulator VPT v1.0">
 	<name>T:DEV_REGULATOR_VPT</name>
+	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
 	<refresh>30</refresh>
 	<led>false</led>
-	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer> <!-- pocitat s jinymi abecedami, napr. azbuka  -->
-	
+
 	<modules>
-		<module id="0" type="0xA3" offset="0" order="0" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+		<module id="0" type="0xA3" offset="0" order="0">
 			<name>T:ZONE_1:MOD_BOILER_OPERATION_TYPE</name>
+			<actor>true</actor>
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
-				<value state="0">T:OFF</value>
-				<value state="1">T:ROOM_REGULATOR</value>
-				<value state="2">T:EQUITERM_REGULATOR</value>
-				<value state="3">T:CONSTANT_WATER_TEMPERATURE</value>
-				<value state="4">T:HOT_WATER</value>
+				<value id="0">T:OFF</value>
+				<value id="1">T:ROOM_REGULATOR</value>
+				<value id="2">T:EQUITERM_REGULATOR</value>
+				<value id="3">T:CONSTANT_WATER_TEMPERATURE</value>
+				<value id="4">T:HOT_WATER</value>
 			</values>
-			<hide>
-				<if-value state="1">
-					<module id="4" />
-					<module id="5" />
-				</if-value>
-				<if-value state="2">
-					<module id="4" />
-					<module id="5" />
-				</if-value>
-				<if-value state="3">
-					<module id="2" />
-					<module id="3" />
-				</if-value>
-				<if-value state="4">
-					<module id="2" />
-					<module id="3" />
-				</if-value>
-			</hide>
+			<rules>
+				<if value="1">
+					<hide-module id="4" />
+					<hide-module id="5" />
+				</if>
+				<if value="2">
+					<hide-module id="4" />
+					<hide-module id="5" />
+				</if>
+				<if value="3">
+					<hide-module id="2" />
+					<hide-module id="3" />
+				</if>
+				<if value="4">
+					<hide-module id="2" />
+					<hide-module id="3" />
+				</if>
+			</rules>
 		</module>
-		<module id="1" type="0xA3" offset="1" order="1" min="0" max="2" granularity="1" vstrings="yes">
+		<module id="1" type="0xA3" offset="1" order="1">
 			<name>T:ZONE_1:MOD_BOILER_OPERATION_MODE</name>
 			<values name="T:VAL_BOILER_OPERATION_MODE">
-				<value state="0">T:AUTOMATIC</value>
-				<value state="1">T:MANUAL</value>
-				<value state="2">T:VACATION</value>
+				<value id="0">T:AUTOMATIC</value>
+				<value id="1">T:MANUAL</value>
+				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="2" type="0xA5" offset="0" order="2" min="-20" max="100" granularity="0.5">
+		<module id="2" type="0xA5" offset="0" order="2">
 			<name>T:ZONE_1:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="3" type="0x0A" offset="0" order="3" min="-20" max="100" granularity="0.01">
+		<module id="3" type="0x0A" offset="0" order="3">
 			<name>T:ZONE_1:MOD_CURRENT_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
-		<module id="4" type="0xA5" offset="1" order="4" min="-20" max="100" granularity="0.5">
+		<module id="4" type="0xA5" offset="1" order="4">
 			<name>T:ZONE_1:MOD_REQUESTED_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="5" type="0x0A" offset="1" order="5" min="-20" max="100" granularity="0.01">
+		<module id="5" type="0x0A" offset="1" order="5">
 			<name>T:ZONE_1:MOD_CURRENT_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
 
 
-		<module id="6" type="0xA3" offset="2" order="6" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+		<module id="6" type="0xA3" offset="2" order="6">
 			<name>T:ZONE_2:MOD_BOILER_OPERATION_TYPE</name>
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
-				<value state="0">T:OFF</value>
-				<value state="1">T:ROOM_REGULATOR</value>
-				<value state="2">T:EQUITERM_REGULATOR</value>
-				<value state="3">T:CONSTANT_WATER_TEMPERATURE</value>
-				<value state="4">T:HOT_WATER</value>
+				<value id="0">T:OFF</value>
+				<value id="1">T:ROOM_REGULATOR</value>
+				<value id="2">T:EQUITERM_REGULATOR</value>
+				<value id="3">T:CONSTANT_WATER_TEMPERATURE</value>
+				<value id="4">T:HOT_WATER</value>
 			</values>
-			<hide>
-				<if-value state="1">
-					<module id="10" />
-					<module id="11" />
-				</if-value>
-				<if-value state="2">
-					<module id="10" />
-					<module id="11" />
-				</if-value>
-				<if-value state="3">
-					<module id="8" />
-					<module id="9" />
-				</if-value>
-				<if-value state="4">
-					<module id="8" />
-					<module id="9" />
-				</if-value>
-			</hide>
+			<rules>
+				<if value="1">
+					<hide-module id="10" />
+					<hide-module id="11" />
+				</if>
+				<if value="2">
+					<hide-module id="10" />
+					<hide-module id="11" />
+				</if>
+				<if value="3">
+					<hide-module id="8" />
+					<hide-module id="9" />
+				</if>
+				<if value="4">
+					<hide-module id="8" />
+					<hide-module id="9" />
+				</if>
+			</rules>
 		</module>
-		<module id="7" type="0xA3" offset="3" order="7" min="0" max="2" granularity="1" vstrings="yes">
+		<module id="7" type="0xA3" offset="3" order="7">
 			<name>T:ZONE_2:MOD_BOILER_OPERATION_MODE</name>
 			<values name="T:VAL_BOILER_OPERATION_MODE">
-				<value state="0">T:AUTOMATIC</value>
-				<value state="1">T:MANUAL</value>
-				<value state="2">T:VACATION</value>
+				<value id="0">T:AUTOMATIC</value>
+				<value id="1">T:MANUAL</value>
+				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="8" type="0xA5" offset="2" order="8" min="-20" max="100" granularity="0.5">
+		<module id="8" type="0xA5" offset="2" order="8">
 			<name>T:ZONE_2:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="9" type="0x0A" offset="2" order="9" min="-20" max="100" granularity="0.01">
+		<module id="9" type="0x0A" offset="2" order="9">
 			<name>T:ZONE_2:MOD_CURRENT_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
-		<module id="10" type="0xA5" offset="3" order="10" min="-20" max="100" granularity="0.5">
+		<module id="10" type="0xA5" offset="3" order="10">
 			<name>T:ZONE_2:MOD_REQUESTED_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="11" type="0x0A" offset="3" order="11" min="-20" max="100" granularity="0.01">
+		<module id="11" type="0x0A" offset="3" order="11">
 			<name>T:ZONE_2:MOD_CURRENT_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
 
 
-		<module id="12" type="0xA3" offset="4" order="12" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+		<module id="12" type="0xA3" offset="4" order="12">
 			<name>T:ZONE_3:MOD_BOILER_OPERATION_TYPE</name>
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
-				<value state="0">T:OFF</value>
-				<value state="1">T:ROOM_REGULATOR</value>
-				<value state="2">T:EQUITERM_REGULATOR</value>
-				<value state="3">T:CONSTANT_WATER_TEMPERATURE</value>
-				<value state="4">T:HOT_WATER</value>
+				<value id="0">T:OFF</value>
+				<value id="1">T:ROOM_REGULATOR</value>
+				<value id="2">T:EQUITERM_REGULATOR</value>
+				<value id="3">T:CONSTANT_WATER_TEMPERATURE</value>
+				<value id="4">T:HOT_WATER</value>
 			</values>
-			<hide>
-				<if-value state="1">
-					<module id="16" />
-					<module id="17" />
-				</if-value>
-				<if-value state="2">
-					<module id="16" />
-					<module id="17" />
-				</if-value>
-				<if-value state="3">
-					<module id="14" />
-					<module id="15" />
-				</if-value>
-				<if-value state="4">
-					<module id="14" />
-					<module id="15" />
-				</if-value>
-			</hide>
+			<rules>
+				<if value="1">
+					<hide-module id="16" />
+					<hide-module id="17" />
+				</if>
+				<if value="2">
+					<hide-module id="16" />
+					<hide-module id="17" />
+				</if>
+				<if value="3">
+					<hide-module id="14" />
+					<hide-module id="15" />
+				</if>
+				<if value="4">
+					<hide-module id="14" />
+					<hide-module id="15" />
+				</if>
+			</rules>
 		</module>
-		<module id="13" type="0xA3" offset="5" order="13" min="0" max="2" granularity="1" vstrings="yes">
+		<module id="13" type="0xA3" offset="5" order="13">
 			<name>T:ZONE_3:MOD_BOILER_OPERATION_MODE</name>
 			<values name="T:VAL_BOILER_OPERATION_MODE">
-				<value state="0">T:AUTOMATIC</value>
-				<value state="1">T:MANUAL</value>
-				<value state="2">T:VACATION</value>
+				<value id="0">T:AUTOMATIC</value>
+				<value id="1">T:MANUAL</value>
+				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="14" type="0xA5" offset="4" order="14" min="-20" max="100" granularity="0.5">
+		<module id="14" type="0xA5" offset="4" order="14">
 			<name>T:ZONE_3:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="15" type="0x0A" offset="4" order="15" min="-20" max="100" granularity="0.01">
+		<module id="15" type="0x0A" offset="4" order="15">
 			<name>T:ZONE_3:MOD_CURRENT_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
-		<module id="16" type="0xA5" offset="5" order="16" min="-20" max="100" granularity="0.5">
+		<module id="16" type="0xA5" offset="5" order="16">
 			<name>T:ZONE_3:MOD_REQUESTED_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="17" type="0x0A" offset="5" order="17" min="-20" max="100" granularity="0.01">
+		<module id="17" type="0x0A" offset="5" order="17">
 			<name>T:ZONE_3:MOD_CURRENT_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
 
 
-		<module id="18" type="0xA3" offset="6" order="18" min="0" max="4" granularity="1" vstrings="yes">  <!-- vstrings signalizuje, ze existuje textova reprezentace k hodnotam -->
+		<module id="18" type="0xA3" offset="6" order="18">
 			<name>T:ZONE_4:MOD_BOILER_OPERATION_TYPE</name>
 			<values name="T:VAL_BOILER_OPERATION_TYPE">
-				<value state="0">T:OFF</value>
-				<value state="1">T:ROOM_REGULATOR</value>
-				<value state="2">T:EQUITERM_REGULATOR</value>
-				<value state="3">T:CONSTANT_WATER_TEMPERATURE</value>
-				<value state="4">T:HOT_WATER</value>
+				<value id="0">T:OFF</value>
+				<value id="1">T:ROOM_REGULATOR</value>
+				<value id="2">T:EQUITERM_REGULATOR</value>
+				<value id="3">T:CONSTANT_WATER_TEMPERATURE</value>
+				<value id="4">T:HOT_WATER</value>
 			</values>
-			<hide>
-				<if-value state="1">
-					<module id="16" />
-					<module id="17" />
-				</if-value>
-				<if-value state="2">
-					<module id="16" />
-					<module id="17" />
-				</if-value>
-				<if-value state="3">
-					<module id="14" />
-					<module id="15" />
-				</if-value>
-				<if-value state="4">
-					<module id="14" />
-					<module id="15" />
-				</if-value>
-			</hide>
+			<rules>
+				<if value="1">
+					<hide-module id="16" />
+					<hide-module id="17" />
+				</if>
+				<if value="2">
+					<hide-module id="16" />
+					<hide-module id="17" />
+				</if>
+				<if value="3">
+					<hide-module id="14" />
+					<hide-module id="15" />
+				</if>
+				<if value="4">
+					<hide-module id="14" />
+					<hide-module id="15" />
+				</if>
+			</rules>
 		</module>
-		<module id="19" type="0xA3" offset="7" order="19" min="0" max="2" granularity="1" vstrings="yes">
+		<module id="19" type="0xA3" offset="7" order="19">
 			<name>T:ZONE_4:MOD_BOILER_OPERATION_MODE</name>
 			<values name="T:VAL_BOILER_OPERATION_MODE">
-				<value state="0">T:AUTOMATIC</value>
-				<value state="1">T:MANUAL</value>
-				<value state="2">T:VACATION</value>
+				<value id="0">T:AUTOMATIC</value>
+				<value id="1">T:MANUAL</value>
+				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="20" type="0xA5" offset="6" order="20" min="-20" max="100" granularity="0.5">
+		<module id="20" type="0xA5" offset="6" order="20">
 			<name>T:ZONE_4:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="21" type="0x0A" offset="6" order="21" min="-20" max="100" granularity="0.01">
+		<module id="21" type="0x0A" offset="6" order="21">
 			<name>T:ZONE_4:MOD_CURRENT_ROOM_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
-		<module id="22" type="0xA5" offset="7" order="22" min="-20" max="100" granularity="0.5">
+		<module id="22" type="0xA5" offset="7" order="22">
 			<name>T:ZONE_4:MOD_REQUESTED_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.5</granularity>
+			</constraints>
 		</module>
-		<module id="23" type="0x0A" offset="7" order="23" min="-20" max="100" granularity="0.01">
+		<module id="23" type="0x0A" offset="7" order="23">
 			<name>T:ZONE_4:MOD_CURRENT_WATER_TEMPERATURE</name>
+			<constraints>
+				<min>-20</min>
+				<max>100</max>
+				<granularity>0.01</granularity>
+			</constraints>
 		</module>
 
-		<module id="24" type="0x0B" offset="8" order="24" min="0" max="4" granularity="1" vstrings="yes">
+		<module id="24" type="0x0B" offset="8" order="24">
 			<name>T:MOD_BOILER_STATUS</name>
+			<actor>false</actor>
 			<values name="T:VAL_BOILER_STATUS">
-				<value state="0">T:UNDEFINED</value>
-				<value state="1">T:HEATING</value>
-				<value state="2">T:HOT_WATER</value>
-				<value state="3">T:FAILURE</value>
-				<value state="4">T:SHUTDOWN</value>
+				<value id="0">T:UNDEFINED</value>
+				<value id="1">T:HEATING</value>
+				<value id="2">T:HOT_WATER</value>
+				<value id="3">T:FAILURE</value>
+				<value id="4">T:SHUTDOWN</value>
 			</values>
 		</module>
 	</modules>
