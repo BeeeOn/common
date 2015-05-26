@@ -9,9 +9,10 @@
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
 	<refresh>30</refresh>
-	<has-battery />
-	<has-led />
-
+    <features>
+        <battery />
+        <led />
+    </features>
 	<modules>
 		<module id="0" type="0x0A" offset="0" order="0">
 			<name>T:MOD_ROOM_TEMPERATURE</name>
@@ -29,7 +30,6 @@
 	<name>T:DEV_REGULATOR_VPT</name>
 	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
 	<refresh>30</refresh>
-
 	<modules>
 		<module id="0" type="0xA3" offset="0" order="0">
 			<name>T:ZONE_1:MOD_BOILER_OPERATION_TYPE</name>

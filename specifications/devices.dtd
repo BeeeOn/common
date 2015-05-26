@@ -1,11 +1,12 @@
 <!ELEMENT devices (device*)>
-<!ELEMENT device (name,refresh,has-led?,has-battery?,manufacturer,modules)>
+<!ELEMENT device (name,manufacturer,refresh,features?,modules)>
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
 <!ELEMENT refresh (#PCDATA)>
-<!ELEMENT has-battery EMPTY>
-<!ELEMENT has-led EMPTY>
+<!ELEMENT features (battery?, led?)>
+<!ELEMENT battery EMPTY>
+<!ELEMENT led EMPTY>
 
 <!ELEMENT modules (module+)
 <!ELEMENT module (name,((is-actor,(constraints|values))|values),rules?)>
