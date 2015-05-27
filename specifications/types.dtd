@@ -16,3 +16,10 @@
 <!ATTLIST var
         size            CDATA   #REQUIRED
         >
+
+<!ENTITY celsius "&#176;C">
+<!ENTITY percent "&#37;">
+<!ENTITY hpascal "hPa">
+<!ENTITY lux "lx">
+<!ENTITY decibel "dB">
+<!ENTITY ppm "ppm">
