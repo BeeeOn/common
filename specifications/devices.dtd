@@ -1,5 +1,5 @@
 <!ELEMENT devices (device*)>
-<!ELEMENT device (name,manufacturer,features?,modules)>
+<!ELEMENT device (name, manufacturer, features?, modules)>
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
@@ -9,8 +9,9 @@
 <!ELEMENT led EMPTY>
 
 <!ELEMENT modules (module+)>
-<!ELEMENT module (group?, name,((is-actuator,(constraints|values))|values)?,rules?)>
+<!ELEMENT module (order?, group?, name,((is-actuator, (constraints|values))|values)?, rules?)>
 
+<!ELEMENT order (#PCDATA)>
 <!ELEMENT group (#PCDATA)>
 <!ELEMENT is-actuator EMPTY>
 <!ELEMENT constraints (min?, max?, granularity)>
@@ -43,7 +44,6 @@
         id              CDATA   #REQUIRED
         type            CDATA   #REQUIRED
         offset          CDATA   #REQUIRED
-        order           CDATA   #REQUIRED
         >
 
 <!ATTLIST values
