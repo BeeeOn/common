@@ -2,21 +2,21 @@
 <!DOCTYPE types SYSTEM "types.dtd">
 <types version="1">
 	<type id="0x01">
-		<name>T:ENUM</name>
+		<name>T:TYPE_ENUM</name>
 		<var size="1">&int;</var>
 	</type>
 	<type id="0x02">
-		<name>T:HUMIDITY</name>
+		<name>T:TYPE_HUMIDITY</name>
 		<var size="1">&int;</var>
 		<unit>&percent;</unit>
 	</type>
 	<type id="0x03">
-		<name>T:PRESSURE</name>
+		<name>T:TYPE_PRESSURE</name>
 		<var size="1">&int;</var>
 		<unit>&hpascal;</unit>
 	</type>
 	<type id="0x04">
-		<name>T:LIGHT</name>
+		<name>T:TYPE_LIGHT</name>
 		<var size="4">&float;</var>
 		<unit>&lux;</unit>
 		<transform>
@@ -25,7 +25,7 @@
 		</transform>
 	</type>
 	<type id="0x05">
-		<name>T:NOISE</name>
+		<name>T:TYPE_NOISE</name>
 		<var size="4">&float;</var>
 		<unit>&decibel;</unit>
 		<transform>
@@ -34,12 +34,12 @@
 		</transform>
 	</type>
 	<type id="0x06">
-		<name>T:CO2</name>
+		<name>T:TYPE_CO2</name>
 		<var size="1">&int;</var>
 		<unit>&ppm;</unit>
 	</type>
 	<type id="0x07">
-		<name>T:TEMPERATURE</name>
+		<name>T:TYPE_TEMPERATURE</name>
 		<var size="4">&float;</var>
 		<unit>&celsius;</unit>
 		<transform>
