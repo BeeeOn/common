@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE types SYSTEM "types.dtd">
+<types version="1">
+	<type id="0x01">
+		<name>T:ENUM</name>
+		<var size="1">int</var>
+	</type>
+	<type id="0x02">
+		<name>T:HUMIDITY</name>
+		<var size="1">int</var>
+		<unit>%</unit>
+	</type>
+	<type id="0x03">
+		<name>T:PRESSURE</name>
+		<var size="1">int</var>
+		<unit>hPa</unit>
+	</type>
+	<type id="0x04">
+		<name>T:LIGHT</name>
+		<var size="4">float</var>
+		<unit>lx</unit>
+		<transform>
+			<from>/100</from>
+			<to>*100</to>
+		</transform>
+	</type>
+	<type id="0x05">
+		<name>T:NOISE</name>
+		<var size="4">float</var>
+		<unit>dB</unit>
+		<transform>
+			<from>/100</from>
+			<to>*100</to>
+		</transform>
+	</type>
+	<type id="0x06">
+		<name>T:CO2</name>
+		<var size="1">int</var>
+		<unit>ppm</unit>
+	</type>
+	<type id="0x07">
+		<name>T:TEMPERATURE</name>
+		<var size="4">float</var>
+		<unit>°C</unit>
+		<transform>
+			<from>/100</from>
+			<to>*100</to>
+		</transform>
+	</type>
+</types>
