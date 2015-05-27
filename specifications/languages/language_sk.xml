@@ -1,12 +1,12 @@
 <language code="sk">
 	<!-- Types -->
 	<string name="type_enum">Výčet</string>
+	<string name="type_temperature">Teplota</string>
 	<string name="type_humidity">Vlhkosť</string>
 	<string name="type_pressure">Tlak</string>
 	<string name="type_light">Svetelnosť</string>
 	<string name="type_noise">Hluk</string>
 	<string name="type_co2">Oxid uhličitý</string>
-	<string name="type_temperature">Teplota</string>
 
 	<!-- Devices -->
 	<string name="manufacturer_but">VUT</string>

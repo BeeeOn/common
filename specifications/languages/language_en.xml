@@ -1,12 +1,12 @@
 <language code="en">
 	<!-- Types -->
 	<string name="type_enum">Enum</string>
+	<string name="type_temperature">Temperature</string>
 	<string name="type_humidity">Humidity</string>
 	<string name="type_pressure">Pressure</string>
 	<string name="type_light">Light</string>
 	<string name="type_noise">Noise</string>
 	<string name="type_co2">Carbon dioxide</string>
-	<string name="type_temperature">Temperature</string>
 
 	<!-- Devices -->
 	<string name="manufacturer_but">BUT</string>
