@@ -1,0 +1,30 @@
+<!ELEMENT types (type*)>
+<!ELEMENT type (name, var, unit?, transform?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT var (#PCDATA)>
+<!ELEMENT unit (#PCDATA)>
+<!ELEMENT transform (from, to)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+
+<!ATTLIST types
+        version         CDATA   #REQUIRED
+        >
+<!ATTLIST type
+        id              CDATA   #REQUIRED
+        >
+<!ATTLIST var
+        size            CDATA   #REQUIRED
+        >
+
+<!-- Variables entities -->
+<!ENTITY int "int">
+<!ENTITY float "float">
+
+<!-- Units entities -->
+<!ENTITY celsius "&#176;C">
+<!ENTITY percent "&#37;">
+<!ENTITY hpascal "hPa">
+<!ENTITY lux "lx">
+<!ENTITY decibel "dB">
+<!ENTITY ppm "ppm">

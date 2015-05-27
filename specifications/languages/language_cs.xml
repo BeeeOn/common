@@ -1,4 +1,14 @@
 <language code="cs">
+	<!-- Types -->
+	<string name="type_enum">Výčet</string>
+	<string name="type_temperature">Teplota</string>
+	<string name="type_humidity">Vlhkost</string>
+	<string name="type_pressure">Tlak</string>
+	<string name="type_light">Světelnost</string>
+	<string name="type_noise">Hluk</string>
+	<string name="type_co2">Oxid uhličitý</string>
+
+	<!-- Devices -->
 	<string name="manufacturer_but">VUT</string>
 	<string name="manufacturer_thermona">Thermona</string>
 	
