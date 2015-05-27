@@ -3,21 +3,21 @@
 <types version="1">
 	<type id="0x01">
 		<name>T:ENUM</name>
-		<var size="1">int</var>
+		<var size="1">&int;</var>
 	</type>
 	<type id="0x02">
 		<name>T:HUMIDITY</name>
-		<var size="1">int</var>
+		<var size="1">&int;</var>
 		<unit>&percent;</unit>
 	</type>
 	<type id="0x03">
 		<name>T:PRESSURE</name>
-		<var size="1">int</var>
+		<var size="1">&int;</var>
 		<unit>&hpascal;</unit>
 	</type>
 	<type id="0x04">
 		<name>T:LIGHT</name>
-		<var size="4">float</var>
+		<var size="4">&float;</var>
 		<unit>&lux;</unit>
 		<transform>
 			<from>/100</from>
@@ -26,7 +26,7 @@
 	</type>
 	<type id="0x05">
 		<name>T:NOISE</name>
-		<var size="4">float</var>
+		<var size="4">&float;</var>
 		<unit>&decibel;</unit>
 		<transform>
 			<from>/100</from>
@@ -35,12 +35,12 @@
 	</type>
 	<type id="0x06">
 		<name>T:CO2</name>
-		<var size="1">int</var>
+		<var size="1">&int;</var>
 		<unit>&ppm;</unit>
 	</type>
 	<type id="0x07">
 		<name>T:TEMPERATURE</name>
-		<var size="4">float</var>
+		<var size="4">&float;</var>
 		<unit>&celsius;</unit>
 		<transform>
 			<from>/100</from>

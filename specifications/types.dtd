@@ -17,6 +17,11 @@
         size            CDATA   #REQUIRED
         >
 
+<!-- Variables entities -->
+<!ENTITY int "int">
+<!ENTITY float "float">
+
+<!-- Units entities -->
 <!ENTITY celsius "&#176;C">
 <!ENTITY percent "&#37;">
 <!ENTITY hpascal "hPa">
