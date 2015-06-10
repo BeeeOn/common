@@ -256,20 +256,20 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			</values>
 			<rules>
 				<if value="1">
-					<hide-module id="16" />
-					<hide-module id="17" />
+					<hide-module id="22" />
+					<hide-module id="23" />
 				</if>
 				<if value="2">
-					<hide-module id="16" />
-					<hide-module id="17" />
+					<hide-module id="22" />
+					<hide-module id="23" />
 				</if>
 				<if value="3">
-					<hide-module id="14" />
-					<hide-module id="15" />
+					<hide-module id="20" />
+					<hide-module id="21" />
 				</if>
 				<if value="4">
-					<hide-module id="14" />
-					<hide-module id="15" />
+					<hide-module id="20" />
+					<hide-module id="21" />
 				</if>
 			</rules>
 		</module>
