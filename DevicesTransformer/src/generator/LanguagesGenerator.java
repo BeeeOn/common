@@ -21,13 +21,12 @@ public class LanguagesGenerator {
 
 	public boolean generateLanguages(String dirDefault, String dirCodeParam, String filename, String defaultLangCode) {
 		for (Language language : mLanguages) {
-			String path = language.getCode().equalsIgnoreCase(defaultLangCode) ? "export/values/" : String.format("export/values-%s/", language.getCode());
+			String path = language.getCode().equalsIgnoreCase(defaultLangCode) ? dirDefault : String.format(dirCodeParam, language.getCode());
 
 			File dir = new File(path);
 			dir.mkdirs();
 
-			String name = "generated_strings_devices.xml";
-			File output = new File(dir, name);
+			File output = new File(dir, filename);
 
 			System.out.println(String.format("Saving Android's strings XML to '%s'", output.getAbsolutePath()));
 			PrintWriter writer = null;
