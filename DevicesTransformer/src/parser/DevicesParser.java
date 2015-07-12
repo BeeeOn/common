@@ -24,7 +24,26 @@ import java.util.List;
  */
 public class DevicesParser {
 
-	public static Devices parse(File file) throws ParserConfigurationException, IOException, SAXException {
+	/**
+	 * @param path Path to XML file with devices definition.
+	 * @return Devices object with parsed data, or null on failure
+	 */
+	public static Devices parseDevices(String path) {
+		Devices devices = null;
+
+		File file = new File(path);
+		System.out.println(String.format("Loading devices specification from '%s'", file.getAbsolutePath()));
+
+		try {
+			devices = DevicesParser.parse(file);
+		} catch (ParserConfigurationException | IOException | SAXException e) {
+			e.printStackTrace();
+		}
+
+		return devices;
+	}
+
+	private static Devices parse(File file) throws ParserConfigurationException, IOException, SAXException {
 		//Get the DOM Builder Factory
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setValidating(true);

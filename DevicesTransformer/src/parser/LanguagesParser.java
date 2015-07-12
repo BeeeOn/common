@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +19,37 @@ import java.util.List;
 /**
  * Created by Robert on 23. 5. 2015.
  */
-public class LanguageParser {
+public class LanguagesParser {
 
-	public static Language parse(File file) throws ParserConfigurationException, IOException, SAXException {
+	public static List<Language> parseLanguages(String dirPath, String filenameStarts, String filenameEnds) {
+		List<Language> languages = new ArrayList<>();
+
+		File[] files = new File(dirPath).listFiles(new FilenameFilter() {
+			@Override
+			public boolean accept(File dir, String name) {
+				return name.startsWith(filenameStarts) && name.endsWith(filenameEnds);
+			}
+		});
+
+		for (File file : files) {
+			try {
+				System.out.println(String.format("Loading translation from '%s'", file.getAbsolutePath()));
+
+				Language language = LanguagesParser.parse(file);
+				if (language == null) {
+					System.err.println(String.format("Error when loading language from '%s'.", file));
+				}
+
+				languages.add(language);
+			} catch (ParserConfigurationException | IOException | SAXException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return languages;
+	}
+
+	private static Language parse(File file) throws ParserConfigurationException, IOException, SAXException {
 
 		//Get the DOM Builder Factory
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
