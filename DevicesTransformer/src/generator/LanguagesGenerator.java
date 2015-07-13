@@ -2,10 +2,7 @@ package generator;
 
 import data.Language;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -19,7 +16,17 @@ public class LanguagesGenerator {
 		mLanguages = languages;
 	}
 
-	public boolean generateLanguages(String dirDefault, String dirCodeParam, String filename, String defaultLangCode) {
+	/**
+	 * Generate files with translations in different languages.
+	 *
+	 * @param formatter Object implementing IDevicesFormatter interface for formatting content of output file
+	 * @param dirDefault Path to output folder for default language, e.g. "/values/"
+	 * @param dirCodeParam Path to output folder for other languages, must contain one %s parameter for language code, e.g. "/values-%s/"
+	 * @param filename Name of generated language file
+	 * @param defaultLangCode Code of default language
+	 * @return
+	 */
+	public boolean generateLanguages(ILanguagesFormatter formatter, String dirDefault, String dirCodeParam, String filename, String defaultLangCode) {
 		boolean result = true;
 
 		for (Language language : mLanguages) {
@@ -33,7 +40,7 @@ public class LanguagesGenerator {
 			System.out.println(String.format("Saving Android's strings XML to '%s'", output.getAbsolutePath()));
 
 			try (PrintWriter writer = new PrintWriter(output, "UTF-8")) {
-				language.printAndroidXml(writer);
+				formatter.formatLanguages(writer, language);
 			} catch (FileNotFoundException | UnsupportedEncodingException e) {
 				e.printStackTrace();
 				result = false;
@@ -41,5 +48,26 @@ public class LanguagesGenerator {
 		}
 
 		return result;
+	}
+
+	public void printLanguages(PrintStream stream) {
+		for (Language language : mLanguages) {
+			printLanguage(stream, language);
+		}
+	}
+
+	public void printLanguage(PrintStream stream, Language language) {
+		stream.println(String.format("--- LISTING OF LANGUAGE '%s' ---", language.getCode()));
+
+		for (Language.Item item : language.getItems()) {
+			String name = item.key;
+			String value = item.value;
+
+			System.out.println(String.format("%s = \"%s\"", name, value));
+		}
+	}
+
+	public interface ILanguagesFormatter {
+		void formatLanguages(PrintWriter writer, Language language);
 	}
 }

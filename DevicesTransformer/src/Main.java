@@ -30,7 +30,7 @@ public class Main {
 		List<Language> languages = LanguagesParser.parseLanguages(SPECIFICATIONS_DIR + "languages/", "language_", ".xml");
 		if (!languages.isEmpty()) {
 			LanguagesGenerator generator = new LanguagesGenerator(languages);
-			generator.generateLanguages("export/values/", "export/values-%s/", "generated_strings_devices.xml", DEFAULT_LANG_CODE);
+			generator.generateLanguages(new AndroidFormatter(), "export/values/", "export/values-%s/", "generated_strings_devices.xml", DEFAULT_LANG_CODE);
 			// generator.printLanguages(System.out);
 		} else {
 			System.err.println("Error when loading languages - nothing loaded.");

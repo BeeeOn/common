@@ -1,20 +1,19 @@
 package generator.formatter;
 
-import data.Device;
-import data.Devices;
-import data.Module;
-import data.Translation;
+import data.*;
 import generator.DevicesGenerator;
+import generator.LanguagesGenerator;
 
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by Robert on 13. 7. 2015.
  */
-public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter {
+public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, LanguagesGenerator.ILanguagesFormatter {
 
 	@Override
 	public void formatDevices(PrintWriter writer, Devices devices) {
@@ -134,5 +133,20 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter {
 		writer.println(String.format("\n/** Generation time (GMT) of this devices list */\npublic static final long DEVICES_DATE = %sl;", new Date().getTime()));
 
 		writer.println("\n/** END OF GENERATED CONTENT **/");
+	}
+
+	@Override
+	public void formatLanguages(PrintWriter writer, Language language) {
+		writer.println("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+		writer.println("<resources>");
+
+		for (Language.Item item : language.getItems()) {
+			String name = item.key;
+			String value = item.value;
+
+			writer.println(String.format("\t<string name=\"%s\">%s</string>", name, value));
+		}
+
+		writer.println("</resources>");
 	}
 }

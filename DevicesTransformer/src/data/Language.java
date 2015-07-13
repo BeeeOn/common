@@ -1,7 +1,5 @@
 package data;
 
-import java.io.PrintStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,31 +38,6 @@ public class Language {
 
 	public List<Item> getItems() {
 		return mItems;
-	}
-
-	public void printLog(PrintStream stream) {
-		stream.println(String.format("--- LISTING OF LANGUAGE '%s' ---", mCode));
-
-		for (Language.Item item : mItems) {
-			String name = item.key;
-			String value = item.value;
-
-			System.out.println(String.format("%s = \"%s\"", name, value));
-		}
-	}
-
-	public void printAndroidXml(PrintWriter writer) {
-		writer.println("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-		writer.println("<resources>");
-
-		for (Language.Item item : mItems) {
-			String name = item.key;
-			String value = item.value;
-
-			writer.println(String.format("\t<string name=\"%s\">%s</string>", name, value));
-		}
-
-		writer.println("</resources>");
 	}
 
 	public static class Item {
