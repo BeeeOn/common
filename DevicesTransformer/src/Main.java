@@ -19,7 +19,7 @@ public class Main {
 		Devices devices = DevicesParser.parseDevices(SPECIFICATIONS_DIR + "devices.xml");
 		if (devices != null) {
 			DevicesGenerator generator = new DevicesGenerator(devices);
-			generator.generateDevices("export/objects/", "devices.java", new AndroidFormatter());
+			generator.generateDevices(new AndroidFormatter(), "export/objects/", "devices.java");
 			// generator.printDevices(System.out);
 		} else {
 			System.err.println("Error when loading devices.");

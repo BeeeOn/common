@@ -18,13 +18,14 @@ public class DevicesGenerator {
 	}
 
 	/**
-	 * Generate file with devices specifications to use in BeeeOn Android application source codes.
+	 * Generate file with devices specifications.
 	 *
-	 * @param path     Path to output folder where to place the generated file.
-	 * @param filename Name of generated file.
+	 * @param formatter Object implementing IDevicesFormatter interface for formatting content of output file
+	 * @param path      Path to output folder where to place the generated file.
+	 * @param filename  Name of generated file.
 	 * @return true on success, false when some error occured
 	 */
-	public boolean generateDevices(String path, String filename, IDevicesFormatter formatter) {
+	public boolean generateDevices(IDevicesFormatter formatter, String path, String filename) {
 		File dir = new File(path);
 		if (!dir.mkdirs()) {
 			// When directory already exists then mkdirs return false. So we just ignore it here
