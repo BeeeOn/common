@@ -14,15 +14,15 @@ public class Type {
 
     private Translation mName;
 
-    private String mVar;
+    private String mVar = "";
 
     private int mVarSize;
 
-    private String mUnit;
+    private String mUnit = "";
 
-    private String mTransformFrom;
+    private String mTransformFrom = "";
 
-    private String mTransformTo;
+    private String mTransformTo = "";
 
 	public Type(String id) {
 		mId = id;

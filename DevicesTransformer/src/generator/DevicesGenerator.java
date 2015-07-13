@@ -3,6 +3,7 @@ package generator;
 import data.Device;
 import data.Devices;
 import data.Module;
+import data.Types;
 
 import java.io.*;
 
@@ -13,8 +14,11 @@ public class DevicesGenerator {
 
 	private Devices mDevices;
 
-	public DevicesGenerator(Devices devices) {
+    private Types mTypes;
+
+	public DevicesGenerator(Devices devices, Types types) {
 		mDevices = devices;
+        mTypes = types;
 	}
 
 	/**
@@ -37,7 +41,7 @@ public class DevicesGenerator {
 		System.out.println(String.format("Saving devices objects to '%s'", output.getAbsolutePath()));
 
 		try (PrintWriter writer = new PrintWriter(output, "UTF-8")) {
-			formatter.formatDevices(writer, mDevices);
+			formatter.formatDevices(writer, mDevices, mTypes);
 			return true;
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			e.printStackTrace();
@@ -95,6 +99,6 @@ public class DevicesGenerator {
 	}
 
 	public interface IDevicesFormatter {
-		void formatDevices(PrintWriter writer, Devices mDevices);
+		void formatDevices(PrintWriter writer, Devices devices, Types types);
 	}
 }

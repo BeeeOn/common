@@ -16,7 +16,7 @@ import java.util.List;
 public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, LanguagesGenerator.ILanguagesFormatter {
 
 	@Override
-	public void formatDevices(PrintWriter writer, Devices devices) {
+	public void formatDevices(PrintWriter writer, Devices devices, Types types) {
 		writer.println("/** BEGIN OF GENERATED CONTENT **/");
 
 		Iterator<Device> it = devices.getDevices().iterator();
