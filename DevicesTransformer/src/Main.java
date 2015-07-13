@@ -2,6 +2,7 @@ import data.Devices;
 import data.Language;
 import generator.DevicesGenerator;
 import generator.LanguagesGenerator;
+import generator.formatter.AndroidFormatter;
 import parser.DevicesParser;
 import parser.LanguagesParser;
 
@@ -16,7 +17,7 @@ public class Main {
 		Devices devices = DevicesParser.parseDevices("xml/devices.xml");
 		if (devices != null) {
 			DevicesGenerator generator = new DevicesGenerator(devices);
-			generator.generateDevices("export/objects/", "devices.java");
+			generator.generateDevices("export/objects/", "devices.java", new AndroidFormatter());
 			// generator.printDevices(System.out);
 		} else {
 			System.err.println("Error when loading devices.");
