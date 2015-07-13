@@ -20,6 +20,8 @@ public class LanguagesGenerator {
 	}
 
 	public boolean generateLanguages(String dirDefault, String dirCodeParam, String filename, String defaultLangCode) {
+		boolean result = true;
+
 		for (Language language : mLanguages) {
 			String path = language.getCode().equalsIgnoreCase(defaultLangCode) ? dirDefault : String.format(dirCodeParam, language.getCode());
 
@@ -29,20 +31,15 @@ public class LanguagesGenerator {
 			File output = new File(dir, filename);
 
 			System.out.println(String.format("Saving Android's strings XML to '%s'", output.getAbsolutePath()));
-			PrintWriter writer = null;
-			try {
-				writer = new PrintWriter(output, "UTF-8");
+
+			try (PrintWriter writer = new PrintWriter(output, "UTF-8")) {
+				language.printAndroidXml(writer);
 			} catch (FileNotFoundException | UnsupportedEncodingException e) {
 				e.printStackTrace();
-				// return false;
-			} finally {
-				if (writer != null)
-					writer.close();
+				result = false;
 			}
-
-			language.printAndroidXml(writer);
 		}
 
-		return true;
+		return result;
 	}
 }

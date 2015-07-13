@@ -38,17 +38,13 @@ public class DevicesGenerator {
 		File output = new File(dir, filename);
 
 		System.out.println(String.format("Saving devices objects to '%s'", output.getAbsolutePath()));
-		PrintWriter writer = null;
-		try {
-			writer = new PrintWriter(output, "UTF-8");
+
+		try (PrintWriter writer = new PrintWriter(output, "UTF-8")) {
+			printAndroidFormat(writer);
+			return true;
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			e.printStackTrace();
-		} finally {
-			if (writer != null)
-				writer.close();
 		}
-
-		printAndroidFormat(writer);
 
 		return false;
 	}
