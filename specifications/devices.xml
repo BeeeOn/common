@@ -45,6 +45,13 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="4">T:HOT_WATER</value>
 			</values>
 			<rules>
+				<if value="0">
+					<hide-module id="1" />
+					<hide-module id="2" />
+					<hide-module id="3" />
+					<hide-module id="4" />
+					<hide-module id="5" />
+				</if>
 				<if value="1">
 					<hide-module id="4" />
 					<hide-module id="5" />
@@ -115,6 +122,13 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="4">T:HOT_WATER</value>
 			</values>
 			<rules>
+				<if value="0">
+					<hide-module id="7" />
+					<hide-module id="8" />
+					<hide-module id="9" />
+					<hide-module id="10" />
+					<hide-module id="11" />
+				</if>
 				<if value="1">
 					<hide-module id="10" />
 					<hide-module id="11" />
@@ -185,6 +199,13 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="4">T:HOT_WATER</value>
 			</values>
 			<rules>
+				<if value="0">
+					<hide-module id="13" />
+					<hide-module id="14" />
+					<hide-module id="15" />
+					<hide-module id="16" />
+					<hide-module id="17" />
+				</if>
 				<if value="1">
 					<hide-module id="16" />
 					<hide-module id="17" />
@@ -255,6 +276,13 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="4">T:HOT_WATER</value>
 			</values>
 			<rules>
+				<if value="0">
+					<hide-module id="19" />
+					<hide-module id="20" />
+					<hide-module id="21" />
+					<hide-module id="22" />
+					<hide-module id="23" />
+				</if>
 				<if value="1">
 					<hide-module id="22" />
 					<hide-module id="23" />
