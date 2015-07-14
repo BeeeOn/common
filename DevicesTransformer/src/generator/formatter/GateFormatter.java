@@ -35,8 +35,8 @@ public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
 			while (itModule.hasNext()) {
 				Module module = itModule.next();
 
-				String minConstraint = "{false, 0}";
-				String maxConstraint = "{false, 0}";
+				String minConstraint = "{false, 0.0}";
+				String maxConstraint = "{false, 0.0}";
 				String values = "{}";
 
 				if (!module.getValues().isEmpty()) {
@@ -54,8 +54,8 @@ public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
 				} else if (module.getConstraints() != null) {
 					Module.Constraints constraints = module.getConstraints();
 
-					minConstraint = String.format("{true, %d}", (int)constraints.getMin());
-					maxConstraint = String.format("{true, %d}", (int)constraints.getMax());
+					minConstraint = String.format("{true, %s}", constraints.getMin());
+					maxConstraint = String.format("{true, %s}", constraints.getMax());
 				}
 
                 // Find type of this module

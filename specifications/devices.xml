@@ -78,8 +78,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>0</min>
-				<max>160</max>
+				<min>0.0</min>
+				<max>160.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
@@ -92,8 +92,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>20</min>
-				<max>90</max>
+				<min>20.0</min>
+				<max>90.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
@@ -148,8 +148,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>0</min>
-				<max>160</max>
+				<min>0.0</min>
+				<max>160.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
@@ -162,8 +162,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>20</min>
-				<max>90</max>
+				<min>20.0</min>
+				<max>90.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
@@ -218,8 +218,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>0</min>
-				<max>160</max>
+				<min>0.0</min>
+				<max>160.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
@@ -232,8 +232,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>20</min>
-				<max>90</max>
+				<min>20.0</min>
+				<max>90.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
@@ -288,8 +288,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>0</min>
-				<max>160</max>
+				<min>0.0</min>
+				<max>160.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
@@ -302,8 +302,8 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
 			<constraints>
-				<min>20</min>
-				<max>90</max>
+				<min>20.0</min>
+				<max>90.0</max>
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
