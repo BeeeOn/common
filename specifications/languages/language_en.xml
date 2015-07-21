@@ -7,6 +7,9 @@
 	<string name="type_light">Light</string>
 	<string name="type_noise">Noise</string>
 	<string name="type_co2">Carbon dioxide</string>
+	<string name="type_battery">Battery</string>
+	<string name="type_rssi">Signal</string>
+	<string name="type_refresh">Refresh period</string>
 
 	<!-- Devices -->
 	<string name="manufacturer_but">BUT</string>
@@ -18,6 +21,9 @@
 	<string name="mod_room_temperature">Room temperature</string>
 	<string name="mod_outside_temperature">Outside temperature</string>
 	<string name="mod_room_humidity">Room humidity</string>
+	<string name="mod_battery">Battery</string>
+	<string name="mod_rssi">Signal</string>
+	<string name="mod_refresh">Refresh</string>
 	
 	<string name="mod_boiler_status">Boiler status</string>
 	<values name="val_boiler_status">

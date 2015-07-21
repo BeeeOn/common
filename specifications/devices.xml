@@ -26,6 +26,21 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 		<module id="2" type="0x03" offset="0">
 			<name>T:MOD_ROOM_HUMIDITY</name>
 		</module>
+		<module id="3" type="0x08" offset="0">
+			<name>T:MOD_BATTERY</name>
+		</module>
+		<module id="4" type="0x09" offset="0">
+			<name>T:MOD_RSSI</name>
+		</module>
+		<module id="5" type="0x0A" offset="0">
+			<name>T:MOD_REFRESH</name>
+            <is-actuator />
+			<constraints>
+				<min>5</min>
+				<max>3600</max>
+				<granularity>1</granularity>
+			</constraints>
+		</module>
 	</modules>
 </device>
 
@@ -351,6 +366,21 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="4">T:SHUTDOWN</value>
 			</values>
 		</module>
+
+		<module id="26" type="0x09" offset="0">
+			<name>T:MOD_RSSI</name>
+		</module>
+		<module id="27" type="0x0A" offset="0">
+			<name>T:MOD_REFRESH</name>
+            <is-actuator />
+			<constraints>
+				<min>5</min>
+				<max>3600</max>
+				<granularity>1</granularity>
+			</constraints>
+		</module>
+	
+
 	</modules>
 </device>
 

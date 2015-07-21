@@ -47,4 +47,22 @@
 		<var size="1">&int;</var>
 		<unit>&ppm;</unit>
 	</type>
+
+	<type id="0x08">
+		<name>T:TYPE_BATTERY</name>
+		<var size="1">&int;</var>
+		<unit>&percent;</unit>
+	</type>
+	<type id="0x09">
+		<name>T:TYPE_RSSI</name>
+		<var size="1">&int;</var>
+		<unit>&percent;</unit>
+	</type>
+	<type id="0x0A">
+		<name>T:TYPE_REFRESH</name>
+		<var size="1">&int;</var>
+		<unit>&seconds;</unit>
+	
+
+
 </types>
