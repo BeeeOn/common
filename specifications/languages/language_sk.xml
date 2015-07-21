@@ -17,6 +17,8 @@
 	
 	<string name="dev_temperature_humidity">Senzor teploty a vlhkosti</string>
 	<string name="dev_regulator_vpt">Regulator VPT</string>
+	<string name="dev_internal_pressure_sensors">Senzor tlaku vzduchu</string>
+
 	
 	<string name="mod_room_temperature">Teplota miestnosti</string>
 	<string name="mod_outside_temperature">Teplota venkovní</string>

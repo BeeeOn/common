@@ -384,4 +384,28 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 	</modules>
 </device>
 
+
+<device id="2" name="Beeeon internal pressure sensor v1.0">
+	<name>T:DEV_INTERNAL_PRESSURE_SENSORS</name>
+	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
+	<features>
+		<refresh default="30" />
+	</features>
+	<modules>
+	<module id="0" type="0x04" offset="0">
+		<name>T:TYPE_PRESSURE</name>
+	</module>
+	<module id="1" type="0x0A" offset="0">
+		<name>T:MOD_REFRESH</name>
+		<is-actuator />
+		<constraints>
+			<min>5</min>
+			<max>3600</max>
+			<granularity>1</granularity>
+		</constraints>
+	</module>
+	</modules>
+</device>
+
+
 </devices>

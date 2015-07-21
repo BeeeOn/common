@@ -17,6 +17,7 @@
 	
 	<string name="dev_temperature_humidity">Temperature and humidity sensor</string>
 	<string name="dev_regulator_vpt">Regulator VPT</string>
+	<string name="dev_internal_pressure_sensors">Air pressure sensor</string>
 	
 	<string name="mod_room_temperature">Room temperature</string>
 	<string name="mod_outside_temperature">Outside temperature</string>
