@@ -12,8 +12,9 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
 	<features>
-		<refresh default="30" />
-		<battery />
+		<refresh moduleId="5" default="30" />
+		<battery moduleId="3" />
+		<rssi moduleId="4" />
 		<led />
 	</features>
 	<modules>
@@ -26,27 +27,15 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 		<module id="2" type="0x03" offset="0">
 			<name>T:MOD_ROOM_HUMIDITY</name>
 		</module>
-		<module id="3" type="0x08" offset="0">
-			<name>T:MOD_BATTERY</name>
-		</module>
-		<module id="4" type="0x09" offset="0">
-			<name>T:MOD_RSSI</name>
-		</module>
-		<module id="5" type="0x0A" offset="0">
-			<name>T:MOD_REFRESH</name>
-            <is-actuator />
-			<constraints>
-				<min>5</min>
-				<max>3600</max>
-				<granularity>1</granularity>
-			</constraints>
-		</module>
 	</modules>
 </device>
 
 <device id="1" name="Regulator VPT v1.0">
 	<name>T:DEV_REGULATOR_VPT</name>
 	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
+	<features>
+		<rssi moduleId="25" />
+	</features>
 	<modules>
 		<module id="0" type="0x01" offset="0">
 			<group>T:ZONE_1</group>
@@ -124,7 +113,6 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
-
 		<module id="6" type="0x01" offset="2">
 			<group>T:ZONE_2</group>
 			<name>T:MOD_BOILER_OPERATION_TYPE</name>
@@ -201,7 +189,6 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
-
 		<module id="12" type="0x01" offset="4">
 			<group>T:ZONE_3</group>
 			<name>T:MOD_BOILER_OPERATION_TYPE</name>
@@ -277,7 +264,6 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 			<group>T:ZONE_3</group>
 			<name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
-
 
 		<module id="18" type="0x01" offset="6">
 			<group>T:ZONE_4</group>
@@ -366,46 +352,20 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="4">T:SHUTDOWN</value>
 			</values>
 		</module>
-
-		<module id="26" type="0x09" offset="0">
-			<name>T:MOD_RSSI</name>
-		</module>
-		<module id="27" type="0x0A" offset="0">
-			<name>T:MOD_REFRESH</name>
-            <is-actuator />
-			<constraints>
-				<min>5</min>
-				<max>3600</max>
-				<granularity>1</granularity>
-			</constraints>
-		</module>
-	
-
 	</modules>
 </device>
-
 
 <device id="2" name="Beeeon internal pressure sensor v1.0">
 	<name>T:DEV_INTERNAL_PRESSURE_SENSORS</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
 	<features>
-		<refresh default="30" />
+		<refresh moduleId="1" default="30" />
 	</features>
 	<modules>
-	<module id="0" type="0x04" offset="0">
-		<name>T:TYPE_PRESSURE</name>
-	</module>
-	<module id="1" type="0x0A" offset="0">
-		<name>T:MOD_REFRESH</name>
-		<is-actuator />
-		<constraints>
-			<min>5</min>
-			<max>3600</max>
-			<granularity>1</granularity>
-		</constraints>
-	</module>
+		<module id="0" type="0x04" offset="0">
+			<name>T:TYPE_PRESSURE</name>
+		</module>
 	</modules>
 </device>
-
 
 </devices>

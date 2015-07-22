@@ -3,9 +3,10 @@
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
-<!ELEMENT features (refresh?, battery?, led?)>
+<!ELEMENT features (refresh?, battery?, rssi?, led?)>
 <!ELEMENT refresh EMPTY>
 <!ELEMENT battery EMPTY>
+<!ELEMENT rssi EMPTY>
 <!ELEMENT led EMPTY>
 
 <!ELEMENT modules (module+)>
@@ -28,7 +29,16 @@
 <!ELEMENT hide-module (#PCDATA)>
 
 <!ATTLIST refresh
+        moduleId        CDATA   #REQUIRED
         default         CDATA   #REQUIRED
+        >
+
+<!ATTLIST battery
+        moduleId        CDATA   #REQUIRED
+        >
+
+<!ATTLIST rssi
+        moduleId        CDATA   #REQUIRED
         >
 
 <!ATTLIST devices
