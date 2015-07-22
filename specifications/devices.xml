@@ -18,13 +18,13 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 		<led />
 	</features>
 	<modules>
-		<module id="0" type="0x02" offset="0">
+		<module id="0" type="0x02">
 			<name>T:MOD_ROOM_TEMPERATURE</name>
 		</module>
-		<module id="1" type="0x02" offset="1">
+		<module id="1" type="0x02">
 			<name>T:MOD_OUTSIDE_TEMPERATURE</name>
 		</module>
-		<module id="2" type="0x03" offset="0">
+		<module id="2" type="0x03">
 			<name>T:MOD_ROOM_HUMIDITY</name>
 		</module>
 	</modules>
@@ -37,7 +37,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 		<rssi moduleId="25" />
 	</features>
 	<modules>
-		<module id="0" type="0x01" offset="0">
+		<module id="0" type="0x01">
 			<group>T:ZONE_1</group>
 			<name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
@@ -74,7 +74,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				</if>
 			</rules>
 		</module>
-		<module id="1" type="0x01" offset="1">
+		<module id="1" type="0x01">
 			<group>T:ZONE_1</group>
 			<name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
@@ -84,7 +84,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="2" type="0x02" offset="0">
+		<module id="2" type="0x02">
 			<group>T:ZONE_1</group>
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
@@ -94,11 +94,11 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="3" type="0x02" offset="0">
+		<module id="3" type="0x02">
 			<group>T:ZONE_1</group>
 			<name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
-		<module id="4" type="0x02" offset="1">
+		<module id="4" type="0x02">
 			<group>T:ZONE_1</group>
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
@@ -108,12 +108,12 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="5" type="0x02" offset="1">
+		<module id="5" type="0x02">
 			<group>T:ZONE_1</group>
 			<name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
-		<module id="6" type="0x01" offset="2">
+		<module id="6" type="0x01">
 			<group>T:ZONE_2</group>
 			<name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
@@ -150,7 +150,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				</if>
 			</rules>
 		</module>
-		<module id="7" type="0x01" offset="3">
+		<module id="7" type="0x01">
 			<group>T:ZONE_2</group>
 			<name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
@@ -160,7 +160,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="8" type="0x02" offset="2">
+		<module id="8" type="0x02">
 			<group>T:ZONE_2</group>
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
@@ -170,11 +170,11 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="9" type="0x02" offset="2">
+		<module id="9" type="0x02">
 			<group>T:ZONE_2</group>
 			<name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
-		<module id="10" type="0x02" offset="3">
+		<module id="10" type="0x02">
 			<group>T:ZONE_2</group>
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
@@ -184,12 +184,12 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="11" type="0x02" offset="3">
+		<module id="11" type="0x02">
 			<group>T:ZONE_2</group>
 			<name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
-		<module id="12" type="0x01" offset="4">
+		<module id="12" type="0x01">
 			<group>T:ZONE_3</group>
 			<name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
@@ -226,7 +226,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				</if>
 			</rules>
 		</module>
-		<module id="13" type="0x01" offset="5">
+		<module id="13" type="0x01">
 			<group>T:ZONE_3</group>
 			<name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
@@ -236,7 +236,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="14" type="0x02" offset="4">
+		<module id="14" type="0x02">
 			<group>T:ZONE_3</group>
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
@@ -246,11 +246,11 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="15" type="0x02" offset="4">
+		<module id="15" type="0x02">
 			<group>T:ZONE_3</group>
 			<name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
-		<module id="16" type="0x02" offset="5">
+		<module id="16" type="0x02">
 			<group>T:ZONE_3</group>
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
@@ -260,12 +260,12 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="17" type="0x02" offset="5">
+		<module id="17" type="0x02">
 			<group>T:ZONE_3</group>
 			<name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
-		<module id="18" type="0x01" offset="6">
+		<module id="18" type="0x01">
 			<group>T:ZONE_4</group>
 			<name>T:MOD_BOILER_OPERATION_TYPE</name>
 			<is-actuator />
@@ -302,7 +302,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				</if>
 			</rules>
 		</module>
-		<module id="19" type="0x01" offset="7">
+		<module id="19" type="0x01">
 			<group>T:ZONE_4</group>
 			<name>T:MOD_BOILER_OPERATION_MODE</name>
 			<is-actuator />
@@ -312,7 +312,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<value id="2">T:VACATION</value>
 			</values>
 		</module>
-		<module id="20" type="0x02" offset="6">
+		<module id="20" type="0x02">
 			<group>T:ZONE_4</group>
 			<name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
 			<is-actuator />
@@ -322,11 +322,11 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="21" type="0x02" offset="6">
+		<module id="21" type="0x02">
 			<group>T:ZONE_4</group>
 			<name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
 		</module>
-		<module id="22" type="0x02" offset="7">
+		<module id="22" type="0x02">
 			<group>T:ZONE_4</group>
 			<name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
 			<is-actuator />
@@ -336,12 +336,12 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 				<granularity>0.5</granularity>
 			</constraints>
 		</module>
-		<module id="23" type="0x02" offset="7">
+		<module id="23" type="0x02">
 			<group>T:ZONE_4</group>
 			<name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
 		</module>
 
-		<module id="24" type="0x01" offset="8">
+		<module id="24" type="0x01">
 			<order>0</order>
 			<name>T:MOD_BOILER_STATUS</name>
 			<values name="T:VAL_BOILER_STATUS">
@@ -362,7 +362,7 @@ v překladovém souboru element <values name="..."> a až v něm jsou konkrétn�
 		<refresh moduleId="1" default="30" />
 	</features>
 	<modules>
-		<module id="0" type="0x04" offset="0">
+		<module id="0" type="0x04">
 			<name>T:TYPE_PRESSURE</name>
 		</module>
 	</modules>
