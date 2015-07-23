@@ -19,7 +19,15 @@ public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
 				"#ifndef DEVICE_TABLE_H\n" +
 				"#define\tDEVICE_TABLE_H\n" +
 				"\n" +
-				"std::map<int, TT_Device> fillDeviceTable() {\n" +
+				"#include \"utils.h\"\n" +
+				"\n" +
+				"using TT_Table = std::map<int, TT_Device>;\n" +
+				"\n" +
+				"/**\n" +
+				" * @brief Generovany soubor s funkci pro vraceni nove tabulky typu, ktera je slozena z devices (multisenzory) a modules (fyzicke senzory na device).\n" +
+				" * @return Vraci mapu devices, ktere obsahuji jejich moduly.\n" +
+				" */" +
+				"\ninline TT_Table fillDeviceTable() {\n" +
 				"\t\n" +
 				"\t//  list of defined TT_Devices and theirs modules\n" +
 				"\tstd::map<int, TT_Device> devices;\n" +
