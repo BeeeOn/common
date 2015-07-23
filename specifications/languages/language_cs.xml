@@ -8,7 +8,7 @@
 	<string name="type_noise">Hluk</string>
 	<string name="type_co2">Oxid uhličitý</string>
 	<string name="type_battery">Baterie</string>
-	<string name="type_rssi">Sign�l</string>
+	<string name="type_rssi">Signál</string>
 	<string name="type_refresh">Interval aktualizace</string>
 
 	<!-- Devices -->
