@@ -115,6 +115,11 @@ public class DevicesParser {
 		return device;
 	}
 
+	private static int getIntAttribute(Element node, String attribute) {
+		String value = node.getAttribute(attribute);
+		return Integer.parseInt(value);
+	}
+
 	private static Device.Features parseFeatures(Element element) {
 		Device.Features features = new Device.Features();
 
@@ -125,12 +130,15 @@ public class DevicesParser {
 			if (node instanceof Element) {
 				String tag = node.getNodeName();
 				if (tag.equals("refresh")) {
-					String refresh = ((Element) node).getAttribute("default");
-					features.setRefresh(Integer.parseInt(refresh));
+					int refresh = getIntAttribute((Element) node, "default");
+					int moduleId = getIntAttribute((Element) node, "moduleId");
+					features.setRefresh(moduleId, refresh);
 				} else if (tag.equals("battery")) {
-					features.setBattery(Boolean.TRUE);
+					int moduleId = getIntAttribute((Element) node, "moduleId");
+					features.setBattery(moduleId);
 				} else if (tag.equals("rssi")) {
-					features.setRssi(Boolean.TRUE);
+					int moduleId = getIntAttribute((Element) node, "moduleId");
+					features.setRssi(moduleId);
 				} else if (tag.equals("led")) {
 					features.setLed(Boolean.TRUE);
 				} else {

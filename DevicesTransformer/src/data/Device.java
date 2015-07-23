@@ -71,12 +71,13 @@ public class Device {
 
 	public static class Features {
 		private Integer mRefresh;
-		private Boolean mBattery;
-		private Boolean mRssi;
+		private Integer mRefreshId;
+		private Integer mBatteryId;
+		private Integer mRssiId;
 		private Boolean mLed;
 
 		public boolean hasRefresh() {
-			return mRefresh != null && mRefresh > 0;
+			return mRefreshId != null && mRefresh != null;
 		}
 
 		@Nullable
@@ -84,24 +85,40 @@ public class Device {
 			return mRefresh;
 		}
 
-		public void setRefresh(Integer refresh) {
+		@Nullable
+		public Integer getRefreshId() {
+			return mRefreshId;
+		}
+
+		public void setRefresh(Integer moduleId, Integer refresh) {
+			mRefreshId = moduleId;
 			mRefresh = refresh;
 		}
 
 		public boolean hasBattery() {
-			return mBattery != null && mBattery;
+			return mBatteryId != null;
 		}
 
-		public void setBattery(Boolean battery) {
-			mBattery = battery;
+		@Nullable
+		public Integer getBatteryId() {
+			return mBatteryId;
+		}
+
+		public void setBattery(Integer moduleId) {
+			mBatteryId = moduleId;
 		}
 
 		public boolean hasRssi() {
-			return mRssi != null && mRssi;
+			return mRssiId != null;
 		}
 
-		public void setRssi(Boolean rssi) {
-			mRssi = rssi;
+		@Nullable
+		public Integer getRssiId() {
+			return mRssiId;
+		}
+
+		public void setRssi(Integer moduleId) {
+			mRssiId = moduleId;
 		}
 
 		public boolean hasLed() {
