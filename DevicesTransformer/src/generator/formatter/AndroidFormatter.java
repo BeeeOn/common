@@ -29,7 +29,7 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 			}
 
 			// Begin of type definition
-			writer.println(String.format("TYPE_%d(\"%d\", \"%s\", %s, %s, new DeviceFeatures(%s, %s, %s)) {",
+			writer.println(String.format("TYPE_%d(\"%d\", \"%s\", %s, %s, new DeviceFeatures(%s, %s, %s, %s)) {",
 					device.getTypeId(),
 					device.getTypeId(),
 					device.getTypeName(),
@@ -37,7 +37,8 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 					device.getManufacturer().getResourceId(),
 					features.hasRefresh() ? features.getDefaultRefresh().toString() : "null",
 					features.hasLed() ? "true" : "false",
-					features.hasBattery() ? "true" : "false"
+					features.hasBattery() ? "true" : "false",
+					features.hasRssi() ? "true" : "false"
 			));
 
 			// Begin of createModules() method
@@ -55,10 +56,9 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 				Translation tname = module.getName();
 				String name = tname != null ? tname.getResourceId() : "null";
 
-				writer.print(String.format("\t\t\t\tnew Module(device, \"%d\", %s, %d, %s, %s, %s, %b",
+				writer.print(String.format("\t\t\t\tnew Module(device, \"%d\", %s, %s, %s, %s, %b",
 								module.getId(),
 								module.getType(),
-								module.getOffset(),
 								module.getOrder(),
 								group,
 								name,
@@ -143,6 +143,11 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 		for (Language.Item item : language.getItems()) {
 			String name = item.key;
 			String value = item.value;
+
+			// FIXME: Use better way than this hardcoded check
+			// Ignore unwanted battery/rssi/refresh modules
+			if (name.equalsIgnoreCase("devices__type_battery") || name.equalsIgnoreCase("devices__type_rssi") || name.equalsIgnoreCase("devices__type_refresh"))
+				continue;
 
 			writer.println(String.format("\t<string name=\"%s\">%s</string>", name, value));
 		}

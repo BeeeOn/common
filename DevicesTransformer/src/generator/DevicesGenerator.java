@@ -54,9 +54,11 @@ public class DevicesGenerator {
 		String res = "";
 		if (features != null) {
 			if (features.hasRefresh())
-				res += ", refresh(" + features.getDefaultRefresh() + ")";
+				res += ", refresh(" + features.getRefreshId() + ", " + features.getDefaultRefresh() + ")";
 			if (features.hasBattery())
-				res += ", battery";
+				res += ", battery(" + features.getBatteryId() + ")";
+			if (features.hasRssi())
+				res += ", rssi(" + features.getRssiId() + ")";
 			if (features.hasLed())
 				res += ", led";
 			if (!res.isEmpty())
@@ -81,10 +83,9 @@ public class DevicesGenerator {
 
 			stream.println("\tDevices:");
 			for (Module module : device.getModules()) {
-				stream.println(String.format("\t\t[%d] \tType: %s\tOffset: %d%s",
+				stream.println(String.format("\t\t[%d] \tType: %s%s",
 						module.getId(),
 						module.getType(),
-						module.getOffset(),
 						module.getOrder() != null ? "\tOrder: " + module.getOrder() : ""
 				));
 
