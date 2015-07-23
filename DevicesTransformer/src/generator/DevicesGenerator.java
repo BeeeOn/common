@@ -81,10 +81,9 @@ public class DevicesGenerator {
 
 			stream.println("\tDevices:");
 			for (Module module : device.getModules()) {
-				stream.println(String.format("\t\t[%d] \tType: %s\tOffset: %d%s",
+				stream.println(String.format("\t\t[%d] \tType: %s%s",
 						module.getId(),
 						module.getType(),
-						module.getOffset(),
 						module.getOrder() != null ? "\tOrder: " + module.getOrder() : ""
 				));
 

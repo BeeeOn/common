@@ -164,9 +164,8 @@ public class DevicesParser {
 	private static Module parseModule(Element element) {
 		int id = Integer.parseInt(element.getAttribute("id"));
 		String type = element.getAttribute("type");
-		int offset = Integer.parseInt(element.getAttribute("offset"));
 
-		Module module = new Module(id, type, offset);
+		Module module = new Module(id, type);
 
 		NodeList moduleNodes = element.getChildNodes();
 		for (int i = 0; i < moduleNodes.getLength(); i++) {

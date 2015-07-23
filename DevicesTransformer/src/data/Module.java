@@ -13,7 +13,6 @@ public class Module {
 
 	private final int mId;
 	private final String mType;
-	private final int mOffset;
 	private final List<Value> mValues = new ArrayList<>();
 	private final List<Rule> mRules = new ArrayList<>();
 	private Integer mOrder;
@@ -22,10 +21,9 @@ public class Module {
 	private boolean mActuator;
 	private Constraints mConstraints;
 
-	public Module(int id, String type, int offset) {
+	public Module(int id, String type) {
 		mId = id;
 		mType = type;
-		mOffset = offset;
 	}
 
 	public int getId() {
@@ -34,10 +32,6 @@ public class Module {
 
 	public String getType() {
 		return mType;
-	}
-
-	public int getOffset() {
-		return mOffset;
 	}
 
 	@Nullable

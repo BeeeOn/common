@@ -55,10 +55,9 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 				Translation tname = module.getName();
 				String name = tname != null ? tname.getResourceId() : "null";
 
-				writer.print(String.format("\t\t\t\tnew Module(device, \"%d\", %s, %d, %s, %s, %s, %b",
+				writer.print(String.format("\t\t\t\tnew Module(device, \"%d\", %s, %s, %s, %s, %b",
 								module.getId(),
 								module.getType(),
-								module.getOffset(),
 								module.getOrder(),
 								group,
 								name,
