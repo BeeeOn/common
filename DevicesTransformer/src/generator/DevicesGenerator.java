@@ -57,6 +57,8 @@ public class DevicesGenerator {
 				res += ", refresh(" + features.getDefaultRefresh() + ")";
 			if (features.hasBattery())
 				res += ", battery";
+			if (features.hasRssi())
+				res += ", rssi";
 			if (features.hasLed())
 				res += ", led";
 			if (!res.isEmpty())

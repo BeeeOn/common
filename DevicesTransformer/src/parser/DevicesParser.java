@@ -129,10 +129,12 @@ public class DevicesParser {
 					features.setRefresh(Integer.parseInt(refresh));
 				} else if (tag.equals("battery")) {
 					features.setBattery(Boolean.TRUE);
+				} else if (tag.equals("rssi")) {
+					features.setRssi(Boolean.TRUE);
 				} else if (tag.equals("led")) {
 					features.setLed(Boolean.TRUE);
 				} else {
-					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'refresh|battery|led')", tag));
+					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'refresh|battery|rssi|led')", tag));
 				}
 			}
 		}

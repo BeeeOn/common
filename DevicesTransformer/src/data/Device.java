@@ -72,6 +72,7 @@ public class Device {
 	public static class Features {
 		private Integer mRefresh;
 		private Boolean mBattery;
+		private Boolean mRssi;
 		private Boolean mLed;
 
 		public boolean hasRefresh() {
@@ -93,6 +94,14 @@ public class Device {
 
 		public void setBattery(Boolean battery) {
 			mBattery = battery;
+		}
+
+		public boolean hasRssi() {
+			return mRssi != null && mRssi;
+		}
+
+		public void setRssi(Boolean rssi) {
+			mRssi = rssi;
 		}
 
 		public boolean hasLed() {

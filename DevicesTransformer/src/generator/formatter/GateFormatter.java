@@ -17,7 +17,7 @@ public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
 
 		writer.print("\n" +
 				"#ifndef DEVICE_TABLE_H\n" +
-				"#define\tDEVICE_TABLE_H\n" +
+				"#define DEVICE_TABLE_H\n" +
 				"\n" +
 				"#include \"utils.h\"\n" +
 				"\n" +
@@ -104,6 +104,6 @@ public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
 		writer.println("\treturn devices;\n" +
 				"}\n" +
 				"\n" +
-				"#endif\t/* DEVICE_TABLE_H */");
+				"#endif /* DEVICE_TABLE_H */");
 	}
 }
