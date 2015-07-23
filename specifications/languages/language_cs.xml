@@ -22,9 +22,6 @@
 	<string name="mod_room_temperature">Teplota místnosti</string>
 	<string name="mod_outside_temperature">Teplota venkovní</string>
 	<string name="mod_room_humidity">Vlhkost v místnosti</string>
-	<string name="mod_battery">Baterie</string>
-	<string name="mod_rssi">Signál</string>
-	<string name="mod_refresh">Aktualizace</string>
 	
 	<string name="mod_boiler_status">Stav kotle</string>
 	<values name="val_boiler_status">
