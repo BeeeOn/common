@@ -21,7 +21,7 @@
 	</type>
 	<type id="0x04">
 		<name>T:TYPE_PRESSURE</name>
-		<var size="1">&int;</var>
+		<var size="2">&int;</var>
 		<unit>&hpascal;</unit>
 	</type>
 	<type id="0x05">
@@ -50,7 +50,7 @@
 
 	<type id="0x08">
 		<name>T:TYPE_BATTERY</name>
-		<var size="1">&int;</var>
+		<var size="2">&int;</var>
 		<unit>&percent;</unit>
 	</type>
 	<type id="0x09">
@@ -60,7 +60,7 @@
 	</type>
 	<type id="0x0A">
 		<name>T:TYPE_REFRESH</name>
-		<var size="1">&int;</var>
+		<var size="2">&int;</var>
 		<unit>&seconds;</unit>
 	</type>
 
