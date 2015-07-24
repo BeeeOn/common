@@ -16,7 +16,7 @@
 	</type>
 	<type id="0x03">
 		<name>T:TYPE_HUMIDITY</name>
-		<var size="1">&int;</var>
+		<var size="4">&int;</var>
 		<unit>&percent;</unit>
 	</type>
 	<type id="0x04">
