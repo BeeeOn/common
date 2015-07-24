@@ -18,11 +18,19 @@
 		<name>T:TYPE_HUMIDITY</name>
 		<var size="4">&int;</var>
 		<unit>&percent;</unit>
+		<transform>
+			<from>/100</from>
+			<to>*100</to>
+		</transform>
 	</type>
 	<type id="0x04">
 		<name>T:TYPE_PRESSURE</name>
 		<var size="2">&int;</var>
 		<unit>&hpascal;</unit>
+		<transform>
+			<from>/100</from>
+			<to>*100</to>
+		</transform>
 	</type>
 	<type id="0x05">
 		<name>T:TYPE_LIGHT</name>
