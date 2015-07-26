@@ -60,6 +60,9 @@
 		<name>T:TYPE_BATTERY</name>
 		<var size="2">&int;</var>
 		<unit>&percent;</unit>
+		<transform>
+			<from>/1000</from>
+		</transform>
 	</type>
 	<type id="0x09">
 		<name>T:TYPE_RSSI</name>
