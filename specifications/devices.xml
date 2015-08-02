@@ -5,12 +5,6 @@
 <device id="0" name="BeeeOn v1.0">
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
-	<features>
-		<refresh moduleId="5" default="30" />
-		<battery moduleId="3" />
-		<rssi moduleId="4" />
-		<led />
-	</features>
 	<modules>
 		<module id="0" type="0x02">
 			<name>T:MOD_ROOM_TEMPERATURE</name>
@@ -21,15 +15,30 @@
 		<module id="2" type="0x03">
 			<name>T:MOD_ROOM_HUMIDITY</name>
 		</module>
+		<module id="3" type="0x08">
+			<name>T:MOD_BATTERY</name>
+			<is-battery />
+		</module>
+		<module id="4" type="0x09">
+			<name>T:MOD_RSSI</name>
+			<is-rssi />
+		</module>
+		<module id="5" type="0x0A">
+			<name>T:MOD_REFRESH</name>
+			<is-refresh />
+			<constraints>
+				<default>30</default>
+				<min>5</min>
+				<max>3600</max>
+				<granularity>1</granularity>
+			</constraints>
+		</module>
 	</modules>
 </device>
 
 <device id="1" name="Regulator VPT v1.0">
 	<name>T:DEV_REGULATOR_VPT</name>
 	<manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
-	<features>
-		<rssi moduleId="25" />
-	</features>
 	<modules>
 		<module id="0" type="0x01">
 			<group>T:ZONE_1</group>
@@ -346,18 +355,30 @@
 				<value id="4">T:SHUTDOWN</value>
 			</values>
 		</module>
+		
+		<module id="25" type="0x09">
+			<name>T:MOD_RSSI</name>
+			<is-rssi />
+		</module>
 	</modules>
 </device>
 
 <device id="2" name="Beeeon internal pressure sensor v1.0">
 	<name>T:DEV_INTERNAL_PRESSURE_SENSORS</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
-	<features>
-		<refresh moduleId="1" default="30" />
-	</features>
 	<modules>
 		<module id="0" type="0x04">
 			<name>T:TYPE_PRESSURE</name>
+		</module>
+		<module id="1" type="0x0A">
+			<name>T:MOD_REFRESH</name>
+			<is-refresh />
+			<constraints>
+				<default>30</default>
+				<min>5</min>
+				<max>3600</max>
+				<granularity>1</granularity>
+			</constraints>
 		</module>
 	</modules>
 </device>

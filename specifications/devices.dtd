@@ -1,24 +1,24 @@
 <!ELEMENT devices (device*)>
-<!ELEMENT device (name, manufacturer, features?, modules)>
+<!ELEMENT device (name, manufacturer, modules)>
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
-<!ELEMENT features (refresh?, battery?, rssi?, led?)>
-<!ELEMENT refresh EMPTY>
-<!ELEMENT battery EMPTY>
-<!ELEMENT rssi EMPTY>
-<!ELEMENT led EMPTY>
 
 <!ELEMENT modules (module+)>
-<!ELEMENT module (order?, group?, name,((is-actuator, (constraints|values))|values)?, rules?)>
+<!ELEMENT module (order?, group?, name,(((is-actuator|is-refresh), (constraints|values))|values|is-battery|is-rssi|is-led)?, rules?)>
 
 <!ELEMENT order (#PCDATA)>
 <!ELEMENT group (#PCDATA)>
 <!ELEMENT is-actuator EMPTY>
-<!ELEMENT constraints (min?, max?, granularity)>
+<!ELEMENT is-battery EMPTY>
+<!ELEMENT is-refresh EMPTY>
+<!ELEMENT is-rssi EMPTY>
+<!ELEMENT is-led EMPTY>
+<!ELEMENT constraints (default?, min?, max?, granularity)>
 <!ELEMENT values (value+)>
 <!ELEMENT value (#PCDATA)>
 
+<!ELEMENT default (#PCDATA)>
 <!ELEMENT min (#PCDATA)>
 <!ELEMENT max (#PCDATA)>
 <!ELEMENT granularity (#PCDATA)>
@@ -27,19 +27,6 @@
 <!ELEMENT if (hide-module+)>
 
 <!ELEMENT hide-module (#PCDATA)>
-
-<!ATTLIST refresh
-        moduleId        CDATA   #REQUIRED
-        default         CDATA   #REQUIRED
-        >
-
-<!ATTLIST battery
-        moduleId        CDATA   #REQUIRED
-        >
-
-<!ATTLIST rssi
-        moduleId        CDATA   #REQUIRED
-        >
 
 <!ATTLIST devices
         version         CDATA   #REQUIRED
