@@ -55,13 +55,13 @@
 		<var size="1">&int;</var>
 		<unit>&ppm;</unit>
 	</type>
-
 	<type id="0x08">
 		<name>T:TYPE_BATTERY</name>
 		<var size="2">&int;</var>
 		<unit>&percent;</unit>
 		<transform>
 			<from>/100</from>
+			<to>*100</to>
 		</transform>
 	</type>
 	<type id="0x09">
@@ -74,6 +74,4 @@
 		<var size="2">&int;</var>
 		<unit>&seconds;</unit>
 	</type>
-
-
 </types>
