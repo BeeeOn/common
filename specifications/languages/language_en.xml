@@ -22,9 +22,6 @@
 	<string name="mod_room_temperature">Room temperature</string>
 	<string name="mod_outside_temperature">Outside temperature</string>
 	<string name="mod_room_humidity">Room humidity</string>
-	<string name="mod_battery">Battery</string>
-	<string name="mod_rssi">Signal</string>
-	<string name="mod_refresh">Refresh</string>
 	
 	<string name="mod_boiler_status">Boiler status</string>
 	<values name="val_boiler_status">

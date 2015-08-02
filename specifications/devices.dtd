@@ -4,17 +4,18 @@
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
 
-<!ELEMENT modules (module+)>
-<!ELEMENT module (order?, group?, name,(((is-actuator|is-refresh), (constraints|values))|values|is-battery|is-rssi|is-led)?, rules?)>
+<!ELEMENT modules (sensor|actuator|refresh|battery|rssi|led)*>
+
+<!ELEMENT sensor (order?, group?, name, values?)>
+<!ELEMENT actuator (order?, group?, name, (constraints|values), rules?)>
+<!ELEMENT refresh (default, (constraints|values))>
+<!ELEMENT battery EMPTY>
+<!ELEMENT rssi EMPTY>
+<!ELEMENT led EMPTY>
 
 <!ELEMENT order (#PCDATA)>
 <!ELEMENT group (#PCDATA)>
-<!ELEMENT is-actuator EMPTY>
-<!ELEMENT is-battery EMPTY>
-<!ELEMENT is-refresh EMPTY>
-<!ELEMENT is-rssi EMPTY>
-<!ELEMENT is-led EMPTY>
-<!ELEMENT constraints (default?, min?, max?, granularity)>
+<!ELEMENT constraints (min?, max?, granularity)>
 <!ELEMENT values (value+)>
 <!ELEMENT value (#PCDATA)>
 
@@ -37,7 +38,32 @@
         name            CDATA   #REQUIRED
         >
 
-<!ATTLIST module
+<!ATTLIST sensor
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST actuator
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST refresh
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST battery
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST rssi
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST led
         id              CDATA   #REQUIRED
         type            CDATA   #REQUIRED
         >
