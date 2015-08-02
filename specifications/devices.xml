@@ -2,12 +2,6 @@
 <!DOCTYPE devices SYSTEM "devices.dtd">
 <devices version="1">
 
-<!--
-Info k překladům: Řetězce začínající s "T:" značí, že následuje identifikátor pro překlad. Ten ukazuje do souboru
-s překladem na položku <string name="...">. Speciální případ je u elementu <values name="...">, kdy name identifikuje
-v překladovém souboru element <values name="..."> a až v něm jsou konkrétní překlady pro jeho hodnoty.
--->
-
 <device id="0" name="BeeeOn v1.0">
 	<name>T:DEV_TEMPERATURE_HUMIDITY</name>
 	<manufacturer>T:MANUFACTURER_BUT</manufacturer>
