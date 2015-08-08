@@ -184,7 +184,7 @@ public class DevicesParser {
 					Module.Constraints constraints = parseConstraints((Element) node);
 					module.setConstraints(constraints);
 				} else if (tag.equals("values")) {
-					Translation name = new Translation(((Element) node).getAttribute("name"));
+					Translation name = new Translation(((Element) node).getAttribute("name"), false);
 					List<Module.Value> values = parseValues((Element) node);
 					module.setValues(name, values);
 				} else if (tag.equals("rules")) {
@@ -234,7 +234,7 @@ public class DevicesParser {
 				String tag = node.getNodeName();
 				if (tag.equals("value")) {
 					int id = getIntAttribute((Element) node, "id");
-					Translation translation = new Translation(node.getTextContent());
+					Translation translation = new Translation(node.getTextContent(), false);
 					Module.Value value = new Module.Value(id, translation);
 					values.add(value);
 				} else {

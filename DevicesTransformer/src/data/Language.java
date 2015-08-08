@@ -1,7 +1,9 @@
 package data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Robert on 23. 5. 2015.
@@ -12,24 +14,28 @@ public class Language {
 
 	private final String mCode;
 
-	private final List<Item> mItems = new ArrayList<>();
+	private final Map<String, Item> mItems = new HashMap<>();
 
 	public Language(String code) {
 		mCode = code;
 	}
 
 	public void addItem(String key, String value) {
-		mItems.add(new Item(key, value));
+		mItems.put(key, new Item(key, value));
 	}
 
 	public void addItem(Item item) {
-		mItems.add(item);
+		mItems.put(item.key, item);
 	}
 
 	public void addItems(List<Item> items) {
 		for (Item item : items) {
-			mItems.add(item);
+			mItems.put(item.key, item);
 		}
+	}
+
+	public Item getItem(String key) {
+		return mItems.get(key);
 	}
 
 	public String getCode() {
@@ -37,7 +43,11 @@ public class Language {
 	}
 
 	public List<Item> getItems() {
-		return mItems;
+		List<Item> items = new ArrayList<>();
+		for (Item item : mItems.values()) {
+			items.add(item);
+		}
+		return items;
 	}
 
 	public static class Item {

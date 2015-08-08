@@ -1,5 +1,6 @@
 import data.Devices;
 import data.Language;
+import data.Translation;
 import data.Types;
 import generator.DevicesGenerator;
 import generator.LanguagesGenerator;
@@ -43,6 +44,17 @@ public class Main {
 		} else {
 			System.err.println("Error when loading languages - nothing loaded.");
 			return;
+		}
+
+		// Check for (not) existence of translations
+		for (Translation translation : Translation.translations) {
+			String key = Language.TRANSLATION_PREFIX + translation.getTranslationId().toLowerCase();
+
+			for (Language language : languages) {
+				if (language.getItem(key) == null) {
+					System.err.println(String.format("Translation '%s' was not found in '%s'.", translation.getTranslationId(), language.getCode()));
+				}
+			}
 		}
 	}
 

@@ -1,5 +1,8 @@
 package data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Robert on 23. 5. 2015.
  */
@@ -8,7 +11,9 @@ public class Translation {
 
 	private final String mTranslationId;
 
-	public Translation(String translation) {
+	public static final List<Translation> translations = new ArrayList<>();
+
+	public Translation(String translation, boolean remember) {
 		String[] parts = translation.split(":");
 
 		if (parts.length != 2) {
@@ -20,6 +25,15 @@ public class Translation {
 		}
 
 		mTranslationId = parts[1];
+
+		// Remember all translations in global object
+		if (remember) {
+			this.translations.add(this);
+		}
+	}
+
+	public Translation(String translation) {
+		this(translation, true);
 	}
 
 	public String getTranslationId() {
