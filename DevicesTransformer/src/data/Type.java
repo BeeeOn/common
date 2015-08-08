@@ -1,10 +1,5 @@
 package data;
 
-import com.sun.istack.internal.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Robert on 23. 5. 2015.
  */

@@ -50,23 +50,6 @@ public class DevicesGenerator {
 		return false;
 	}
 
-	private String getFeaturesString(Device.Features features) {
-		String res = "";
-		if (features != null) {
-			if (features.hasRefresh())
-				res += ", refresh(" + features.getRefreshId() + ", " + features.getDefaultRefresh() + ")";
-			if (features.hasBattery())
-				res += ", battery(" + features.getBatteryId() + ")";
-			if (features.hasRssi())
-				res += ", rssi(" + features.getRssiId() + ")";
-			if (features.hasLed())
-				res += ", led";
-			if (!res.isEmpty())
-				res = res.substring(2);
-		}
-		return String.format("[%s]", res);
-	}
-
 	public void printDevices(PrintStream stream) {
 		stream.println(String.format("--- LISTING OF DEVICES (version %s) ---", mDevices.getVersion()));
 
@@ -75,12 +58,12 @@ public class DevicesGenerator {
 					device.getTypeId(),
 					device.getTypeName()));
 
-			stream.println(String.format("\tManufacturer: %s\n\tName: %s\n\tFeatures: %s",
+			stream.println(String.format("\tManufacturer: %s\n\tName: %s",
 					device.getManufacturer().getTranslationId(),
-					device.getName().getTranslationId(),
-					getFeaturesString(device.getFeatures())
+					device.getName().getTranslationId()
 			));
 
+			// FIXME
 			stream.println("\tDevices:");
 			for (Module module : device.getModules()) {
 				stream.println(String.format("\t\t[%d] \tType: %s%s",

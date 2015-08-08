@@ -20,6 +20,7 @@ public class Module {
 	private Translation mName;
 	private boolean mActuator;
 	private Constraints mConstraints;
+	private String mDefaultValue;
 
 	public Module(int id, String type) {
 		mId = id;
@@ -99,6 +100,14 @@ public class Module {
 
 	public void setConstraints(@Nullable Constraints constraints) {
 		mConstraints = constraints;
+	}
+
+	public String getDefaultValue() {
+		return mDefaultValue;
+	}
+
+	public void setDefaultValue(String defaultVaule) {
+		mDefaultValue = defaultVaule;
 	}
 
 	public static class Constraints {

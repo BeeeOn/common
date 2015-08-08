@@ -1,7 +1,9 @@
 package parser;
 
 import com.sun.org.apache.xml.internal.utils.DefaultErrorHandler;
-import data.*;
+import data.Translation;
+import data.Type;
+import data.Types;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -13,13 +15,15 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Robert on 23. 5. 2015.
  */
 public class TypesParser {
+
+	public static final String TYPE_BATTERY = "0x08";
+	public static final String TYPE_RSSI = "0x09";
+	public static final String TYPE_REFRESH = "0x0A";
 
 	/**
 	 * @param path Path to XML file with types definition.
@@ -95,7 +99,7 @@ public class TypesParser {
 				if (tag.equals("name")) {
 					type.setName(new Translation(node.getTextContent()));
 				} else if (tag.equals("var")) {
-                    type.setVarSize(Integer.parseInt(((Element) node).getAttribute("size")));
+                    type.setVarSize(DevicesParser.getIntAttribute((Element) node, "size"));
 					type.setVar(node.getTextContent());
 				} else if (tag.equals("unit")) {
 	                type.setUnit(node.getTextContent());

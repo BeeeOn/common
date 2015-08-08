@@ -3,17 +3,32 @@ package generator.formatter;
 import data.*;
 import generator.DevicesGenerator;
 import generator.LanguagesGenerator;
+import parser.TypesParser;
 
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Robert on 13. 7. 2015.
  */
 public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, LanguagesGenerator.ILanguagesFormatter {
+
+	private Features determineFeatures(Device device) {
+		Features features = new Features();
+
+		for (Module module : device.getModules()) {
+			String type = module.getType();
+			if (type.equalsIgnoreCase(TypesParser.TYPE_BATTERY)) {
+				features.battery = true;
+			} else if (type.equalsIgnoreCase(TypesParser.TYPE_RSSI)) {
+				features.rssi = true;
+			} else if (type.equalsIgnoreCase(TypesParser.TYPE_REFRESH)) {
+				features.refresh = module.getDefaultValue();
+			}
+		}
+
+		return features;
+	}
 
 	@Override
 	public void formatDevices(PrintWriter writer, Devices devices, Types types) {
@@ -23,10 +38,7 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 		while (it.hasNext()) {
 			Device device = it.next();
 
-			Device.Features features = device.getFeatures();
-			if (features == null) {
-				features = new Device.Features();
-			}
+			Features features = determineFeatures(device);
 
 			// Begin of type definition
 			writer.println(String.format("TYPE_%d(\"%d\", \"%s\", %s, %s, new DeviceFeatures(%s, %s, %s, %s)) {",
@@ -35,10 +47,10 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 					device.getTypeName(),
 					device.getName().getResourceId(),
 					device.getManufacturer().getResourceId(),
-					features.hasRefresh() ? features.getDefaultRefresh().toString() : "null",
-					features.hasLed() ? "true" : "false",
-					features.hasBattery() ? "true" : "false",
-					features.hasRssi() ? "true" : "false"
+					features.refresh != null ? features.refresh : "null",
+					features.led ? "true" : "false",
+					features.battery ? "true" : "false",
+					features.rssi ? "true" : "false"
 			));
 
 			// Begin of createModules() method
@@ -47,9 +59,23 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 			// Begin of modules array
 			writer.println("\t\treturn Arrays.asList(");
 
-			Iterator<Module> itModule = device.getModules().iterator();
+			List<Module> filteredModules = new ArrayList<>();
+			for (Module module : device.getModules()) {
+				// Ignore special modules (battery, rssi, refresh, led) to generate same output as before
+				String type = module.getType();
+				if (type.equalsIgnoreCase(TypesParser.TYPE_BATTERY)
+						|| type.equalsIgnoreCase(TypesParser.TYPE_RSSI)
+						|| type.equalsIgnoreCase(TypesParser.TYPE_REFRESH)) {
+					continue;
+				}
+
+				filteredModules.add(module);
+			}
+
+			Iterator<Module> itModule = filteredModules.iterator();
 			while (itModule.hasNext()) {
 				Module module = itModule.next();
+
 				Translation tgroup = module.getGroup();
 				String group = tgroup != null ? tgroup.getResourceId() : "null";
 
@@ -145,13 +171,23 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 			String value = item.value;
 
 			// FIXME: Use better way than this hardcoded check
-			// Ignore unwanted battery/rssi/refresh modules
-			if (name.equalsIgnoreCase("devices__type_battery") || name.equalsIgnoreCase("devices__type_rssi") || name.equalsIgnoreCase("devices__type_refresh"))
+			// Ignore unwanted battery/rssi/refresh/led modules
+			if (name.equalsIgnoreCase("devices__type_battery")
+					|| name.equalsIgnoreCase("devices__type_rssi")
+					|| name.equalsIgnoreCase("devices__type_refresh")
+					|| name.equalsIgnoreCase("devices__type_led"))
 				continue;
 
 			writer.println(String.format("\t<string name=\"%s\">%s</string>", name, value));
 		}
 
 		writer.println("</resources>");
+	}
+
+	private class Features {
+		public String refresh;
+		public boolean battery;
+		public boolean led;
+		public boolean rssi;
 	}
 }
