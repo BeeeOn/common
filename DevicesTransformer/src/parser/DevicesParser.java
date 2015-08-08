@@ -3,8 +3,8 @@ package parser;
 import com.sun.org.apache.xml.internal.utils.DefaultErrorHandler;
 import data.Device;
 import data.Devices;
-import data.Module;
 import data.Translation;
+import data.module.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -132,22 +132,23 @@ public class DevicesParser {
 
 				String tag = node.getNodeName();
 				if (tag.equals("sensor")) {
-					Module module = parseModule(nodeEl, id, type);
+					Module module = parseModule(nodeEl, new Sensor(id, type));
 					modules.add(module);
 				} else if (tag.equals("actuator")) {
-					Module module = parseModule(nodeEl, id, type);
-					module.setActuator(true);
+					Module module = parseModule(nodeEl, new Actuator(id, type));
 					modules.add(module);
 				} else if (tag.equals("refresh")) {
-					Module module = parseModule(nodeEl, id, type);
-					module.setActuator(true);
+					Module module = parseModule(nodeEl, new Refresh(id, type));
 					modules.add(module);
 				} else if (tag.equals("battery")) {
-					modules.add(parseModule(nodeEl, id, type));
+					Module module = parseModule(nodeEl, new Battery(id, type));
+					modules.add(module);
 				} else if (tag.equals("rssi")) {
-					modules.add(parseModule(nodeEl, id, type));
+					Module module = parseModule(nodeEl, new Rssi(id, type));
+					modules.add(module);
 				} else if (tag.equals("led")) {
-					modules.add(parseModule(nodeEl, id, type));
+					Module module = parseModule(nodeEl, new Led(id, type));
+					modules.add(module);
 				} else {
 					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'sensor|actuator|refresh|battery|rssi|led')", tag));
 				}
@@ -157,9 +158,14 @@ public class DevicesParser {
 		return modules;
 	}
 
-	private static Module parseModule(Element element, int id, String type) {
-		Module module = new Module(id, type);
-
+	/**
+	 * Parse element data and properly fill given module object.
+	 *
+	 * @param element
+	 * @param module
+	 * @return same given module object.
+	 */
+	private static Module parseModule(Element element, Module module) {
 		NodeList moduleNodes = element.getChildNodes();
 		for (int i = 0; i < moduleNodes.getLength(); i++) {
 			Node node = moduleNodes.item(i);

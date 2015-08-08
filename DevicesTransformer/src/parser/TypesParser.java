@@ -21,10 +21,6 @@ import java.io.IOException;
  */
 public class TypesParser {
 
-	public static final String TYPE_BATTERY = "0x08";
-	public static final String TYPE_RSSI = "0x09";
-	public static final String TYPE_REFRESH = "0x0A";
-
 	/**
 	 * @param path Path to XML file with types definition.
 	 * @return Types object with parsed data, or null on failure

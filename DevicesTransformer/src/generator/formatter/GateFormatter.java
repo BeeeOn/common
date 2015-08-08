@@ -1,6 +1,10 @@
 package generator.formatter;
 
-import data.*;
+import data.Device;
+import data.Devices;
+import data.Type;
+import data.Types;
+import data.module.Module;
 import generator.DevicesGenerator;
 
 import java.io.PrintWriter;

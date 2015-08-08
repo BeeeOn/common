@@ -2,8 +2,8 @@ package generator;
 
 import data.Device;
 import data.Devices;
-import data.Module;
 import data.Types;
+import data.module.Module;
 
 import java.io.*;
 
