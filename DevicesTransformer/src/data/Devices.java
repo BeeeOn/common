@@ -1,9 +1,7 @@
 package data;
 
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Robert on 23. 5. 2015.

@@ -1,6 +1,7 @@
-package data;
+package data.module;
 
 import com.sun.istack.internal.Nullable;
+import data.Translation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * Created by Robert on 23. 5. 2015.
  */
-public class Module {
+public abstract class Module {
 	public static final String PREFIX_VALUE_SEPARATOR = "_";
 
 	private final int mId;
@@ -18,8 +19,8 @@ public class Module {
 	private Integer mOrder;
 	private Translation mGroup;
 	private Translation mName;
-	private boolean mActuator;
 	private Constraints mConstraints;
+	private String mDefaultValue;
 
 	public Module(int id, String type) {
 		mId = id;
@@ -84,13 +85,7 @@ public class Module {
 		mRules.addAll(rules);
 	}
 
-	public boolean isActuator() {
-		return mActuator;
-	}
-
-	public void setActuator(boolean actuator) {
-		mActuator = actuator;
-	}
+	public abstract boolean isActuator();
 
 	@Nullable
 	public Constraints getConstraints() {
@@ -99,6 +94,14 @@ public class Module {
 
 	public void setConstraints(@Nullable Constraints constraints) {
 		mConstraints = constraints;
+	}
+
+	public String getDefaultValue() {
+		return mDefaultValue;
+	}
+
+	public void setDefaultValue(String defaultVaule) {
+		mDefaultValue = defaultVaule;
 	}
 
 	public static class Constraints {

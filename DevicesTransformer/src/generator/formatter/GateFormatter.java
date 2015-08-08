@@ -1,58 +1,19 @@
 package generator.formatter;
 
-import data.*;
+import data.Device;
+import data.Devices;
+import data.Type;
+import data.Types;
+import data.module.Module;
 import generator.DevicesGenerator;
 
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by Robert on 13. 7. 2015.
  */
 public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
-
-	public static final String TYPE_BATTERY_ID = "0x08";
-	public static final String TYPE_RSSI_ID = "0x09";
-	public static final String TYPE_REFRESH_ID = "0x0A";
-
-	public static final Module.Constraints CONSTRAINTS_REFRESH;
-	static {
-		CONSTRAINTS_REFRESH = new Module.Constraints();
-		CONSTRAINTS_REFRESH.setMin(5);
-		CONSTRAINTS_REFRESH.setMax(3600);
-		CONSTRAINTS_REFRESH.setGranularity(1);
-	};
-
-	private List<Module> getModulesIncludingFeatures(Device device) {
-		List<Module> modules = new ArrayList<>();
-
-		// Add all defined modules
-		modules.addAll(device.getModules());
-
-		// Then add special "features" modules
-		Device.Features features = device.getFeatures();
-
-		if (features.hasBattery()) {
-			Module battery = new Module(features.getBatteryId(), TYPE_BATTERY_ID);
-			modules.add(battery);
-		}
-
-		if (features.hasRefresh()) {
-			Module refresh = new Module(features.getRefreshId(), TYPE_REFRESH_ID);
-			refresh.setActuator(true);
-			refresh.setConstraints(CONSTRAINTS_REFRESH);
-			modules.add(refresh);
-		}
-
-		if (features.hasRssi()) {
-			Module rssi = new Module(features.getRssiId(), TYPE_RSSI_ID);
-			modules.add(rssi);
-		}
-
-		return modules;
-	}
 
 	@Override
 	public void formatDevices(PrintWriter writer, Devices devices, Types types) {
@@ -81,7 +42,7 @@ public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
 			Device device = it.next();
 
 			// List modules of this device
-			Iterator<Module> itModule = getModulesIncludingFeatures(device).iterator();
+			Iterator<Module> itModule = device.getModules().iterator();
 			while (itModule.hasNext()) {
 				Module module = itModule.next();
 
@@ -131,13 +92,9 @@ public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
 				));
 			}
 
-			Device.Features features = device.getFeatures();
-
-			writer.println(String.format("\tdevices.insert( {%d, TT_Device(%d, modules, %b, %b)} ); // insert device to map of devices",
+			writer.println(String.format("\tdevices.insert( {%d, TT_Device(%d, modules)} ); // insert device to map of devices",
 					device.getTypeId(),
-					device.getTypeId(),
-					features != null && features.hasBattery(),
-					features != null && features.hasLed()
+					device.getTypeId()
 			));
 			writer.println("\tmodules.clear();");
 			writer.println("");

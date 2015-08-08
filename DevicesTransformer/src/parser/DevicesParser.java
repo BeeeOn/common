@@ -3,8 +3,8 @@ package parser;
 import com.sun.org.apache.xml.internal.utils.DefaultErrorHandler;
 import data.Device;
 import data.Devices;
-import data.Module;
 import data.Translation;
+import data.module.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -100,14 +100,11 @@ public class DevicesParser {
 					device.setName(new Translation(node.getTextContent()));
 				} else if (tag.equals("manufacturer")) {
 					device.setManufacturer(new Translation(node.getTextContent()));
-				} else if (tag.equals("features")) {
-					Device.Features features = parseFeatures((Element) node);
-					device.setFeatures(features);
 				} else if (tag.equals("modules")) {
 					List<Module> modules = parseModules((Element) node);
 					device.setModules(modules);
 				} else {
-					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'name|manufacturer|features|modules')", tag));
+					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'name|manufacturer|modules')", tag));
 				}
 			}
 		}
@@ -115,39 +112,9 @@ public class DevicesParser {
 		return device;
 	}
 
-	private static int getIntAttribute(Element node, String attribute) {
+	public static int getIntAttribute(Element node, String attribute) {
 		String value = node.getAttribute(attribute);
 		return Integer.parseInt(value);
-	}
-
-	private static Device.Features parseFeatures(Element element) {
-		Device.Features features = new Device.Features();
-
-		NodeList featuresNodes = element.getChildNodes();
-		for (int i = 0; i < featuresNodes.getLength(); i++) {
-			Node node = featuresNodes.item(i);
-
-			if (node instanceof Element) {
-				String tag = node.getNodeName();
-				if (tag.equals("refresh")) {
-					int refresh = getIntAttribute((Element) node, "default");
-					int moduleId = getIntAttribute((Element) node, "moduleId");
-					features.setRefresh(moduleId, refresh);
-				} else if (tag.equals("battery")) {
-					int moduleId = getIntAttribute((Element) node, "moduleId");
-					features.setBattery(moduleId);
-				} else if (tag.equals("rssi")) {
-					int moduleId = getIntAttribute((Element) node, "moduleId");
-					features.setRssi(moduleId);
-				} else if (tag.equals("led")) {
-					features.setLed(Boolean.TRUE);
-				} else {
-					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'refresh|battery|rssi|led')", tag));
-				}
-			}
-		}
-
-		return features;
 	}
 
 	private static List<Module> parseModules(Element element) {
@@ -158,12 +125,32 @@ public class DevicesParser {
 			Node node = modulesNodes.item(i);
 
 			if (node instanceof Element) {
+				Element nodeEl = (Element) node;
+
+				int id = getIntAttribute(nodeEl, "id");
+				String type = nodeEl.getAttribute("type");
+
 				String tag = node.getNodeName();
-				if (tag.equals("module")) {
-					Module module = parseModule((Element) node);
+				if (tag.equals("sensor")) {
+					Module module = parseModule(nodeEl, new Sensor(id, type));
+					modules.add(module);
+				} else if (tag.equals("actuator")) {
+					Module module = parseModule(nodeEl, new Actuator(id, type));
+					modules.add(module);
+				} else if (tag.equals("refresh")) {
+					Module module = parseModule(nodeEl, new Refresh(id, type));
+					modules.add(module);
+				} else if (tag.equals("battery")) {
+					Module module = parseModule(nodeEl, new Battery(id, type));
+					modules.add(module);
+				} else if (tag.equals("rssi")) {
+					Module module = parseModule(nodeEl, new Rssi(id, type));
+					modules.add(module);
+				} else if (tag.equals("led")) {
+					Module module = parseModule(nodeEl, new Led(id, type));
 					modules.add(module);
 				} else {
-					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'module')", tag));
+					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'sensor|actuator|refresh|battery|rssi|led')", tag));
 				}
 			}
 		}
@@ -171,12 +158,14 @@ public class DevicesParser {
 		return modules;
 	}
 
-	private static Module parseModule(Element element) {
-		int id = Integer.parseInt(element.getAttribute("id"));
-		String type = element.getAttribute("type");
-
-		Module module = new Module(id, type);
-
+	/**
+	 * Parse element data and properly fill given module object.
+	 *
+	 * @param element
+	 * @param module
+	 * @return same given module object.
+	 */
+	private static Module parseModule(Element element, Module module) {
 		NodeList moduleNodes = element.getChildNodes();
 		for (int i = 0; i < moduleNodes.getLength(); i++) {
 			Node node = moduleNodes.item(i);
@@ -189,8 +178,8 @@ public class DevicesParser {
 					module.setGroup(new Translation(node.getTextContent()));
 				} else if (tag.equals("name")) {
 					module.setName(new Translation(node.getTextContent()));
-				} else if (tag.equals("is-actuator")) {
-					module.setActuator(true);
+				} else if (tag.equals("default")) {
+					module.setDefaultValue(node.getTextContent());
 				} else if (tag.equals("constraints")) {
 					Module.Constraints constraints = parseConstraints((Element) node);
 					module.setConstraints(constraints);
@@ -202,7 +191,7 @@ public class DevicesParser {
 					List<Module.Rule> rules = parseRules((Element) node);
 					module.setRules(rules);
 				} else {
-					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'module')", tag));
+					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'order|group|name|constraints|values|rules|default')", tag));
 				}
 			}
 		}
@@ -244,7 +233,7 @@ public class DevicesParser {
 			if (node instanceof Element) {
 				String tag = node.getNodeName();
 				if (tag.equals("value")) {
-					int id = Integer.parseInt(((Element) node).getAttribute("id"));
+					int id = getIntAttribute((Element) node, "id");
 					Translation translation = new Translation(node.getTextContent());
 					Module.Value value = new Module.Value(id, translation);
 					values.add(value);
@@ -267,7 +256,7 @@ public class DevicesParser {
 			if (node instanceof Element) {
 				String tag = node.getNodeName();
 				if (tag.equals("if")) {
-					int value = Integer.parseInt(((Element) node).getAttribute("value"));
+					int value = getIntAttribute((Element) node, "value");
 
 					List<Integer> hideModulesIdsList = new ArrayList<>();
 					NodeList hideModuleNodes = ((Element) node).getElementsByTagName("hide-module");

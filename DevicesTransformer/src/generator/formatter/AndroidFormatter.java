@@ -1,6 +1,7 @@
 package generator.formatter;
 
 import data.*;
+import data.module.Module;
 import generator.DevicesGenerator;
 import generator.LanguagesGenerator;
 
@@ -8,7 +9,6 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by Robert on 13. 7. 2015.
@@ -23,11 +23,6 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 		while (it.hasNext()) {
 			Device device = it.next();
 
-			Device.Features features = device.getFeatures();
-			if (features == null) {
-				features = new Device.Features();
-			}
-
 			// Begin of type definition
 			writer.println(String.format("TYPE_%d(\"%d\", \"%s\", %s, %s, new DeviceFeatures(%s, %s, %s, %s)) {",
 					device.getTypeId(),
@@ -35,10 +30,10 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 					device.getTypeName(),
 					device.getName().getResourceId(),
 					device.getManufacturer().getResourceId(),
-					features.hasRefresh() ? features.getDefaultRefresh().toString() : "null",
-					features.hasLed() ? "true" : "false",
-					features.hasBattery() ? "true" : "false",
-					features.hasRssi() ? "true" : "false"
+					device.getFeatureRefresh() != null ? device.getFeatureRefresh().getDefaultValue() : "null",
+					device.getFeatureLed() != null ? "true" : "false",
+					device.getFeatureBattery() != null ? "true" : "false",
+					device.getFeatureRssi() != null ? "true" : "false"
 			));
 
 			// Begin of createModules() method
@@ -47,9 +42,10 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 			// Begin of modules array
 			writer.println("\t\treturn Arrays.asList(");
 
-			Iterator<Module> itModule = device.getModules().iterator();
+			Iterator<Module> itModule = device.getModulesWithoutFeatures().iterator();
 			while (itModule.hasNext()) {
 				Module module = itModule.next();
+
 				Translation tgroup = module.getGroup();
 				String group = tgroup != null ? tgroup.getResourceId() : "null";
 
@@ -145,8 +141,11 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 			String value = item.value;
 
 			// FIXME: Use better way than this hardcoded check
-			// Ignore unwanted battery/rssi/refresh modules
-			if (name.equalsIgnoreCase("devices__type_battery") || name.equalsIgnoreCase("devices__type_rssi") || name.equalsIgnoreCase("devices__type_refresh"))
+			// Ignore unwanted battery/rssi/refresh/led modules
+			if (name.equalsIgnoreCase("devices__type_battery")
+					|| name.equalsIgnoreCase("devices__type_rssi")
+					|| name.equalsIgnoreCase("devices__type_refresh")
+					|| name.equalsIgnoreCase("devices__type_led"))
 				continue;
 
 			writer.println(String.format("\t<string name=\"%s\">%s</string>", name, value));
@@ -154,4 +153,5 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 
 		writer.println("</resources>");
 	}
+
 }

@@ -1,24 +1,25 @@
 <!ELEMENT devices (device*)>
-<!ELEMENT device (name, manufacturer, features?, modules)>
+<!ELEMENT device (name, manufacturer, modules)>
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT manufacturer (#PCDATA)>
-<!ELEMENT features (refresh?, battery?, rssi?, led?)>
-<!ELEMENT refresh EMPTY>
+
+<!ELEMENT modules (sensor|actuator|refresh|battery|rssi|led)*>
+
+<!ELEMENT sensor (order?, group?, name, values?)>
+<!ELEMENT actuator (order?, group?, name, (constraints|values), rules?)>
+<!ELEMENT refresh (default, (constraints|values))>
 <!ELEMENT battery EMPTY>
 <!ELEMENT rssi EMPTY>
 <!ELEMENT led EMPTY>
 
-<!ELEMENT modules (module+)>
-<!ELEMENT module (order?, group?, name,((is-actuator, (constraints|values))|values)?, rules?)>
-
 <!ELEMENT order (#PCDATA)>
 <!ELEMENT group (#PCDATA)>
-<!ELEMENT is-actuator EMPTY>
 <!ELEMENT constraints (min?, max?, granularity)>
 <!ELEMENT values (value+)>
 <!ELEMENT value (#PCDATA)>
 
+<!ELEMENT default (#PCDATA)>
 <!ELEMENT min (#PCDATA)>
 <!ELEMENT max (#PCDATA)>
 <!ELEMENT granularity (#PCDATA)>
@@ -27,19 +28,6 @@
 <!ELEMENT if (hide-module+)>
 
 <!ELEMENT hide-module (#PCDATA)>
-
-<!ATTLIST refresh
-        moduleId        CDATA   #REQUIRED
-        default         CDATA   #REQUIRED
-        >
-
-<!ATTLIST battery
-        moduleId        CDATA   #REQUIRED
-        >
-
-<!ATTLIST rssi
-        moduleId        CDATA   #REQUIRED
-        >
 
 <!ATTLIST devices
         version         CDATA   #REQUIRED
@@ -50,7 +38,32 @@
         name            CDATA   #REQUIRED
         >
 
-<!ATTLIST module
+<!ATTLIST sensor
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST actuator
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST refresh
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST battery
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST rssi
+        id              CDATA   #REQUIRED
+        type            CDATA   #REQUIRED
+        >
+
+<!ATTLIST led
         id              CDATA   #REQUIRED
         type            CDATA   #REQUIRED
         >

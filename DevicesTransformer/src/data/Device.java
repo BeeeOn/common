@@ -1,6 +1,6 @@
 package data;
 
-import com.sun.istack.internal.Nullable;
+import data.module.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,11 @@ public class Device {
 
 	private Translation mManufacturer;
 
-	private Features mFeatures;
+	// Feaures modules
+	private Led mFeatureLed;
+	private Battery mFeatureBattery;
+	private Refresh mFeatureRefresh;
+	private Rssi mFeatureRssi;
 
 	public Device(int typeId, String typeName) {
 		mTypeId = typeId;
@@ -31,9 +35,52 @@ public class Device {
 		return mModules;
 	}
 
+	public List<Module> getModulesWithoutFeatures() {
+		List<Module> filteredModules = new ArrayList<>();
+		for (Module module : mModules) {
+			// Ignore special modules (battery, rssi, refresh, led) to generate same output as before
+
+			filteredModules.add(module);
+		}
+		return filteredModules;
+	}
+
+	private void clearFeatures() {
+		mFeatureRefresh = null;
+		mFeatureBattery = null;
+		mFeatureLed = null;
+		mFeatureRssi = null;
+	}
+
+	private boolean isFeatureModule(Module module) {
+		return (module instanceof Battery
+				|| module instanceof Refresh
+				|| module instanceof Rssi
+				|| module instanceof Led);
+	}
+
+	private void setFeatureModule(Module module) {
+		if (module instanceof Battery) {
+			mFeatureBattery = (Battery) module;
+		} else if (module instanceof Refresh) {
+			mFeatureRefresh = (Refresh) module;
+		} else if (module instanceof Rssi) {
+			mFeatureRssi = (Rssi) module;
+		} else if (module instanceof Led) {
+			mFeatureLed = (Led) module;
+		}
+	}
+
 	public void setModules(List<Module> modules) {
 		mModules.clear();
-		mModules.addAll(modules);
+		clearFeatures();
+
+		for (Module module : modules) {
+			mModules.add(module);
+			if (isFeatureModule(module)) {
+				setFeatureModule(module);
+			}
+		}
 	}
 
 	public int getTypeId() {
@@ -60,73 +107,19 @@ public class Device {
 		mManufacturer = manufacturer;
 	}
 
-	@Nullable
-	public Features getFeatures() {
-		return mFeatures;
+	public Led getFeatureLed() {
+		return mFeatureLed;
 	}
 
-	public void setFeatures(Features features) {
-		mFeatures = features;
+	public Battery getFeatureBattery() {
+		return mFeatureBattery;
 	}
 
-	public static class Features {
-		private Integer mRefresh;
-		private Integer mRefreshId;
-		private Integer mBatteryId;
-		private Integer mRssiId;
-		private Boolean mLed;
+	public Refresh getFeatureRefresh() {
+		return mFeatureRefresh;
+	}
 
-		public boolean hasRefresh() {
-			return mRefreshId != null && mRefresh != null;
-		}
-
-		@Nullable
-		public Integer getDefaultRefresh() {
-			return mRefresh;
-		}
-
-		@Nullable
-		public Integer getRefreshId() {
-			return mRefreshId;
-		}
-
-		public void setRefresh(Integer moduleId, Integer refresh) {
-			mRefreshId = moduleId;
-			mRefresh = refresh;
-		}
-
-		public boolean hasBattery() {
-			return mBatteryId != null;
-		}
-
-		@Nullable
-		public Integer getBatteryId() {
-			return mBatteryId;
-		}
-
-		public void setBattery(Integer moduleId) {
-			mBatteryId = moduleId;
-		}
-
-		public boolean hasRssi() {
-			return mRssiId != null;
-		}
-
-		@Nullable
-		public Integer getRssiId() {
-			return mRssiId;
-		}
-
-		public void setRssi(Integer moduleId) {
-			mRssiId = moduleId;
-		}
-
-		public boolean hasLed() {
-			return mLed != null && mLed;
-		}
-
-		public void setLed(Boolean led) {
-			mLed = led;
-		}
+	public Rssi getFeatureRssi() {
+		return mFeatureRssi;
 	}
 }
