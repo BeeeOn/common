@@ -24,16 +24,12 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 			Device device = it.next();
 
 			// Begin of type definition
-			writer.println(String.format("TYPE_%d(\"%d\", \"%s\", %s, %s, new DeviceFeatures(%s, %s, %s, %s)) {",
+			writer.println(String.format("TYPE_%d(\"%d\", \"%s\", %s, %s) {",
 					device.getTypeId(),
 					device.getTypeId(),
 					device.getTypeName(),
 					device.getName().getResourceId(),
-					device.getManufacturer().getResourceId(),
-					device.getFeatureRefresh() != null ? device.getFeatureRefresh().getDefaultValue() : "null",
-					device.getFeatureLed() != null ? "true" : "false",
-					device.getFeatureBattery() != null ? "true" : "false",
-					device.getFeatureRssi() != null ? "true" : "false"
+					device.getManufacturer().getResourceId()
 			));
 
 			// Begin of createModules() method
@@ -42,7 +38,7 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 			// Begin of modules array
 			writer.println("\t\treturn Arrays.asList(");
 
-			Iterator<Module> itModule = device.getModulesWithoutFeatures().iterator();
+			Iterator<Module> itModule = device.getModules().iterator();
 			while (itModule.hasNext()) {
 				Module module = itModule.next();
 
@@ -111,6 +107,13 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 					));
 				}
 
+				String defaultValue = module.getDefaultValue();
+				if (defaultValue != null && !defaultValue.isEmpty()) {
+					writer.print(String.format(", \"%s\"", module.getDefaultValue()));
+				} else {
+					writer.print(", null");
+				}
+
 				writer.println(itModule.hasNext() ? ")," : ")");
 			}
 
@@ -134,19 +137,15 @@ public class AndroidFormatter implements DevicesGenerator.IDevicesFormatter, Lan
 	@Override
 	public void formatLanguages(PrintWriter writer, Language language) {
 		writer.println("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-		writer.println("<resources>");
+		writer.println("<!-- Don't edit this file; it was generated automatically by DevicesTransformer. -->");
+		if (language.getCode().equalsIgnoreCase("en"))
+			writer.println(String.format("<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:locale=\"%s\">", language.getCode()));
+		else
+			writer.println("<resources>");
 
 		for (Language.Item item : language.getItems()) {
 			String name = item.key;
 			String value = item.value;
-
-			// FIXME: Use better way than this hardcoded check
-			// Ignore unwanted battery/rssi/refresh/led modules
-			if (name.equalsIgnoreCase("devices__type_battery")
-					|| name.equalsIgnoreCase("devices__type_rssi")
-					|| name.equalsIgnoreCase("devices__type_refresh")
-					|| name.equalsIgnoreCase("devices__type_led"))
-				continue;
 
 			writer.println(String.format("\t<string name=\"%s\">%s</string>", name, value));
 		}
