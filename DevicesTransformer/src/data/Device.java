@@ -20,12 +20,6 @@ public class Device {
 
 	private Translation mManufacturer;
 
-	// Feaures modules
-	private Led mFeatureLed;
-	private Battery mFeatureBattery;
-	private Refresh mFeatureRefresh;
-	private Rssi mFeatureRssi;
-
 	public Device(int typeId, String typeName) {
 		mTypeId = typeId;
 		mTypeName = typeName;
@@ -35,52 +29,9 @@ public class Device {
 		return mModules;
 	}
 
-	public List<Module> getModulesWithoutFeatures() {
-		List<Module> filteredModules = new ArrayList<>();
-		for (Module module : mModules) {
-			// Ignore special modules (battery, rssi, refresh, led) to generate same output as before
-
-			filteredModules.add(module);
-		}
-		return filteredModules;
-	}
-
-	private void clearFeatures() {
-		mFeatureRefresh = null;
-		mFeatureBattery = null;
-		mFeatureLed = null;
-		mFeatureRssi = null;
-	}
-
-	private boolean isFeatureModule(Module module) {
-		return (module instanceof Battery
-				|| module instanceof Refresh
-				|| module instanceof Rssi
-				|| module instanceof Led);
-	}
-
-	private void setFeatureModule(Module module) {
-		if (module instanceof Battery) {
-			mFeatureBattery = (Battery) module;
-		} else if (module instanceof Refresh) {
-			mFeatureRefresh = (Refresh) module;
-		} else if (module instanceof Rssi) {
-			mFeatureRssi = (Rssi) module;
-		} else if (module instanceof Led) {
-			mFeatureLed = (Led) module;
-		}
-	}
-
 	public void setModules(List<Module> modules) {
 		mModules.clear();
-		clearFeatures();
-
-		for (Module module : modules) {
-			mModules.add(module);
-			if (isFeatureModule(module)) {
-				setFeatureModule(module);
-			}
-		}
+		mModules.addAll(modules);
 	}
 
 	public int getTypeId() {
@@ -105,21 +56,5 @@ public class Device {
 
 	public void setManufacturer(Translation manufacturer) {
 		mManufacturer = manufacturer;
-	}
-
-	public Led getFeatureLed() {
-		return mFeatureLed;
-	}
-
-	public Battery getFeatureBattery() {
-		return mFeatureBattery;
-	}
-
-	public Refresh getFeatureRefresh() {
-		return mFeatureRefresh;
-	}
-
-	public Rssi getFeatureRssi() {
-		return mFeatureRssi;
 	}
 }
