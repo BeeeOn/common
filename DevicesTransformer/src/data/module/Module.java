@@ -100,8 +100,8 @@ public abstract class Module {
 		return mDefaultValue;
 	}
 
-	public void setDefaultValue(String defaultVaule) {
-		mDefaultValue = defaultVaule;
+	public void setDefaultValue(String defaultValue) {
+		mDefaultValue = defaultValue;
 	}
 
 	public static class Constraints {
