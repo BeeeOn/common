@@ -53,8 +53,8 @@
 	<string name="mod_requested_water_temperature">Žádaná teplota vody</string>
 	<string name="mod_current_water_temperature">Aktuální teplota vody</string>
 	
-	<string name="zone_1">Zóna 1 - </string>
-	<string name="zone_2">Zóna 2 - </string>
-	<string name="zone_3">Zóna 3 - </string>
-	<string name="zone_4">Zóna 4 - </string>
+	<string name="zone_1">Zóna 1</string>
+	<string name="zone_2">Zóna 2</string>
+	<string name="zone_3">Zóna 3</string>
+	<string name="zone_4">Zóna 4</string>
 </language>
