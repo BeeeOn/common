@@ -1,9 +1,6 @@
 package data;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Robert on 23. 5. 2015.
@@ -47,6 +44,12 @@ public class Language {
 		for (Item item : mItems.values()) {
 			items.add(item);
 		}
+		Collections.sort(items, new Comparator<Item>() {
+			@Override
+			public int compare(Item o1, Item o2) {
+				return o1.key.compareTo(o2.key);
+			}
+		});
 		return items;
 	}
 
