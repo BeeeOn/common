@@ -10,6 +10,7 @@
 	<string name="type_battery">Baterie</string>
 	<string name="type_rssi">Signál</string>
 	<string name="type_refresh">Interval aktualizace</string>
+	<string name="type_unknown">Neznámy</string>
 
 	<!-- Devices -->
 	<string name="manufacturer_but">VUT</string>

@@ -10,6 +10,7 @@
 	<string name="type_battery">Battery</string>
 	<string name="type_rssi">Signal</string>
 	<string name="type_refresh">Refresh period</string>
+	<string name="type_unknown">Unknown</string>
 
 	<!-- Devices -->
 	<string name="manufacturer_but">BUT</string>
