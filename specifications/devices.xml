@@ -354,4 +354,65 @@
 	</modules>
 </device>
 
+<device id="3" name="Virtual THN v1.0">
+	<name>T:DEV_VIRTUAL_THN</name>
+	<manufacturer>T:MANUFACTURER_VIRTUAL</manufacturer>
+	<modules>
+		<sensor id="0" type="0x02">
+			<name>T:TYPE_TEMPERATURE</name>
+		</sensor>
+		<sensor id="1" type="0x03">
+			<name>T:TYPE_HUMIDITY</name>
+		</sensor>
+		<sensor id="2" type="0x06">
+			<name>T:TYPE_NOISE</name>
+		</sensor>
+	</modules>
+</device>
+
+<device id="4" name="Virtual THNx3 v1.0">
+	<name>T:DEV_VIRTUAL_THN_X3</name>
+	<manufacturer>T:MANUFACTURER_VIRTUAL</manufacturer>
+	<modules>
+		<sensor id="0" type="0x02">
+			<group>T:ZONE_1</group>
+			<name>T:TYPE_TEMPERATURE</name>
+		</sensor>
+		<sensor id="1" type="0x03">
+			<group>T:ZONE_1</group>
+			<name>T:TYPE_HUMIDITY</name>
+		</sensor>
+		<sensor id="2" type="0x06">
+			<group>T:ZONE_1</group>
+			<name>T:TYPE_NOISE</name>
+		</sensor>
+		
+		<sensor id="3" type="0x02">
+			<group>T:ZONE_2</group>
+			<name>T:TYPE_TEMPERATURE</name>
+		</sensor>
+		<sensor id="4" type="0x03">
+			<group>T:ZONE_2</group>
+			<name>T:TYPE_HUMIDITY</name>
+		</sensor>
+		<sensor id="5" type="0x06">
+			<group>T:ZONE_2</group>
+			<name>T:TYPE_NOISE</name>
+		</sensor>
+		
+		<sensor id="6" type="0x02">
+			<group>T:ZONE_3</group>
+			<name>T:TYPE_TEMPERATURE</name>
+		</sensor>
+		<sensor id="7" type="0x03">
+			<group>T:ZONE_3</group>
+			<name>T:TYPE_HUMIDITY</name>
+		</sensor>
+		<sensor id="8" type="0x06">
+			<group>T:ZONE_3</group>
+			<name>T:TYPE_NOISE</name>
+		</sensor>
+	</modules>
+</device>
+
 </devices>

@@ -16,10 +16,13 @@
 	<!-- Devices -->
 	<string name="manufacturer_but">VUT</string>
 	<string name="manufacturer_thermona">Thermona</string>
+	<string name="manufacturer_virtual">Virtuální</string>
 	
 	<string name="dev_temperature_humidity">Senzor teploty a vlhkosti</string>
 	<string name="dev_regulator_vpt">Regulátor VPT</string>
 	<string name="dev_internal_pressure">Senzor tlaku vzduchu</string>
+	<string name="dev_virtual_thn">TepVlhHluk</string>
+	<string name="dev_virtual_thn_x3">TepVlhHluk x3</string>
 	
 	<string name="mod_room_temperature">Teplota místnosti</string>
 	<string name="mod_outside_temperature">Teplota venkovní</string>
@@ -55,6 +58,7 @@
 	<string name="mod_requested_water_temperature">Žádaná teplota vody</string>
 	<string name="mod_current_water_temperature">Aktuální teplota vody</string>
 	
+	<!-- Groups -->
 	<string name="zone_1">Zóna 1</string>
 	<string name="zone_2">Zóna 2</string>
 	<string name="zone_3">Zóna 3</string>
