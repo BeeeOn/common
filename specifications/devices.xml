@@ -415,4 +415,19 @@
 	</modules>
 </device>
 
+<device id="5" name="OpenHAB Presence v1.0">
+	<name>T:DEV_PRESENCE_MONITOR</name>
+	<manufacturer>T:MANUFACTURER_OPENHAB</manufacturer>
+	<modules>
+		<sensor id="0" type="0x01">
+			<name>T:MOD_PRESENCE_STATUS</name>
+			<values name="T:VAL_PRESENCE_STATUS">
+				<value id="0">T:UNDEFINED</value>
+				<value id="1">T:PRESENT</value>
+				<value id="2">T:NOT_PRESENT</value>
+			</values>
+		</sensor>
+	</modules>
+</device>
+
 </devices>

@@ -17,12 +17,14 @@
 	<string name="manufacturer_but">BUT</string>
 	<string name="manufacturer_thermona">Thermona</string>
 	<string name="manufacturer_virtual">Virtual</string>
+	<string name="manufacturer_openhab">OpenHAB</string>
 	
 	<string name="dev_temperature_humidity">Temperature and humidity sensor</string>
 	<string name="dev_regulator_vpt">Regulator VPT</string>
 	<string name="dev_internal_pressure">Air pressure sensor</string>
 	<string name="dev_virtual_thn">TempHumNoise</string>
 	<string name="dev_virtual_thn_x3">TempHumNoise x3</string>
+	<string name="dev_presence_monitor">Presence monitor</string>
 	
 	<string name="mod_room_temperature">Room temperature</string>
 	<string name="mod_outside_temperature">Outside temperature</string>
@@ -57,6 +59,13 @@
 	<string name="mod_current_room_temperature">Current room temperature</string>
 	<string name="mod_requested_water_temperature">Requested water temperature</string>
 	<string name="mod_current_water_temperature">Current water temperature</string>
+	
+	<string name="mod_presence_status">Stav přítomnosti</string>
+	<values name="val_presence_status">
+		<string name="undefined">Undefined</string>
+		<string name="present">Present</string>
+		<string name="not_present">Not present</string>
+	</values>
 	
 	<!-- Groups -->
 	<string name="zone_1">Zone 1</string>

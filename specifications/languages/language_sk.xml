@@ -17,12 +17,14 @@
 	<string name="manufacturer_but">VUT</string>
 	<string name="manufacturer_thermona">Thermona</string>
 	<string name="manufacturer_virtual">Virtuálny</string>
+	<string name="manufacturer_openhab">OpenHAB</string>
 	
 	<string name="dev_temperature_humidity">Senzor teploty a vlhkosti</string>
 	<string name="dev_regulator_vpt">Regulator VPT</string>
 	<string name="dev_internal_pressure">Senzor tlaku vzduchu</string>
 	<string name="dev_virtual_thn">TepVlhHluk</string>
 	<string name="dev_virtual_thn_x3">TepVlhHluk x3</string>
+	<string name="dev_presence_monitor">Sledovanie prítomnosti</string>
 	
 	<string name="mod_room_temperature">Teplota miestnosti</string>
 	<string name="mod_outside_temperature">Teplota venkovní</string>
@@ -30,7 +32,7 @@
 	
 	<string name="mod_boiler_status">Stav kotla</string>
 	<values name="val_boiler_status">
-		<string name="undefined">Nezjištěno</string>
+		<string name="undefined">Nezistené</string>
 		<string name="heating">Topenie</string>
 		<string name="hot_water">Ohrev TUV</string>
 		<string name="failure">Porucha</string>
@@ -57,6 +59,13 @@
 	<string name="mod_current_room_temperature">Aktuálná teplota místnosti</string>
 	<string name="mod_requested_water_temperature">Žádaná teplota vody</string>
 	<string name="mod_current_water_temperature">Aktuálná teplota vody</string>
+	
+	<string name="mod_presence_status">Stav prítomnosti</string>
+	<values name="val_presence_status">
+		<string name="undefined">Nezistené</string>
+		<string name="present">Prítomný</string>
+		<string name="not_present">Neprítomný</string>
+	</values>
 	
 	<!-- Groups -->
 	<string name="zone_1">Zona 1</string>
