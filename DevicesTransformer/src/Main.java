@@ -6,6 +6,7 @@ import generator.DevicesGenerator;
 import generator.LanguagesGenerator;
 import generator.formatter.AndroidFormatter;
 import generator.formatter.GateFormatter;
+import generator.formatter.WebFormatter;
 import parser.DevicesParser;
 import parser.LanguagesParser;
 import parser.TypesParser;
@@ -39,7 +40,8 @@ public class Main {
 		List<Language> languages = LanguagesParser.parseLanguages(SPECIFICATIONS_DIR + "languages/", "language_", ".xml");
 		if (!languages.isEmpty()) {
 			LanguagesGenerator generator = new LanguagesGenerator(languages);
-			generator.generateLanguages(new AndroidFormatter(), "export/android/res/values/", "export/android/res/values-%s/", "generated_strings_devices.xml", DEFAULT_LANG_CODE);
+			generator.generateLanguages(new AndroidFormatter(), "export/android/res/values/", "export/android/res/values-%s/", "generated_strings_devices.xml", DEFAULT_LANG_CODE,"Saving Android's strings XML to ");
+			generator.generateLanguages(new WebFormatter(), "export/webapp/res/values/", "export/webapp/res/values-%s/", "generated_strings_devices.json", DEFAULT_LANG_CODE,"Saving Webapp's strings JSON to ");
 			// generator.printLanguages(System.out);
 		} else {
 			System.err.println("Error when loading languages - nothing loaded.");
