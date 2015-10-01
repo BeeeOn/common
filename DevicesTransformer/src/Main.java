@@ -29,6 +29,8 @@ public class Main {
 			generator.generateDevices(new AndroidFormatter(), "export/android/", "devices.java");
 			// Generate Gate data
 			generator.generateDevices(new GateFormatter(), "export/gate/", "device_table.h");
+			//Generate Webapp data
+			generator.generateDevices(new WebFormatter(), "export/webapp/", "devices.js");
 			// Print data just to log
 			// generator.printDevices(System.out);
 		} else {

@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class Translation {
 	private static final String RESOURCE_STRING = "R.string." + Language.TRANSLATION_PREFIX + "%s";
+	private static final String WEBAPP_RESOURCE_STRING = Language.TRANSLATION_PREFIX.toUpperCase() + "%s";
 
 	private final String mTranslationId;
 
@@ -42,6 +43,10 @@ public class Translation {
 
 	public String getResourceId() {
 		return String.format(RESOURCE_STRING, mTranslationId.toLowerCase());
+	}
+
+	public String getWebappResourceId() {
+		return String.format(WEBAPP_RESOURCE_STRING, mTranslationId.toUpperCase());
 	}
 
 }
