@@ -26,7 +26,7 @@ public class LanguagesGenerator {
 	 * @param defaultLangCode Code of default language
 	 * @return
 	 */
-	public boolean generateLanguages(ILanguagesFormatter formatter, String dirDefault, String dirCodeParam, String filename, String defaultLangCode) {
+	public boolean generateLanguages(ILanguagesFormatter formatter, String dirDefault, String dirCodeParam, String filename, String defaultLangCode,String message) {
 		boolean result = true;
 
 		for (Language language : mLanguages) {
@@ -37,7 +37,7 @@ public class LanguagesGenerator {
 
 			File output = new File(dir, filename);
 
-			System.out.println(String.format("Saving Android's strings XML to '%s'", output.getAbsolutePath()));
+			System.out.println(String.format(message + "'%s'", output.getAbsolutePath()));
 
 			try (PrintWriter writer = new PrintWriter(output, "UTF-8")) {
 				formatter.formatLanguages(writer, language);
