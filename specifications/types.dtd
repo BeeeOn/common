@@ -20,6 +20,7 @@
 <!-- Variables entities -->
 <!ENTITY int "int">
 <!ENTITY float "float">
+<!ENTITY bitarray "bitarray">
 
 <!-- Units entities -->
 <!ENTITY celsius "&#176;C">

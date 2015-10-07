@@ -74,4 +74,8 @@
 		<var size="2">&int;</var>
 		<unit>&seconds;</unit>
 	</type>
+	<type id="0x0B">
+		<name>T:TYPE_BITARRAY</name>
+		<var size="4">&bitarray;</var>
+	</type>
 </types>
