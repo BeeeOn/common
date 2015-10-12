@@ -78,4 +78,12 @@
 		<name>T:TYPE_BITARRAY</name>
 		<var size="4">&bitarray;</var>
 	</type>
+	<type id="0x0C">
+		<name>T:TYPE_RAW_INT</name>
+		<var size="4">&int;</var>
+	</type>
+	<type id="0x0D">
+		<name>T:TYPE_RAW_FLOAT</name>
+		<var size="4">&float;</var>
+	</type>
 </types>
