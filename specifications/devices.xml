@@ -430,8 +430,6 @@
 	</modules>
 </device>
 
-</devices>
-
 <device id="6" name="Regulator VPT LAN v1.0">
     <name>T:DEV_REGULATOR_VPT_LAN</name>
     <manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
@@ -1149,3 +1147,5 @@
         </sensor>
     </modules>
 </device>
+
+</devices>
