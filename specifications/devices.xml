@@ -591,7 +591,7 @@
         </actuator>
         <actuator id="13" type="0x02">
             <group>T:ZONE_1</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
@@ -756,7 +756,7 @@
         </actuator>
         <actuator id="27" type="0x02">
             <group>T:ZONE_2</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
@@ -925,7 +925,7 @@
         </actuator>
         <actuator id="41" type="0x02">
             <group>T:ZONE_3</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
@@ -1088,7 +1088,7 @@
         </actuator>
         <actuator id="55" type="0x02">
             <group>T:ZONE_4</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
