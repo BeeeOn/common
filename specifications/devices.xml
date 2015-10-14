@@ -549,7 +549,7 @@
         </actuator>
         <actuator id="9" type="0x0D">
             <group>T:ZONE_1</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
@@ -714,7 +714,7 @@
         </actuator>
         <actuator id="23" type="0x0D">
             <group>T:ZONE_2</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
@@ -883,7 +883,7 @@
         </actuator>
         <actuator id="37" type="0x0D">
             <group>T:ZONE_3</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
@@ -1046,7 +1046,7 @@
         </actuator>
         <actuator id="51" type="0x0D">
             <group>T:ZONE_4</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
