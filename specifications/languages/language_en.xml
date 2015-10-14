@@ -61,6 +61,25 @@
 	<string name="mod_current_room_temperature">Current room temperature</string>
 	<string name="mod_requested_water_temperature">Requested water temperature</string>
 	<string name="mod_current_water_temperature">Current water temperature</string>
+
+	<string name="mod_minimal_water_temperature">Minimal water temperature</string>
+	<string name="mod_maximal_water_temperature">Maximal water temperature</string>
+
+	<string name="mod_use_ekviterm_thermostat">Use ekviterm thermostat</string>
+	<values name="val_use_ekviterm_thermostat">
+		<string name="off">Off</string>
+		<string name="on">On</string>
+	</values>
+	<string name="mod_slope_ekviterm_curve">Slope of ekviterm curve</string>
+	<string name="mod_offset_ekviterm_curve">Offset of ekviterm curve</string>
+
+	<string name="frost_protection">Frost protection</string>
+	<values name="val_frost_protection">
+		<string name="off">Off</string>
+		<string name="on">On</string>
+	</values>
+	<string name="frost_protection_water_temperature">Water temperature when frost protection is active</string>
+	<string name="frost_protection_threshold">Temperature threshold to activate frost protection</string>
 	
 	<string name="mod_presence_status">Stav přítomnosti</string>
 	<values name="val_presence_status">
