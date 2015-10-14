@@ -11,6 +11,8 @@
 	<string name="type_rssi">Signál</string>
 	<string name="type_refresh">Interval aktualizácie</string>
 	<string name="type_bitarray">Bitové pole</string>
+	<string name="type_raw_int">Celé číslo</string>
+	<string name="type_raw_float">Desatinné číslo</string>
 	<string name="type_unknown">Neznámy</string>
 
 	<!-- Devices -->
