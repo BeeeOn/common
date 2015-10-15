@@ -23,6 +23,7 @@
 	
 	<string name="dev_temperature_humidity">Temperature and humidity sensor</string>
 	<string name="dev_regulator_vpt">Regulator VPT</string>
+	<string name="dev_regulator_vpt_lan">Regulator VPT LAN</string>
 	<string name="dev_internal_pressure">Air pressure sensor</string>
 	<string name="dev_virtual_thn">TempHumNoise</string>
 	<string name="dev_virtual_thn_x3">TempHumNoise x3</string>
@@ -80,6 +81,22 @@
 	</values>
 	<string name="frost_protection_water_temperature">Water temperature when frost protection is active</string>
 	<string name="frost_protection_threshold">Temperature threshold to activate frost protection</string>
+
+	<string name="mod_boiler_status">Boiler status</string>
+	<values name="val_boiler_status">
+            <value name="undefined">Unknown</value>
+            <value name="heating">Heating</value>
+            <value name="hot_water">Hot water</value>
+            <value name="failure">Failure</value>
+            <value name="shutdown">Shutdown</value>
+	</values>
+
+	<string name="mod_current_boiler_performance">Boiler performance</string>
+	<string name="mod_current_boiler_pressure">Boiler pressure</string>
+	<string name="mod_current_boiler_error">Boiler error</string>
+	<string name="mod_current_ip_address">IP address</string>
+	<string name="mod_current_outside_temperature">Outside temperature</string>
+	<string name="mod_average_outside_temperature">Outside temperature (avarage in 24 hours)</string>
 	
 	<string name="mod_presence_status">Stav přítomnosti</string>
 	<values name="val_presence_status">
@@ -93,4 +110,5 @@
 	<string name="zone_2">Zone 2</string>
 	<string name="zone_3">Zone 3</string>
 	<string name="zone_4">Zone 4</string>
+        <string name="boiler">Boiler</string>
 </language>
