@@ -62,6 +62,42 @@
 	<string name="mod_requested_water_temperature">Žiadaná teplota vody</string>
 	<string name="mod_current_water_temperature">Aktuálna teplota vody</string>
 
+	<string name="mod_minimal_water_temperature">Minimálna teplota topnej vody</string>
+	<string name="mod_maximal_water_temperature">Maximálna teplota topnej vody</string>
+
+	<string name="mod_use_ekviterm_thermostat">Použít ekvitermní regulaci v izbovom termostate</string>
+	<values name="val_use_ekviterm_thermostat">
+		<string name="off">Vypnuto</string>
+		<string name="on">Zapnuto</string>
+	</values>
+	<string name="mod_slope_ekviterm_curve">Sklon ekvitermickej krivky</string>
+	<string name="mod_offset_ekviterm_curve">Posun ekvitermickej krivky</string>
+
+	<string name="frost_protection">Protimrazová ochrana</string>
+	<values name="val_frost_protection">
+		<string name="off">Vypnuto</string>
+		<string name="on">Zapnuto</string>
+	</values>
+	<string name="frost_protection_water_temperature">Teplota topnej vody pri protimrazovej ochrane</string>
+	<string name="frost_protection_threshold">Prah protimrazovej ochrany</string>
+
+	<string name="mod_boiler_status">Boiler status</string>
+	<values name="val_boiler_status">
+            <value name="undefined">Nezjištěno</value>
+            <value name="heating">Topení</value>
+            <value name="hot_water">Ohřev TUV</value>
+            <value name="failure">Porucha</value>
+            <value name="shutdown">Odstaveno</value>
+	</values>
+
+	<string name="mod_current_boiler_performance">Výkon kotla</string>
+	<string name="mod_current_boiler_pressure">Tlak v otopnej sústave</string>
+	<string name="mod_current_boiler_error">Poruchová signalizacia</string>
+	<string name="mod_current_boiler_pressure">Tlak měřený kotlem</string>
+	<string name="mod_current_ip_address">IP adresa</string>
+	<string name="mod_current_outside_temperature">Venkovní teplota</string>
+	<string name="mod_average_outside_temperature">Venkovní teplota (průměr za 24 h)</string>
+
 	<string name="mod_presence_status">Stav prítomnosti</string>
 	<values name="val_presence_status">
 		<string name="undefined">Nezistené</string>
@@ -74,4 +110,5 @@
 	<string name="zone_2">Zóna 2</string>
 	<string name="zone_3">Zóna 3</string>
 	<string name="zone_4">Zóna 4</string>
+        <string name="boiler">Boiler</string>
 </language>
