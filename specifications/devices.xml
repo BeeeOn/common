@@ -451,34 +451,33 @@
                     <hide-module id="3"/>
                     <hide-module id="4"/>
                     <hide-module id="5"/>
-				<!--
+                    <!--
                     <hide-module id="6"/>
                     <hide-module id="7"/>
                     <hide-module id="8"/>
                     <hide-module id="9"/>
                     <hide-module id="10"/>
-				-->
+                    -->
                     <hide-module id="11"/>
                     <hide-module id="12"/>
                     <hide-module id="13"/>
                 </if>
                 <if value="1">
-					<hide-module id="2"/>
+                    <hide-module id="2"/>
                     <hide-module id="4"/>
-					<!-- <hide-module id="6"/>
-					<hide-module id="7"/> -->
-
+                    <!-- <hide-module id="6"/>
+                    <hide-module id="7"/> -->
                 </if>
                 <if value="2">
-					<hide-module id="2"/>
+                    <hide-module id="2"/>
                     <hide-module id="4"/>
-					<!-- <hide-module id="6"/>
-					<hide-module id="7"/> -->
+                    <!-- <hide-module id="6"/>
+                    <hide-module id="7"/> -->
                 </if>
                 <if value="3">
                     <hide-module id="4"/>
-					<!-- <hide-module id="6"/>
-					<hide-module id="7"/> -->
+                    <!-- <hide-module id="6"/>
+                    <hide-module id="7"/> -->
                 </if>
             </rules>
         </actuator>
@@ -610,40 +609,39 @@
                 <value id="4">T:HOT_WATER</value>
             </values>
             <rules>
-				<if value="0">
+                <if value="0">
                     <hide-module id="15"/>
                     <hide-module id="16"/>
                     <hide-module id="17"/>
                     <hide-module id="18"/>
                     <hide-module id="19"/>
-				<!--
+                    <!--
                     <hide-module id="20"/>
                     <hide-module id="21"/>
                     <hide-module id="22"/>
                     <hide-module id="23"/>
                     <hide-module id="24"/>
-				-->
+                    -->
                     <hide-module id="25"/>
                     <hide-module id="26"/>
                     <hide-module id="27"/>
                 </if>
                 <if value="1">
-					<hide-module id="16"/>
+                    <hide-module id="16"/>
                     <hide-module id="18"/>
-					<!-- <hide-module id="20"/>
-					<hide-module id="21"/> -->
-
+                    <!-- <hide-module id="20"/>
+                    <hide-module id="21"/> -->
                 </if>
                 <if value="2">
-					<hide-module id="16"/>
+                    <hide-module id="16"/>
                     <hide-module id="18"/>
-					<!-- <hide-module id="20"/>
-					<hide-module id="21"/> -->
+                    <!-- <hide-module id="20"/>
+                    <hide-module id="21"/> -->
                 </if>
                 <if value="3">
                     <hide-module id="18"/>
-					<!-- <hide-module id="20"/>
-					<hide-module id="21"/> -->
+                    <!-- <hide-module id="20"/>
+                    <hide-module id="21"/> -->
                 </if>
             </rules>
         </actuator>
@@ -775,44 +773,43 @@
                 <value id="4">T:HOT_WATER</value>
             </values>
             <rules>
-				<if value="0">
+                <if value="0">
                     <hide-module id="29"/>
                     <hide-module id="30"/>
                     <hide-module id="31"/>
                     <hide-module id="32"/>
                     <hide-module id="33"/>
-				<!--
+                    <!--
                     <hide-module id="34"/>
                     <hide-module id="35"/>
                     <hide-module id="36"/>
                     <hide-module id="37"/>
                     <hide-module id="38"/>
-				-->
+                    -->
                     <hide-module id="39"/>
                     <hide-module id="40"/>
                     <hide-module id="41"/>
                 </if>
                 <if value="1">
-					<hide-module id="30"/>
+                    <hide-module id="30"/>
                     <hide-module id="32"/>
-					<!--
-					<hide-module id="34"/>
-					<hide-module id="35"/>
-					-->
-
+                    <!--
+                    <hide-module id="34"/>
+                    <hide-module id="35"/>
+                    -->
                 </if>
                 <if value="2">
-					<hide-module id="30"/>
+                    <hide-module id="30"/>
                     <hide-module id="32"/>
-					<!--
-					<hide-module id="34"/>
-					<hide-module id="35"/>
-					-->
+                    <!--
+                    <hide-module id="34"/>
+                    <hide-module id="35"/>
+                    -->
                 </if>
                 <if value="3">
                     <hide-module id="32"/>
-					<!-- <hide-module id="34"/>
-					<hide-module id="35"/> -->
+                    <!-- <hide-module id="34"/>
+                    <hide-module id="35"/> -->
                 </if>
             </rules>
         </actuator>
@@ -959,23 +956,22 @@
                     <hide-module id="54"/>
                     <hide-module id="55"/>
                 </if>
-				<if value="1">
-					<hide-module id="44"/>
+                <if value="1">
+                    <hide-module id="44"/>
                     <hide-module id="46"/>
-					<!-- <hide-module id="48"/>
-					<hide-module id="49"/> -->
-
+                    <!-- <hide-module id="48"/>
+                    <hide-module id="49"/> -->
                 </if>
                 <if value="2">
-					<hide-module id="44"/>
+                    <hide-module id="44"/>
                     <hide-module id="46"/>
-					<!-- <hide-module id="48"/>
-					<hide-module id="49"/>	-->
+                    <!-- <hide-module id="48"/>
+                    <hide-module id="49"/> -->
                 </if>
                 <if value="3">
                     <hide-module id="46"/>
-					<!-- <hide-module id="48"/>
-					<hide-module id="49"/> -->
+                    <!-- <hide-module id="48"/>
+                    <hide-module id="49"/> -->
                 </if>
             </rules>
         </actuator>
@@ -1137,11 +1133,11 @@
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PRESSURE</name>
         </sensor>
-		<sensor id="63" type="0x0B">
+        <sensor id="63" type="0x0B">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_ERROR</name>
         </sensor>
-		<sensor id="64" type="0x0B">
+        <sensor id="64" type="0x0B">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_IP_ADDRESS</name>
         </sensor>
