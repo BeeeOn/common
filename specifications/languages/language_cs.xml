@@ -84,17 +84,16 @@
 
 	<string name="mod_boiler_status">Stav kotle</string>
 	<values name="val_boiler_status">
-            <value name="undefined">Nezjištěno</value>
-            <value name="heating">Topení</value>
-            <value name="hot_water">Ohřev TUV</value>
-            <value name="failure">Porucha</value>
-            <value name="shutdown">Odstaveno</value>
+		<string name="undefined">Nezjištěno</string>
+		<string name="heating">Topení</string>
+		<string name="hot_water">Ohřev TUV</string>
+		<string name="failure">Porucha</string>
+		<string name="shutdown">Odstaveno</string>
 	</values>
 
-	<string name="mod_current_boiler_performance">Výkon kotla</string>
-	<string name="mod_current_boiler_pressure">Tlak v otopnej sústave</string>
-	<string name="mod_current_boiler_error">Poruchová signalizacia</string>
-	<string name="mod_current_boiler_pressure">Tlak měřený kotlem</string>
+	<string name="mod_current_boiler_performance">Výkon kotle</string>
+	<string name="mod_current_boiler_pressure">Tlak v topné soustavě</string>
+	<string name="mod_current_boiler_error">Poruchová signalizace</string>
 	<string name="mod_current_ip_address">IP adresa</string>
 	<string name="mod_current_outside_temperature">Venkovní teplota</string>
 	<string name="mod_average_outside_temperature">Venkovní teplota (průměr za 24 h)</string>
@@ -111,5 +110,5 @@
 	<string name="zone_2">Zóna 2</string>
 	<string name="zone_3">Zóna 3</string>
 	<string name="zone_4">Zóna 4</string>
-        <string name="boiler">Kotel</string>
+	<string name="boiler">Kotel</string>
 </language>
