@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class LanguagesParser {
 
-	public static List<Language> parseLanguages(String dirPath, String filenameStarts, String filenameEnds) {
+	public static List<Language> parseLanguages(String dirPath, final String filenameStarts, final String filenameEnds) {
 		List<Language> languages = new ArrayList<>();
 
 		File[] files = new File(dirPath).listFiles(new FilenameFilter() {
