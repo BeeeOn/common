@@ -1155,10 +1155,14 @@
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_ERROR</name>
         </sensor>
+	<!--
+	    Do not show IP address to the user. We can and probably
+	    we will do it later.
         <sensor id="64" type="0x0B">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_IP_ADDRESS</name>
         </sensor>
+	-->
     </modules>
 </device>
 
