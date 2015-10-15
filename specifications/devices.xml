@@ -452,6 +452,7 @@
                     <hide-module id="4"/>
                     <hide-module id="5"/>
                     <!--
+		       Currently unsupported, see below...
                     <hide-module id="6"/>
                     <hide-module id="7"/>
                     <hide-module id="8"/>
@@ -512,6 +513,16 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+		Currently unsupported:
+		* minimal water temperature: will be enabled when there
+		  is a way how to use it for boundary check on the client
+		  side
+		* maximal water temperature: same as previous
+		* use ekviterm thermostat: to be enabled when there is a
+		  GUI to set ekviterm curve
+		* slope of ekviterm curve: same as previous
+		* offset of ekviterm curve: same as previous
+
         <actuator id="6" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
@@ -616,6 +627,7 @@
                     <hide-module id="18"/>
                     <hide-module id="19"/>
                     <!--
+		       Currently unsupported, see zone 1...
                     <hide-module id="20"/>
                     <hide-module id="21"/>
                     <hide-module id="22"/>
@@ -676,6 +688,7 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+            Currently unsupported, see zone 1...
         <actuator id="20" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
@@ -780,6 +793,7 @@
                     <hide-module id="32"/>
                     <hide-module id="33"/>
                     <!--
+                        Currently unsupported, see zone 1...
                     <hide-module id="34"/>
                     <hide-module id="35"/>
                     <hide-module id="36"/>
@@ -844,6 +858,7 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+            Currently unsupported, see zone 1...
         <actuator id="34" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
@@ -947,7 +962,9 @@
                     <hide-module id="45"/>
                     <hide-module id="46"/>
                     <hide-module id="47"/>
-                    <!-- <hide-module id="48"/>
+                    <!--
+		        Currently unsupported, see zone 1...
+                    <hide-module id="48"/>
                     <hide-module id="49"/>
                     <hide-module id="50"/>
                     <hide-module id="51"/>
@@ -1006,6 +1023,7 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+            Currently unsupported, see zone 1...
         <actuator id="48" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
