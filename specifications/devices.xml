@@ -1111,8 +1111,8 @@
 <!-- ##################################ZONA 4################################### -->
 
         <sensor id="56" type="0x01">
-            <group>T:BOILER</group>
             <order>0</order>
+            <group>T:BOILER</group>
             <name>T:MOD_BOILER_STATUS</name>
             <values name="T:VAL_BOILER_STATUS">
                 <value id="0">T:UNDEFINED</value>
