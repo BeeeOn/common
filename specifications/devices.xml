@@ -1122,6 +1122,8 @@
                 <value id="4">T:SHUTDOWN</value>
             </values>
         </sensor>
+	<!--
+		No idea, to what register on VPT is this mapped
         <sensor id="57" type="0x01">
             <group>T:BOILER</group>
             <name>T:MOD_BOILER_MODE</name>
@@ -1131,6 +1133,7 @@
                 <value id="2">T:OFF</value>
             </values>
         </sensor>
+	-->
         <sensor id="58" type="0x02">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
