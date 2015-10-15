@@ -23,6 +23,7 @@
 	
 	<string name="dev_temperature_humidity">Senzor teploty a vlhkosti</string>
 	<string name="dev_regulator_vpt">Regulátor VPT</string>
+	<string name="dev_regulator_vpt_lan">Regulátor VPT LAN</string>
 	<string name="dev_internal_pressure">Senzor tlaku vzduchu</string>
 	<string name="dev_virtual_thn">TepVlhHluk</string>
 	<string name="dev_virtual_thn_x3">TepVlhHluk x3</string>
