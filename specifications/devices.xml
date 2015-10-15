@@ -430,8 +430,6 @@
 	</modules>
 </device>
 
-</devices>
-
 <device id="6" name="Regulator VPT LAN v1.0">
     <name>T:DEV_REGULATOR_VPT_LAN</name>
     <manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
@@ -453,34 +451,34 @@
                     <hide-module id="3"/>
                     <hide-module id="4"/>
                     <hide-module id="5"/>
-				<!--
+                    <!--
+		       Currently unsupported, see below...
                     <hide-module id="6"/>
                     <hide-module id="7"/>
                     <hide-module id="8"/>
                     <hide-module id="9"/>
                     <hide-module id="10"/>
-				-->
+                    -->
                     <hide-module id="11"/>
                     <hide-module id="12"/>
                     <hide-module id="13"/>
                 </if>
                 <if value="1">
-					<hide-module id="2"/>
+                    <hide-module id="2"/>
                     <hide-module id="4"/>
-					<!-- <hide-module id="6"/>
-					<hide-module id="7"/> -->
-
+                    <!-- <hide-module id="6"/>
+                    <hide-module id="7"/> -->
                 </if>
                 <if value="2">
-					<hide-module id="2"/>
+                    <hide-module id="2"/>
                     <hide-module id="4"/>
-					<!-- <hide-module id="6"/>
-					<hide-module id="7"/> -->
+                    <!-- <hide-module id="6"/>
+                    <hide-module id="7"/> -->
                 </if>
                 <if value="3">
                     <hide-module id="4"/>
-					<!-- <hide-module id="6"/>
-					<hide-module id="7"/> -->
+                    <!-- <hide-module id="6"/>
+                    <hide-module id="7"/> -->
                 </if>
             </rules>
         </actuator>
@@ -515,6 +513,16 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+		Currently unsupported:
+		* minimal water temperature: will be enabled when there
+		  is a way how to use it for boundary check on the client
+		  side
+		* maximal water temperature: same as previous
+		* use ekviterm thermostat: to be enabled when there is a
+		  GUI to set ekviterm curve
+		* slope of ekviterm curve: same as previous
+		* offset of ekviterm curve: same as previous
+
         <actuator id="6" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
@@ -549,7 +557,7 @@
         </actuator>
         <actuator id="9" type="0x0D">
             <group>T:ZONE_1</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
@@ -591,7 +599,7 @@
         </actuator>
         <actuator id="13" type="0x02">
             <group>T:ZONE_1</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
@@ -612,40 +620,40 @@
                 <value id="4">T:HOT_WATER</value>
             </values>
             <rules>
-				<if value="0">
+                <if value="0">
                     <hide-module id="15"/>
                     <hide-module id="16"/>
                     <hide-module id="17"/>
                     <hide-module id="18"/>
                     <hide-module id="19"/>
-				<!--
+                    <!--
+		       Currently unsupported, see zone 1...
                     <hide-module id="20"/>
                     <hide-module id="21"/>
                     <hide-module id="22"/>
                     <hide-module id="23"/>
                     <hide-module id="24"/>
-				-->
+                    -->
                     <hide-module id="25"/>
                     <hide-module id="26"/>
                     <hide-module id="27"/>
                 </if>
                 <if value="1">
-					<hide-module id="16"/>
+                    <hide-module id="16"/>
                     <hide-module id="18"/>
-					<!-- <hide-module id="20"/>
-					<hide-module id="21"/> -->
-
+                    <!-- <hide-module id="20"/>
+                    <hide-module id="21"/> -->
                 </if>
                 <if value="2">
-					<hide-module id="16"/>
+                    <hide-module id="16"/>
                     <hide-module id="18"/>
-					<!-- <hide-module id="20"/>
-					<hide-module id="21"/> -->
+                    <!-- <hide-module id="20"/>
+                    <hide-module id="21"/> -->
                 </if>
                 <if value="3">
                     <hide-module id="18"/>
-					<!-- <hide-module id="20"/>
-					<hide-module id="21"/> -->
+                    <!-- <hide-module id="20"/>
+                    <hide-module id="21"/> -->
                 </if>
             </rules>
         </actuator>
@@ -680,6 +688,7 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+            Currently unsupported, see zone 1...
         <actuator id="20" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
@@ -714,7 +723,7 @@
         </actuator>
         <actuator id="23" type="0x0D">
             <group>T:ZONE_2</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
@@ -756,7 +765,7 @@
         </actuator>
         <actuator id="27" type="0x02">
             <group>T:ZONE_2</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
@@ -777,44 +786,44 @@
                 <value id="4">T:HOT_WATER</value>
             </values>
             <rules>
-				<if value="0">
+                <if value="0">
                     <hide-module id="29"/>
                     <hide-module id="30"/>
                     <hide-module id="31"/>
                     <hide-module id="32"/>
                     <hide-module id="33"/>
-				<!--
+                    <!--
+                        Currently unsupported, see zone 1...
                     <hide-module id="34"/>
                     <hide-module id="35"/>
                     <hide-module id="36"/>
                     <hide-module id="37"/>
                     <hide-module id="38"/>
-				-->
+                    -->
                     <hide-module id="39"/>
                     <hide-module id="40"/>
                     <hide-module id="41"/>
                 </if>
                 <if value="1">
-					<hide-module id="30"/>
+                    <hide-module id="30"/>
                     <hide-module id="32"/>
-					<!--
-					<hide-module id="34"/>
-					<hide-module id="35"/>
-					-->
-
+                    <!--
+                    <hide-module id="34"/>
+                    <hide-module id="35"/>
+                    -->
                 </if>
                 <if value="2">
-					<hide-module id="30"/>
+                    <hide-module id="30"/>
                     <hide-module id="32"/>
-					<!--
-					<hide-module id="34"/>
-					<hide-module id="35"/>
-					-->
+                    <!--
+                    <hide-module id="34"/>
+                    <hide-module id="35"/>
+                    -->
                 </if>
                 <if value="3">
                     <hide-module id="32"/>
-					<!-- <hide-module id="34"/>
-					<hide-module id="35"/> -->
+                    <!-- <hide-module id="34"/>
+                    <hide-module id="35"/> -->
                 </if>
             </rules>
         </actuator>
@@ -849,6 +858,7 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+            Currently unsupported, see zone 1...
         <actuator id="34" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
@@ -883,7 +893,7 @@
         </actuator>
         <actuator id="37" type="0x0D">
             <group>T:ZONE_3</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
@@ -925,7 +935,7 @@
         </actuator>
         <actuator id="41" type="0x02">
             <group>T:ZONE_3</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
@@ -952,7 +962,9 @@
                     <hide-module id="45"/>
                     <hide-module id="46"/>
                     <hide-module id="47"/>
-                    <!-- <hide-module id="48"/>
+                    <!--
+		        Currently unsupported, see zone 1...
+                    <hide-module id="48"/>
                     <hide-module id="49"/>
                     <hide-module id="50"/>
                     <hide-module id="51"/>
@@ -961,23 +973,22 @@
                     <hide-module id="54"/>
                     <hide-module id="55"/>
                 </if>
-				<if value="1">
-					<hide-module id="44"/>
+                <if value="1">
+                    <hide-module id="44"/>
                     <hide-module id="46"/>
-					<!-- <hide-module id="48"/>
-					<hide-module id="49"/> -->
-
+                    <!-- <hide-module id="48"/>
+                    <hide-module id="49"/> -->
                 </if>
                 <if value="2">
-					<hide-module id="44"/>
+                    <hide-module id="44"/>
                     <hide-module id="46"/>
-					<!-- <hide-module id="48"/>
-					<hide-module id="49"/>	-->
+                    <!-- <hide-module id="48"/>
+                    <hide-module id="49"/> -->
                 </if>
                 <if value="3">
                     <hide-module id="46"/>
-					<!-- <hide-module id="48"/>
-					<hide-module id="49"/> -->
+                    <!-- <hide-module id="48"/>
+                    <hide-module id="49"/> -->
                 </if>
             </rules>
         </actuator>
@@ -1012,6 +1023,7 @@
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
         </sensor>
 <!--
+            Currently unsupported, see zone 1...
         <actuator id="48" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_MINIMAL_WATER_TEMPERATURE</name>
@@ -1046,7 +1058,7 @@
         </actuator>
         <actuator id="51" type="0x0D">
             <group>T:ZONE_4</group>
-            <name>T:MOD_SCOPE_EKVITERM_CURVE</name>
+            <name>T:MOD_SLOPE_EKVITERM_CURVE</name>
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
@@ -1088,7 +1100,7 @@
         </actuator>
         <actuator id="55" type="0x02">
             <group>T:ZONE_4</group>
-            <name>T:FROST_PROTECTION_TRESHOLF</name>
+            <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
@@ -1099,8 +1111,8 @@
 <!-- ##################################ZONA 4################################### -->
 
         <sensor id="56" type="0x01">
-            <group>T:BOILER</group>
             <order>0</order>
+            <group>T:BOILER</group>
             <name>T:MOD_BOILER_STATUS</name>
             <values name="T:VAL_BOILER_STATUS">
                 <value id="0">T:UNDEFINED</value>
@@ -1110,6 +1122,8 @@
                 <value id="4">T:SHUTDOWN</value>
             </values>
         </sensor>
+	<!--
+		No idea, to what register on VPT is this mapped
         <sensor id="57" type="0x01">
             <group>T:BOILER</group>
             <name>T:MOD_BOILER_MODE</name>
@@ -1119,6 +1133,7 @@
                 <value id="2">T:OFF</value>
             </values>
         </sensor>
+	-->
         <sensor id="58" type="0x02">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -1139,13 +1154,19 @@
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PRESSURE</name>
         </sensor>
-		<sensor id="63" type="0x0B">
+        <sensor id="63" type="0x0B">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_ERROR</name>
         </sensor>
-		<sensor id="64" type="0x0B">
+	<!--
+	    Do not show IP address to the user. We can and probably
+	    we will do it later.
+        <sensor id="64" type="0x0B">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_IP_ADDRESS</name>
         </sensor>
+	-->
     </modules>
 </device>
+
+</devices>
