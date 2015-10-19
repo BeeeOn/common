@@ -506,7 +506,7 @@
         </sensor>
         <actuator id="4" type="0x02">
             <group>T:ZONE_1</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
@@ -690,7 +690,7 @@
         </sensor>
         <actuator id="18" type="0x02">
             <group>T:ZONE_2</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
@@ -869,7 +869,7 @@
         </sensor>
         <actuator id="32" type="0x02">
             <group>T:ZONE_3</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
@@ -1043,7 +1043,7 @@
         </sensor>
         <actuator id="46" type="0x02">
             <group>T:ZONE_4</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
