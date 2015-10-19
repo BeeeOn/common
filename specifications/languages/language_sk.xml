@@ -30,7 +30,7 @@
 	<string name="dev_presence_monitor">Sledovanie prítomnosti</string>
 	
 	<string name="mod_room_temperature">Teplota miestnosti</string>
-	<string name="mod_outside_temperature">Teplota vonkajšia</string>
+	<string name="mod_outside_temperature">Vonkajšia teplota</string>
 	<string name="mod_room_humidity">Vlhkosť v miestnosti</string>
 	
 	<string name="mod_boiler_status">Stav kotla</string>
@@ -68,7 +68,7 @@
 	<string name="mod_minimal_water_temperature">Minimálna teplota topnej vody</string>
 	<string name="mod_maximal_water_temperature">Maximálna teplota topnej vody</string>
 
-	<string name="mod_use_ekviterm_thermostat">Použít ekvitermní regulaci v izbovom termostate</string>
+	<string name="mod_use_ekviterm_thermostat">Použít ekvitermickej regulácie v izbovom termostate</string>
 	<values name="val_use_ekviterm_thermostat">
 		<string name="off">Vypnuto</string>
 		<string name="on">Zapnuto</string>
@@ -86,10 +86,10 @@
 
 	<string name="mod_current_boiler_performance">Výkon kotla</string>
 	<string name="mod_current_boiler_pressure">Tlak v otopnej sústave</string>
-	<string name="mod_current_boiler_error">Poruchová signalizacia</string>
+	<string name="mod_current_boiler_error">Poruchová signalizácia</string>
 	<string name="mod_current_ip_address">IP adresa</string>
-	<string name="mod_current_outside_temperature">Venkovní teplota</string>
-	<string name="mod_average_outside_temperature">Venkovní teplota (průměr za 24 h)</string>
+	<string name="mod_current_outside_temperature">Vonkajšia teplota</string>
+	<string name="mod_average_outside_temperature">Vonkajšia teplota (priemer za 24 h)</string>
 
 	<string name="mod_presence_status">Stav prítomnosti</string>
 	<values name="val_presence_status">
@@ -103,5 +103,5 @@
 	<string name="zone_2">Zóna 2</string>
 	<string name="zone_3">Zóna 3</string>
 	<string name="zone_4">Zóna 4</string>
-	<string name="boiler">Boiler</string>
+	<string name="boiler">Kotol</string>
 </language>
