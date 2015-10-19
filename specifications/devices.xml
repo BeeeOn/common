@@ -465,7 +465,6 @@
                     <hide-module id="65"/>
                 </if>
                 <if value="1">
-                    <hide-module id="2"/>
                     <hide-module id="4"/>
                     <!-- <hide-module id="6"/>
                     <hide-module id="7"/> -->
@@ -477,11 +476,13 @@
                     <hide-module id="7"/> -->
                 </if>
                 <if value="3">
+                    <hide-module id="2"/>
                     <hide-module id="4"/>
                     <!-- <hide-module id="6"/>
                     <hide-module id="7"/> -->
                 </if>
                 <if value="4">
+                    <hide-module id="2"/>
                     <hide-module id="65"/>
                 </if>
             </rules>
@@ -648,7 +649,6 @@
                     <hide-module id="66"/>
                 </if>
                 <if value="1">
-                    <hide-module id="16"/>
                     <hide-module id="18"/>
                     <!-- <hide-module id="20"/>
                     <hide-module id="21"/> -->
@@ -660,11 +660,13 @@
                     <hide-module id="21"/> -->
                 </if>
                 <if value="3">
+                    <hide-module id="16"/>
                     <hide-module id="18"/>
                     <!-- <hide-module id="20"/>
                     <hide-module id="21"/> -->
                 </if>
                 <if value="4">
+                    <hide-module id="16"/>
                     <hide-module id="66"/>
                 </if>
             </rules>
@@ -822,7 +824,6 @@
                     <hide-module id="67"/>
                 </if>
                 <if value="1">
-                    <hide-module id="30"/>
                     <hide-module id="32"/>
                     <!--
                     <hide-module id="34"/>
@@ -838,11 +839,13 @@
                     -->
                 </if>
                 <if value="3">
+                    <hide-module id="30"/>
                     <hide-module id="32"/>
                     <!-- <hide-module id="34"/>
                     <hide-module id="35"/> -->
                 </if>
                 <if value="4">
+                    <hide-module id="30"/>
                     <hide-module id="67"/>
                 </if>
             </rules>
@@ -999,7 +1002,6 @@
                     <hide-module id="68"/>
                 </if>
                 <if value="1">
-                    <hide-module id="44"/>
                     <hide-module id="46"/>
                     <!-- <hide-module id="48"/>
                     <hide-module id="49"/> -->
@@ -1011,11 +1013,13 @@
                     <hide-module id="49"/> -->
                 </if>
                 <if value="3">
+                    <hide-module id="44"/>
                     <hide-module id="46"/>
                     <!-- <hide-module id="48"/>
                     <hide-module id="49"/> -->
                 </if>
                 <if value="4">
+                    <hide-module id="44"/>
                     <hide-module id="68"/>
                 </if>
             </rules>
