@@ -462,6 +462,7 @@
                     <hide-module id="11"/>
                     <hide-module id="12"/>
                     <hide-module id="13"/>
+                    <hide-module id="65"/>
                 </if>
                 <if value="1">
                     <hide-module id="2"/>
@@ -479,6 +480,9 @@
                     <hide-module id="4"/>
                     <!-- <hide-module id="6"/>
                     <hide-module id="7"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="65"/>
                 </if>
             </rules>
         </actuator>
@@ -508,6 +512,10 @@
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="65" type="0x02">
+            <group>T:ZONE_1</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="5" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -637,6 +645,7 @@
                     <hide-module id="25"/>
                     <hide-module id="26"/>
                     <hide-module id="27"/>
+                    <hide-module id="66"/>
                 </if>
                 <if value="1">
                     <hide-module id="16"/>
@@ -654,6 +663,9 @@
                     <hide-module id="18"/>
                     <!-- <hide-module id="20"/>
                     <hide-module id="21"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="66"/>
                 </if>
             </rules>
         </actuator>
@@ -683,6 +695,10 @@
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="66" type="0x02">
+            <group>T:ZONE_2</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="19" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -803,6 +819,7 @@
                     <hide-module id="39"/>
                     <hide-module id="40"/>
                     <hide-module id="41"/>
+                    <hide-module id="67"/>
                 </if>
                 <if value="1">
                     <hide-module id="30"/>
@@ -824,6 +841,9 @@
                     <hide-module id="32"/>
                     <!-- <hide-module id="34"/>
                     <hide-module id="35"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="67"/>
                 </if>
             </rules>
         </actuator>
@@ -853,6 +873,10 @@
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="67" type="0x02">
+            <group>T:ZONE_3</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="33" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -972,6 +996,7 @@
                     <hide-module id="53"/>
                     <hide-module id="54"/>
                     <hide-module id="55"/>
+                    <hide-module id="68"/>
                 </if>
                 <if value="1">
                     <hide-module id="44"/>
@@ -989,6 +1014,9 @@
                     <hide-module id="46"/>
                     <!-- <hide-module id="48"/>
                     <hide-module id="49"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="68"/>
                 </if>
             </rules>
         </actuator>
@@ -1018,6 +1046,10 @@
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="68" type="0x02">
+            <group>T:ZONE_4</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="47" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
