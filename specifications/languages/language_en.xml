@@ -61,6 +61,8 @@
 	<string name="mod_requested_room_temperature">Requested room temperature</string>
 	<string name="mod_current_room_temperature">Current room temperature</string>
 	<string name="mod_requested_water_temperature">Requested water temperature</string>
+	<string name="mod_requested_water_temperature_read">Requested water temperature</string>
+	<string name="mod_requested_water_temperature_set">Requested water temperature</string>
 	<string name="mod_current_water_temperature">Current water temperature</string>
 
 	<string name="mod_minimal_water_temperature">Minimal water temperature</string>

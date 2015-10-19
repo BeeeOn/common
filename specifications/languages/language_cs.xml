@@ -61,6 +61,8 @@
 	<string name="mod_requested_room_temperature">Žádaná teplota místnosti</string>
 	<string name="mod_current_room_temperature">Aktuální teplota místnosti</string>
 	<string name="mod_requested_water_temperature">Žádaná teplota vody</string>
+        <string name="mod_requested_water_temperature_read">Žádaná teplota vody</string>
+        <string name="mod_requested_water_temperature_set">Žádaná teplota vody</string>
 	<string name="mod_current_water_temperature">Aktuální teplota vody</string>
 
 	<string name="mod_minimal_water_temperature">Minimální teplota topné vody</string>
