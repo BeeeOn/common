@@ -84,15 +84,6 @@
 	<string name="frost_protection_water_temperature">Water temperature when frost protection is active</string>
 	<string name="frost_protection_threshold">Temperature threshold to activate frost protection</string>
 
-	<string name="mod_boiler_status">Boiler status</string>
-	<values name="val_boiler_status">
-		<string name="undefined">Unknown</string>
-		<string name="heating">Heating</string>
-		<string name="hot_water">Hot water</string>
-		<string name="failure">Failure</string>
-		<string name="shutdown">Shutdown</string>
-	</values>
-
 	<string name="mod_current_boiler_performance">Boiler performance</string>
 	<string name="mod_current_boiler_pressure">Boiler pressure</string>
 	<string name="mod_current_boiler_error">Boiler error</string>

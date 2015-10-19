@@ -84,15 +84,6 @@
 	<string name="frost_protection_water_temperature">Teplota topnej vody pri protimrazovej ochrane</string>
 	<string name="frost_protection_threshold">Prah protimrazovej ochrany</string>
 
-	<string name="mod_boiler_status">Boiler status</string>
-	<values name="val_boiler_status">
-		<string name="undefined">Nezjištěno</string>
-		<string name="heating">Topení</string>
-		<string name="hot_water">Ohřev TUV</string>
-		<string name="failure">Porucha</string>
-		<string name="shutdown">Odstaveno</string>
-	</values>
-
 	<string name="mod_current_boiler_performance">Výkon kotla</string>
 	<string name="mod_current_boiler_pressure">Tlak v otopnej sústave</string>
 	<string name="mod_current_boiler_error">Poruchová signalizacia</string>
