@@ -1,0 +1,1 @@
+SELECT EXISTS (SELECT 1 FROM users WHERE mail = 'test@test.cz' AND password = 'testPASS');

@@ -1,0 +1,4 @@
+<response version="1.0.0" ns="locations" type="getall" result="data">
+<location id="1000000000" type="1" name="loc1"/>
+<location id="1000000001" type="2" name="loc2"/>
+</response>

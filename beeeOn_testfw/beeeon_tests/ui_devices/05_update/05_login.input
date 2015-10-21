@@ -1,0 +1,4 @@
+<request version="1.0.0" ns="accounts" type="login">
+  <provider name="beeeon" email="test@beeeon.cz" password="beeeonPass1" />
+  <phone name="Samsung Galaxy"/>
+</request>

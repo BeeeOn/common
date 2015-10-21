@@ -1,0 +1,3 @@
+<request version="1.0.0" ns="gateusers" type="invite" sessionid="testSessiontest@beeeon.cz" gateid="100">
+<user email="test2@beeeon.cz" permission="user"/>
+</request>

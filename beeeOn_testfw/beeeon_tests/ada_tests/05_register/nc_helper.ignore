@@ -1,0 +1,24 @@
+
+<adapter_server adapter_id="0x1000000" fw_version="v1.2-dirty" protocol_version="1.0" state="register" time="1444906351"> </adapter_server>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<adapter_server adapter_id="0x3bd2c435a504b" fw_version="v1.1-36-g3638c00-dirty" protocol_version="1.0" state="data" time="1445259710">
+        <device device_id="0x02" euid="0xa2ecf1fe">
+                <values count="1">
+                        <value module_id="0x00">991.41</value>
+                </values>
+        </device>
+</adapter_server>
+
+
+
+echo -n '<adapter_server adapter_id="0x1000000" fw_version="v1.2-dirty" protocol_version="1.0" state="register" time="1444906351"> </adapter_server>X' | tr X '\000' | nc --ssl 0.0.0.0 7080^C
+
+
+echo -n '<adapter_server adapter_id="0x1000000" fw_version="v1.2-dirty" protocol_version="1.0" state="data" time="1444906441">        <device device_id="0x02" euid="0xa2ecf1fe">
+                <values count="1">
+                        <value module_id="0x00">1100</value>
+                </values>
+        </device>
+</adapter_server>
+X' | tr X '\000' | nc --ssl 0.0.0.0 7080

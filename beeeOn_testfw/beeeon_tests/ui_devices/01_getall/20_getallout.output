@@ -1,0 +1,8 @@
+<response ns="devices" type="getall" version="1.0.0" result="data">
+<device gateid="100" euid="101" involved="10000" locationid="1000000000" name="dev101" time="10010" type="0">
+<module id="0" value="100"></module><module id="1" value="50"></module>
+</device>
+<device gateid="100" euid="201" involved="10001" locationid="1000000000" name="dev201" time="10011" type="0">
+<module id="0" value="110"></module><module id="1" value="102"></module>
+</device>
+</response>

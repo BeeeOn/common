@@ -1,0 +1,3 @@
+<response version="1.0.0" ns="gates" type="get" result="data">
+<gate id="100" permission="owner" name="home_one" devices="0" users="2" ip="-1" version="-1" timezone="1" owner=" name"/>
+</response>

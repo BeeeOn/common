@@ -1,0 +1,3 @@
+<request version="1.0.0" ns="accounts" type="register">
+  <provider name="beeeon" email="test2@test2.cz" password="test2PASS" />
+</request>

@@ -1,0 +1,4 @@
+<response version="1.0.0" ns="gateusers" type="getall" result="data">
+<user email="test@beeeon.cz" id="UNKNOWN_ATTRIBUTE" permission="owner" name="tester" surname="dummy" gender="male"></user>
+<user email="test2@beeeon.cz" id="UNKNOWN_ATTRIBUTE" permission="admin" name="helper" surname="dum" gender="female"></user>
+</response>

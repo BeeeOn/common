@@ -1,0 +1,1 @@
+DELETE FROM users WHERE mail='test@beeeon.cz';

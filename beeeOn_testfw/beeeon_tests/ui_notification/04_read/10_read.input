@@ -1,0 +1,4 @@
+<request version="1.0.0" ns="notifications" type="read" sessionid="testSessiontest@beeeon.cz" >
+<notification id="1000000000" />
+<notification id="1000000001" />
+</request>

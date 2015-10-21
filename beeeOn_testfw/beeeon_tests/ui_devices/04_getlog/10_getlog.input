@@ -1,0 +1,3 @@
+<request version="1.0.0" ns="devices" type="getlog" sessionid="testSessiontest@beeeon.cz" gateid="100">
+<logs deviceeuid="201" moduleid="1" from="0" to="1000" ftype="avg" interval="100" />
+</request>

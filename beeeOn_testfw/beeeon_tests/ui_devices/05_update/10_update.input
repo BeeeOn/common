@@ -1,0 +1,3 @@
+<request version="1.0.0" ns="devices" type="update" sessionid="testSessiontest@beeeon.cz" gateid="100">
+<device euid="201" init="1" locationid="null" name="newDevice" />
+</request>

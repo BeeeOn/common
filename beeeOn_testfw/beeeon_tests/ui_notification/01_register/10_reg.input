@@ -1,0 +1,3 @@
+<request version="1.0.0" ns="notifications" type="registerservice" sessionid="testSessiontest@beeeon.cz" >
+<provider gcmid="12344" />
+</request>

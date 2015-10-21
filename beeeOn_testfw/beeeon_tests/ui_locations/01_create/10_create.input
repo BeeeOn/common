@@ -1,0 +1,3 @@
+<request version="1.0.0" ns="locations" type="create" sessionid="testSessiontest@beeeon.cz" gateid="100">
+<location type="2" name="newLoc" />
+</request>

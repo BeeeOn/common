@@ -1,0 +1,4 @@
+<response version="1.0.0" ns="gates" type="getall" result="data">
+<gate id="100" name="home_one" permission="admin" timezone="1"/>
+<gate id="200" name="home_two" permission="admin" timezone="-1"/>
+</response>

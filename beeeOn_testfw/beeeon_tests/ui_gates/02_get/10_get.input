@@ -1,0 +1,3 @@
+<request version="1.0.0" ns="gates" type="get" sessionid="testSessiontest@beeeon.cz">
+<gate id="100" />
+</request>

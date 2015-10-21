@@ -1,0 +1,1 @@
+DELETE FROM gateway WHERE gateway_id = x'022225'::integer;

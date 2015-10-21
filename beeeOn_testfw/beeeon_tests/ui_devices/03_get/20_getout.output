@@ -1,0 +1,6 @@
+<response ns="devices" type="get" version="1.0.0" result="data">
+<device gateid="100" euid="201" involved="10001" locationid="1000000000" name="dev201" time="10011" type="0">
+<module id="0" value="110"></module>
+<module id="1" value="102"></module>
+</device>
+</response>

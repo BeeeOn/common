@@ -1,0 +1,3 @@
+<response version="1.0.0" ns="locations" type="create" result="data">
+<location id="UNKNOWN_ATTRIBUTE" type="UNKNOWN_ATTRIBUTE" name="UNKNOWN_ATTRIBUTE" />
+</response>

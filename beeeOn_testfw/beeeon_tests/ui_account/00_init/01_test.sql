@@ -1,0 +1,1 @@
+select gateway_id from gateway where gateway_id < 3;
