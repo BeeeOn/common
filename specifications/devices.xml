@@ -603,7 +603,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="13" type="0x02">
@@ -612,7 +612,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
@@ -778,7 +778,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="27" type="0x02">
@@ -787,7 +787,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
@@ -957,7 +957,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="41" type="0x02">
@@ -966,7 +966,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
@@ -1131,7 +1131,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="55" type="0x02">
@@ -1140,7 +1140,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
