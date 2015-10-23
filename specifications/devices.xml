@@ -553,7 +553,7 @@
         <actuator id="8" type="0x01">
             <group>T:ZONE_1</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -586,7 +586,7 @@
         <actuator id="11" type="0x01">
             <group>T:ZONE_1</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="enum">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -728,7 +728,7 @@
         <actuator id="22" type="0x01">
             <group>T:ZONE_2</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -761,7 +761,7 @@
         <actuator id="25" type="0x01">
             <group>T:ZONE_2</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -907,7 +907,7 @@
         <actuator id="36" type="0x01">
             <group>T:ZONE_3</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -940,7 +940,7 @@
         <actuator id="39" type="0x01">
             <group>T:ZONE_3</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -1081,7 +1081,7 @@
         <actuator id="50" type="0x01">
             <group>T:ZONE_4</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -1114,7 +1114,7 @@
         <actuator id="53" type="0x01">
             <group>T:ZONE_4</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
