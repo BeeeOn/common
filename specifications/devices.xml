@@ -1179,7 +1179,7 @@
             <group>T:BOILER</group>
             <name>T:MOD_AVERAGE_OUTSIDE_TEMPERATURE</name>
         </sensor>
-        <sensor id="61" type="0x02">
+        <sensor id="61" type="0x03">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PERFORMANCE</name>
         </sensor>
