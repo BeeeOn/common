@@ -41,7 +41,14 @@
 		<string name="failure">Porucha</string>
 		<string name="shutdown">Odstavené</string>
 	</values>
-	
+
+	<string name="mod_boiler_mode">Režim kotla</string>
+	<values name="val_boiler_mode">
+		<string name="undefined">Nezistený</string>
+		<string name="on">Zapnutý</string>
+		<string name="off">Vypnutý</string>
+	</values>
+
 	<string name="mod_boiler_operation_type">Typ prevádzky</string>
 	<values name="val_boiler_operation_type">
 		<string name="off">Vypnuté</string>
