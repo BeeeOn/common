@@ -35,7 +35,7 @@
 	
 	<string name="mod_boiler_status">Stav kotla</string>
 	<values name="val_boiler_status">
-		<string name="undefined">Nezistené</string>
+		<string name="undefined">Nezistený</string>
 		<string name="heating">Vyhrievanie</string>
 		<string name="hot_water">Ohrev TUV</string>
 		<string name="failure">Porucha</string>
@@ -77,16 +77,16 @@
 
 	<string name="mod_use_ekviterm_thermostat">Použít ekvitermickej regulácie v izbovom termostate</string>
 	<values name="val_use_ekviterm_thermostat">
-		<string name="off">Vypnuto</string>
-		<string name="on">Zapnuto</string>
+		<string name="off">Vypnute</string>
+		<string name="on">Zapnute</string>
 	</values>
 	<string name="mod_slope_ekviterm_curve">Sklon ekvitermickej krivky</string>
 	<string name="mod_offset_ekviterm_curve">Posun ekvitermickej krivky</string>
 
 	<string name="frost_protection">Protimrazová ochrana</string>
 	<values name="val_frost_protection">
-		<string name="off">Vypnuto</string>
-		<string name="on">Zapnuto</string>
+		<string name="off">Vypnuta</string>
+		<string name="on">Zapnuta</string>
 	</values>
 	<string name="frost_protection_water_temperature">Teplota topnej vody pri protimrazovej ochrane</string>
 	<string name="frost_protection_threshold">Prah protimrazovej ochrany</string>
