@@ -462,9 +462,9 @@
                     <hide-module id="11"/>
                     <hide-module id="12"/>
                     <hide-module id="13"/>
+                    <hide-module id="65"/>
                 </if>
                 <if value="1">
-                    <hide-module id="2"/>
                     <hide-module id="4"/>
                     <!-- <hide-module id="6"/>
                     <hide-module id="7"/> -->
@@ -476,9 +476,14 @@
                     <hide-module id="7"/> -->
                 </if>
                 <if value="3">
+                    <hide-module id="2"/>
                     <hide-module id="4"/>
                     <!-- <hide-module id="6"/>
                     <hide-module id="7"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="2"/>
+                    <hide-module id="65"/>
                 </if>
             </rules>
         </actuator>
@@ -501,13 +506,17 @@
         </sensor>
         <actuator id="4" type="0x02">
             <group>T:ZONE_1</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="65" type="0x02">
+            <group>T:ZONE_1</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="5" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -544,7 +553,7 @@
         <actuator id="8" type="0x01">
             <group>T:ZONE_1</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -577,7 +586,7 @@
         <actuator id="11" type="0x01">
             <group>T:ZONE_1</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="enum">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -594,7 +603,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="13" type="0x02">
@@ -603,7 +612,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
@@ -637,9 +646,9 @@
                     <hide-module id="25"/>
                     <hide-module id="26"/>
                     <hide-module id="27"/>
+                    <hide-module id="66"/>
                 </if>
                 <if value="1">
-                    <hide-module id="16"/>
                     <hide-module id="18"/>
                     <!-- <hide-module id="20"/>
                     <hide-module id="21"/> -->
@@ -651,9 +660,14 @@
                     <hide-module id="21"/> -->
                 </if>
                 <if value="3">
+                    <hide-module id="16"/>
                     <hide-module id="18"/>
                     <!-- <hide-module id="20"/>
                     <hide-module id="21"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="16"/>
+                    <hide-module id="66"/>
                 </if>
             </rules>
         </actuator>
@@ -676,13 +690,17 @@
         </sensor>
         <actuator id="18" type="0x02">
             <group>T:ZONE_2</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="66" type="0x02">
+            <group>T:ZONE_2</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="19" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -710,7 +728,7 @@
         <actuator id="22" type="0x01">
             <group>T:ZONE_2</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -743,7 +761,7 @@
         <actuator id="25" type="0x01">
             <group>T:ZONE_2</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -760,7 +778,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="27" type="0x02">
@@ -769,7 +787,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
@@ -803,9 +821,9 @@
                     <hide-module id="39"/>
                     <hide-module id="40"/>
                     <hide-module id="41"/>
+                    <hide-module id="67"/>
                 </if>
                 <if value="1">
-                    <hide-module id="30"/>
                     <hide-module id="32"/>
                     <!--
                     <hide-module id="34"/>
@@ -821,9 +839,14 @@
                     -->
                 </if>
                 <if value="3">
+                    <hide-module id="30"/>
                     <hide-module id="32"/>
                     <!-- <hide-module id="34"/>
                     <hide-module id="35"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="30"/>
+                    <hide-module id="67"/>
                 </if>
             </rules>
         </actuator>
@@ -846,13 +869,17 @@
         </sensor>
         <actuator id="32" type="0x02">
             <group>T:ZONE_3</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="67" type="0x02">
+            <group>T:ZONE_3</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="33" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -880,7 +907,7 @@
         <actuator id="36" type="0x01">
             <group>T:ZONE_3</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -913,7 +940,7 @@
         <actuator id="39" type="0x01">
             <group>T:ZONE_3</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -930,7 +957,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="41" type="0x02">
@@ -939,7 +966,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
@@ -972,9 +999,9 @@
                     <hide-module id="53"/>
                     <hide-module id="54"/>
                     <hide-module id="55"/>
+                    <hide-module id="68"/>
                 </if>
                 <if value="1">
-                    <hide-module id="44"/>
                     <hide-module id="46"/>
                     <!-- <hide-module id="48"/>
                     <hide-module id="49"/> -->
@@ -986,9 +1013,14 @@
                     <hide-module id="49"/> -->
                 </if>
                 <if value="3">
+                    <hide-module id="44"/>
                     <hide-module id="46"/>
                     <!-- <hide-module id="48"/>
                     <hide-module id="49"/> -->
+                </if>
+                <if value="4">
+                    <hide-module id="44"/>
+                    <hide-module id="68"/>
                 </if>
             </rules>
         </actuator>
@@ -1011,13 +1043,17 @@
         </sensor>
         <actuator id="46" type="0x02">
             <group>T:ZONE_4</group>
-            <name>T:MOD_REQUESTED_WATER_TEMPERATURE</name>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
                 <granularity>1</granularity>
             </constraints>
         </actuator>
+        <sensor id="68" type="0x02">
+            <group>T:ZONE_4</group>
+            <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+        </sensor>
         <sensor id="47" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -1045,7 +1081,7 @@
         <actuator id="50" type="0x01">
             <group>T:ZONE_4</group>
             <name>T:MOD_USE_EKVITERM_THERMOSTAT</name>
-            <values name="T:VAL_USE_EKVITERM_THERMOSTAT">
+            <values name="T:VAL_USE_EKVITERM_THERMOSTAT" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -1078,7 +1114,7 @@
         <actuator id="53" type="0x01">
             <group>T:ZONE_4</group>
             <name>T:FROST_PROTECTION</name>
-            <values name="T:VAL_FROST_PROTECTION">
+            <values name="T:VAL_FROST_PROTECTION" type="switch">
                 <value id="0">T:OFF</value>
                 <value id="1">T:ON</value>
             </values>
@@ -1095,7 +1131,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
         <actuator id="55" type="0x02">
@@ -1104,11 +1140,11 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>0.5</granularity>
+                <granularity>1</granularity>
             </constraints>
         </actuator>
 
-<!-- ##################################ZONA 4################################### -->
+<!-- ##################################BOILER################################## -->
 
         <sensor id="56" type="0x01">
             <order>0</order>
@@ -1122,8 +1158,6 @@
                 <value id="4">T:SHUTDOWN</value>
             </values>
         </sensor>
-	<!--
-		No idea, to what register on VPT is this mapped
         <sensor id="57" type="0x01">
             <group>T:BOILER</group>
             <name>T:MOD_BOILER_MODE</name>
@@ -1133,7 +1167,6 @@
                 <value id="2">T:OFF</value>
             </values>
         </sensor>
-	-->
         <sensor id="58" type="0x02">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
@@ -1146,7 +1179,7 @@
             <group>T:BOILER</group>
             <name>T:MOD_AVERAGE_OUTSIDE_TEMPERATURE</name>
         </sensor>
-        <sensor id="61" type="0x02">
+        <sensor id="61" type="0x03">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PERFORMANCE</name>
         </sensor>

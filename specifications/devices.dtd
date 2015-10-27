@@ -70,6 +70,7 @@
 
 <!ATTLIST values
         name            CDATA   #REQUIRED
+        type            (enum|switch) "enum"
         >
 
 <!ATTLIST value

@@ -41,7 +41,14 @@
 		<string name="failure">Porucha</string>
 		<string name="shutdown">Odstaveno</string>
 	</values>
-	
+
+	<string name="mod_boiler_mode">Režim kotle</string>
+        <values name="val_boiler_mode">
+                <string name="undefined">Nezjištěno</string>
+                <string name="on">Zapnuto</string>
+                <string name="off">Vypnuto</string>
+        </values>
+
 	<string name="mod_boiler_operation_type">Typ provozu</string>
 	<values name="val_boiler_operation_type">
 		<string name="off">Vypnuto</string>
@@ -61,6 +68,8 @@
 	<string name="mod_requested_room_temperature">Žádaná teplota místnosti</string>
 	<string name="mod_current_room_temperature">Aktuální teplota místnosti</string>
 	<string name="mod_requested_water_temperature">Žádaná teplota vody</string>
+        <string name="mod_requested_water_temperature_read">Žádaná teplota vody</string>
+        <string name="mod_requested_water_temperature_set">Žádaná teplota vody</string>
 	<string name="mod_current_water_temperature">Aktuální teplota vody</string>
 
 	<string name="mod_minimal_water_temperature">Minimální teplota topné vody</string>
@@ -81,15 +90,6 @@
 	</values>
 	<string name="frost_protection_water_temperature">Teplota topné vody při protimrazové ochraně</string>
 	<string name="frost_protection_threshold">Práh protimrazové ochrany</string>
-
-	<string name="mod_boiler_status">Stav kotle</string>
-	<values name="val_boiler_status">
-		<string name="undefined">Nezjištěno</string>
-		<string name="heating">Topení</string>
-		<string name="hot_water">Ohřev TUV</string>
-		<string name="failure">Porucha</string>
-		<string name="shutdown">Odstaveno</string>
-	</values>
 
 	<string name="mod_current_boiler_performance">Výkon kotle</string>
 	<string name="mod_current_boiler_pressure">Tlak v topné soustavě</string>
