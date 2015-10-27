@@ -6,6 +6,7 @@ import sys
 import glob
 import os
 import StringIO
+import time
 #xml + canonical xml
 import lxml.etree as ET
 import shutil

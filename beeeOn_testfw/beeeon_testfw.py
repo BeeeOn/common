@@ -49,9 +49,9 @@ def main():
     beeeOnTestRunner = beeeon_test_runner.testRunner(args.filter)
 
     beeeOnTestRunner.setBeeeOnSegmentTestfw(base_test_handler.BaseTestHandler())
-    if("ui" in args.modules):
+    if("ui" in args.segments):
         beeeOnTestRunner.setBeeeOnSegmentTestfw(ui_test_handler.UiTestHandler())
-    if("ada" in args.modules):
+    if("ada" in args.segments):
         beeeOnTestRunner.setBeeeOnSegmentTestfw(ada_test_handler.AdaTestHandler())
 
     '''
