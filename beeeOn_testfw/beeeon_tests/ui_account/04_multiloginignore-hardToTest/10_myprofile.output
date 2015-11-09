@@ -1,0 +1,7 @@
+<response version="1.0.0" ns="accounts" type="getmyprofile" result="data">
+<user id="UNKNOWN_ATTRIBUTE" name="tester" surname="dummy" gender="male" email="test@beeeon.cz" imgurl="imgtest.beeeon.cz"/>
+<providers>
+<provider name="google" id="google"/>
+<provider name="facebook" id="face"/>
+</providers>
+</response>

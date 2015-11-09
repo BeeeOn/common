@@ -35,6 +35,10 @@ class testRunner:
 
     def runSingleTestPart(self, testPartFile):
         testFile = os.path.basename(testPartFile)
+        if("." not in testFile):
+            print utils.failure("extension missing")
+            return False
+
         fileName, fileExt = testFile.split(".")
 
         if("ignore" in fileExt):

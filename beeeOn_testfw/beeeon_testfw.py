@@ -13,10 +13,12 @@ import base_test_handler
 import ui_test_handler
 import ada_test_handler
 import beeeon_test_runner
+import utils
 
 SUCCESS = 0
 ERROR_PARAMS = 2
 ERROR_TEST_FAIL = 1
+ERROR_RUNTIME = 3
 
 def main():
     parser = argparse.ArgumentParser()
@@ -48,12 +50,15 @@ def main():
 
     beeeOnTestRunner = beeeon_test_runner.testRunner(args.filter)
 
-    beeeOnTestRunner.setBeeeOnSegmentTestfw(base_test_handler.BaseTestHandler())
-    if("ui" in args.segments):
-        beeeOnTestRunner.setBeeeOnSegmentTestfw(ui_test_handler.UiTestHandler())
-    if("ada" in args.segments):
-        beeeOnTestRunner.setBeeeOnSegmentTestfw(ada_test_handler.AdaTestHandler())
-
+    try:
+        beeeOnTestRunner.setBeeeOnSegmentTestfw(base_test_handler.BaseTestHandler())
+        if("ui" in args.segments):
+            beeeOnTestRunner.setBeeeOnSegmentTestfw(ui_test_handler.UiTestHandler())
+        if("ada" in args.segments):
+            beeeOnTestRunner.setBeeeOnSegmentTestfw(ada_test_handler.AdaTestHandler())
+    except :
+        print utils.failure("fail to instantiate segments testfw")
+        return ERROR_RUNTIME
     '''
     place for register new BeeeOn Segment testfw
     '''

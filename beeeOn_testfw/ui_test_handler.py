@@ -30,7 +30,6 @@ import xml_utils
 
 HOST = '0.0.0.0'
 UI_PORT = 8811
-DB_CON_STRING = "dbname='home7' user='xvampo01' password='1234'"
 
 IGNORED_ATTRIBUTE = "UNKNOWN_ATTRIBUTE"
 
@@ -38,14 +37,14 @@ class UiTestHandler(i_segment_test_handler.ISegmentTestHandler):
     def __init__(self):
         self.name = "ui-server tests"
         self.lastSocketOutput = ""
-        self.dbLastOutput = []
         self.host = HOST
         self.port = UI_PORT
-        # can throw
-        self.socket = utils.SecuredSocket(self.host, self.port)
+        try:
+            self.socket = utils.SecuredSocket(self.host, self.port)
+        except:
+            print utils.failure("FAIL: cannot connect to ui_server socket")
+            raise
 
-        self.dbConn = psycopg2.connect(DB_CON_STRING)
-        self.dbCursor = self.dbConn.cursor()
 
         self.supportedTests = {}
         self.supportedTests['input'] = self.processInput

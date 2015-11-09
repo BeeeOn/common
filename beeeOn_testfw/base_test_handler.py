@@ -29,16 +29,19 @@ import i_segment_test_handler
 import utils
 import xml_utils
 
-DB_CON_STRING = "dbname='home7' user='xvampo01' password='1234'"
+DB_CON_STRING = "dbname='home7' user='george' password='d3lame.PGS'"
 
 
 class BaseTestHandler(i_segment_test_handler.ISegmentTestHandler):
     def __init__(self):
         self.name = "base tests"
         self.dbLastOutput = []
-        # can throw
-        self.dbConn = psycopg2.connect(DB_CON_STRING)
-        self.dbCursor = self.dbConn.cursor()
+        try:
+            self.dbConn = psycopg2.connect(DB_CON_STRING)
+            self.dbCursor = self.dbConn.cursor()
+        except:
+            print utils.failure("FAIL: cannot connect database")
+            raise
 
         self.supportedTests = {}
         self.supportedTests['sql'] = self.processDb

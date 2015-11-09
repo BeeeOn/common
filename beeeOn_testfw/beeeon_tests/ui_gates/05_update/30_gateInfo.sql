@@ -1,1 +1,1 @@
-SELECT home_name, home_timezone FROM gateway WHERE gateway_id = 100;
+SELECT home_name, home_timezone, altitude FROM gateway WHERE gateway_id = 100;
