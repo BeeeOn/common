@@ -12,6 +12,7 @@ sys.dont_write_bytecode = True
 import base_test_handler
 import ui_test_handler
 import ada_test_handler
+import adaapp_test_handler
 import beeeon_test_runner
 import utils
 
@@ -36,7 +37,6 @@ def main():
                         help="register some segments(ui_server, AdaApp, ...), probably you want use this with --filter")
     args = parser.parse_args()
 
-
     # check filter regex validity
     try:
         re.compile(args.filter)
@@ -49,13 +49,17 @@ def main():
     os.chdir(args.testsdir)
 
     beeeOnTestRunner = beeeon_test_runner.testRunner(args.filter)
+    beeeOnTestRunner.setTestSegments(args.segments)
 
     try:
-        beeeOnTestRunner.setBeeeOnSegmentTestfw(base_test_handler.BaseTestHandler())
+        if (("ui" in args.segments) or ("ada" in args.segments)):
+            beeeOnTestRunner.setBeeeOnSegmentTestfw(base_test_handler.BaseTestHandler())
         if("ui" in args.segments):
             beeeOnTestRunner.setBeeeOnSegmentTestfw(ui_test_handler.UiTestHandler())
         if("ada" in args.segments):
             beeeOnTestRunner.setBeeeOnSegmentTestfw(ada_test_handler.AdaTestHandler())
+        if("adaapp" in args.segments):
+            beeeOnTestRunner.setBeeeOnSegmentTestfw(adaapp_test_handler.AdaappTestHandler())
     except :
         print utils.failure("fail to instantiate segments testfw")
         return ERROR_RUNTIME

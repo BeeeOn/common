@@ -32,6 +32,8 @@ class testRunner:
             print utils.warning("extension conflict!")
             return False
 
+    def setTestSegments(self, segments):
+        self.segments = segments
 
     def runSingleTestPart(self, testPartFile):
         testFile = os.path.basename(testPartFile)
@@ -55,6 +57,16 @@ class testRunner:
         unitTestPassed = True
         # module tests
         for testModuleDir in testModuleDirs:
+
+            isTesting = False
+            for segment in self.segments:
+                if re.match(segment + "_*", testModuleDir):
+                    isTesting = True
+                    break
+
+            if not isTesting:
+                continue
+
             testModuleFilter = "^" + self.filterRegex.split("/")[0]
             # skip if filter regex not match
             if not re.match(testModuleFilter, testModuleDir):
@@ -71,6 +83,7 @@ class testRunner:
                 if "ignore" in testDir:
                     print "  +", utils.info(testDir), utils.warning("IGNORE")
                     continue
+
                 print "  +", utils.info(testDir), ":",
                 testPartFiles = sorted(os.listdir(testModuleDir + '/' + testDir))
                 # print testPartFiles,
