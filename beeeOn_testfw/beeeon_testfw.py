@@ -42,9 +42,11 @@ def main():
         re.compile(args.filter)
     except re.error:
         print "regex is not valid"
+        sys.stdout.flush()
         return ERROR_PARAMS
 
     print 'START'
+    sys.stdout.flush()
 
     os.chdir(args.testsdir)
 
@@ -62,6 +64,7 @@ def main():
             beeeOnTestRunner.setBeeeOnSegmentTestfw(adaapp_test_handler.AdaappTestHandler())
     except :
         print utils.failure("fail to instantiate segments testfw")
+        sys.stdout.flush()
         return ERROR_RUNTIME
     '''
     place for register new BeeeOn Segment testfw

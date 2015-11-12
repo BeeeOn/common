@@ -30,6 +30,7 @@ class testRunner:
 
         if len(self.allTestsDict) > len(set(self.allTestsDict)):
             print utils.warning("extension conflict!")
+            sys.stdout.flush()
             return False
 
     def setTestSegments(self, segments):
@@ -39,6 +40,7 @@ class testRunner:
         testFile = os.path.basename(testPartFile)
         if("." not in testFile):
             print utils.failure("extension missing")
+            sys.stdout.flush()
             return False
 
         fileName, fileExt = testFile.split(".")
@@ -48,6 +50,7 @@ class testRunner:
 
         if(fileExt not in self.allTestsDict.keys()):
             print utils.failure("unknown extension: " + fileExt)
+            sys.stdout.flush()
             return False
 
         return self.allTestsDict[fileExt](testPartFile)
@@ -72,7 +75,9 @@ class testRunner:
             if not re.match(testModuleFilter, testModuleDir):
                 continue
             print ""
+            sys.stdout.flush()
             print "<",testModuleDir
+            sys.stdout.flush()
             testDirs = next(os.walk(testModuleDir))[1]
 
             moduleTestsPassed = True
@@ -82,9 +87,11 @@ class testRunner:
                     continue
                 if "ignore" in testDir:
                     print "  +", utils.info(testDir), utils.warning("IGNORE")
+                    sys.stdout.flush()
                     continue
 
                 print "  +", utils.info(testDir), ":",
+                sys.stdout.flush()
                 testPartFiles = sorted(os.listdir(testModuleDir + '/' + testDir))
                 # print testPartFiles,
                 singleTestPassed = True
@@ -94,33 +101,41 @@ class testRunner:
                     testPartPassed = self.runSingleTestPart(testModuleDir + '/' + testDir + '/' + testPartFile)
                     if(testPartPassed):
                         print testPartFile,
+                        sys.stdout.flush()
                         pass
                     else:
                         singleTestPassed = False
                         print utils.failure(testPartFile) ,
+                        sys.stdout.flush()
                         # dont break, we need to clean after test
 
                 if(singleTestPassed):
                     print utils.success("OK")
+                    sys.stdout.flush()
                 else:
                     print utils.failure("FAIL")
+                    sys.stdout.flush()
                     moduleTestsPassed = False
                     if(self.stopOnFail):
                         break
 
             if(moduleTestsPassed):
                 print utils.success("> module "+ testModuleDir +" OK")
+                sys.stdout.flush()
             else:
                 print utils.failure("> module "+ testModuleDir +" FAIL")
+                sys.stdout.flush()
                 unitTestPassed = False
                 if(self.stopOnFail):
                   break
 
         if(unitTestPassed):
             print utils.success("Tests OK")
+            sys.stdout.flush()
             return SUCCESS
         else:
             print utils.failure("Tests FAIL")
+            sys.stdout.flush()
             unitTestPassed = False
             return ERROR_TEST_FAIL
 
