@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from shutil import copyfile
 import socket
 import ssl
 import sys
@@ -35,7 +36,7 @@ class AdaappTestHandler(i_segment_test_handler.ISegmentTestHandler):
 
         self.setInstallDir(os.getcwd()+"/adaapp_configs/install_x86.ignore")
         self.supportedTests = {}
-        self.supportedTests['etc'] = self.tryConfigs
+        self.supportedTests['etc'] = self.copyConfigs
         self.supportedTests['sh'] = self.executeShell
 
     def getSupportedTests(self):
@@ -44,10 +45,15 @@ class AdaappTestHandler(i_segment_test_handler.ISegmentTestHandler):
     def setInstallDir(self, installDir):
         self.installDir = installDir;
 
-    def tryConfigs(self, testFilePath):
-        print "HELLO TRY CONFIG"
+    def copyConfigs(self, testFilePath):
+        ls_dir = os.listdir(testFilePath);
+        for file in ls_dir:
+            copyfile(testFilePath+"/"+file, self.installDir+"/etc/beeeon/"+file);
         return True
 
     def executeShell(self, testFilePath):
-        os.system("./"+testFilePath + " " + self.installDir)
-        return True
+        ret_code = os.system("./"+testFilePath + " " + self.installDir)
+        if (ret_code == 0):
+            return True
+        else:
+            return False
