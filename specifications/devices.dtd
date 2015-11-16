@@ -6,7 +6,7 @@
 
 <!ELEMENT modules (sensor|actuator|refresh|battery|rssi|led)*>
 
-<!ELEMENT sensor (order?, group?, name, values?)>
+<!ELEMENT sensor (order?, group?, name, (constraints|values)?>
 <!ELEMENT actuator (order?, group?, name, (constraints|values), rules?)>
 <!ELEMENT refresh (default, (constraints|values))>
 <!ELEMENT battery EMPTY>
