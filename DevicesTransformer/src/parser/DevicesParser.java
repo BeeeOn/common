@@ -212,10 +212,10 @@ public class DevicesParser {
 					constraints.setMin(Double.parseDouble(node.getTextContent()));
 				} else if (tag.equals("max")) {
 					constraints.setMax(Double.parseDouble(node.getTextContent()));
-				} else if (tag.equals("granularity")) {
+				} else if (tag.equals("step")) {
 					constraints.setGranularity(Double.parseDouble(node.getTextContent()));
 				} else {
-					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'min|max|granularity')", tag));
+					throw new IllegalStateException(String.format("Unexpected element '%s' (expected 'min|max|step')", tag));
 				}
 			}
 		}

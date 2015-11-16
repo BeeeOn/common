@@ -15,14 +15,14 @@
 
 <!ELEMENT order (#PCDATA)>
 <!ELEMENT group (#PCDATA)>
-<!ELEMENT constraints (min?, max?, granularity)>
+<!ELEMENT constraints (min?, max?, step)>
 <!ELEMENT values (value+)>
 <!ELEMENT value (#PCDATA)>
 
 <!ELEMENT default (#PCDATA)>
 <!ELEMENT min (#PCDATA)>
 <!ELEMENT max (#PCDATA)>
-<!ELEMENT granularity (#PCDATA)>
+<!ELEMENT step (#PCDATA)>
 
 <!ELEMENT rules (if+)>
 <!ELEMENT if (hide-module+)>

@@ -22,7 +22,7 @@
 			<constraints>
 				<min>5</min>
 				<max>3600</max>
-				<granularity>1</granularity>
+				<step>1</step>
 			</constraints>
 		</refresh>
 	</modules>
@@ -83,7 +83,7 @@
 			<constraints>
 				<min>0.0</min>
 				<max>160.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="3" type="0x02">
@@ -96,7 +96,7 @@
 			<constraints>
 				<min>20.0</min>
 				<max>90.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="5" type="0x02">
@@ -155,7 +155,7 @@
 			<constraints>
 				<min>0.0</min>
 				<max>160.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="9" type="0x02">
@@ -168,7 +168,7 @@
 			<constraints>
 				<min>20.0</min>
 				<max>90.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="11" type="0x02">
@@ -227,7 +227,7 @@
 			<constraints>
 				<min>0.0</min>
 				<max>160.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="15" type="0x02">
@@ -240,7 +240,7 @@
 			<constraints>
 				<min>20.0</min>
 				<max>90.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="17" type="0x02">
@@ -299,7 +299,7 @@
 			<constraints>
 				<min>0.0</min>
 				<max>160.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="21" type="0x02">
@@ -312,7 +312,7 @@
 			<constraints>
 				<min>20.0</min>
 				<max>90.0</max>
-				<granularity>0.5</granularity>
+				<step>0.5</step>
 			</constraints>
 		</actuator>
 		<sensor id="23" type="0x02">
@@ -348,7 +348,7 @@
 			<constraints>
 				<min>5</min>
 				<max>3600</max>
-				<granularity>1</granularity>
+				<step>1</step>
 			</constraints>
 		</refresh>
 	</modules>
@@ -510,7 +510,7 @@
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <sensor id="65" type="0x02">
@@ -538,7 +538,7 @@
             <constraints>
                 <min>20.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="7" type="0x02">
@@ -547,7 +547,7 @@
             <constraints>
                 <min>30.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="8" type="0x01">
@@ -570,7 +570,7 @@
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
-                <granularity>0.1</granularity>
+                <step>0.1</step>
             </constraints>
         </actuator>
         <actuator id="10" type="0x02">
@@ -579,7 +579,7 @@
             <constraints>
                 <min>-20</min>
                 <max>40</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 -->
@@ -603,7 +603,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="13" type="0x02">
@@ -612,7 +612,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 
@@ -694,7 +694,7 @@
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <sensor id="66" type="0x02">
@@ -713,7 +713,7 @@
             <constraints>
                 <min>20.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="21" type="0x02">
@@ -722,7 +722,7 @@
             <constraints>
                 <min>30.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="22" type="0x01">
@@ -745,7 +745,7 @@
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
-                <granularity>0.1</granularity>
+                <step>0.1</step>
             </constraints>
         </actuator>
         <actuator id="24" type="0x02">
@@ -754,7 +754,7 @@
             <constraints>
                 <min>-20</min>
                 <max>40</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 -->
@@ -778,7 +778,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="27" type="0x02">
@@ -787,7 +787,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 
@@ -873,7 +873,7 @@
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <sensor id="67" type="0x02">
@@ -892,7 +892,7 @@
             <constraints>
                 <min>20.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="35" type="0x02">
@@ -901,7 +901,7 @@
             <constraints>
                 <min>30.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="36" type="0x01">
@@ -924,7 +924,7 @@
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
-                <granularity>0.1</granularity>
+                <step>0.1</step>
             </constraints>
         </actuator>
         <actuator id="38" type="0x02">
@@ -933,7 +933,7 @@
             <constraints>
                 <min>-20</min>
                 <max>40</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 -->
@@ -957,7 +957,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="41" type="0x02">
@@ -966,7 +966,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 
@@ -1047,7 +1047,7 @@
             <constraints>
                 <min>50.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <sensor id="68" type="0x02">
@@ -1066,7 +1066,7 @@
             <constraints>
                 <min>20.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="49" type="0x02">
@@ -1075,7 +1075,7 @@
             <constraints>
                 <min>30.0</min>
                 <max>90.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="50" type="0x01">
@@ -1098,7 +1098,7 @@
             <constraints>
                 <min>0.1</min>
                 <max>6.0</max>
-                <granularity>0.1</granularity>
+                <step>0.1</step>
             </constraints>
         </actuator>
         <actuator id="52" type="0x02">
@@ -1107,7 +1107,7 @@
             <constraints>
                 <min>-20</min>
                 <max>40</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 -->
@@ -1131,7 +1131,7 @@
             <constraints>
                 <min>25.0</min>
                 <max>50.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
         <actuator id="55" type="0x02">
@@ -1140,7 +1140,7 @@
             <constraints>
                 <min>0.0</min>
                 <max>15.0</max>
-                <granularity>1</granularity>
+                <step>1</step>
             </constraints>
         </actuator>
 
