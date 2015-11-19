@@ -96,7 +96,7 @@ class testRunner:
                 # print testPartFiles,
                 singleTestPassed = True
                 # test parts
-                for testPartFile in testPartFiles:
+                for testPartFile in sorted(testPartFiles):
                     # print "   +", testPartFile,
                     testPartPassed = self.runSingleTestPart(testModuleDir + '/' + testDir + '/' + testPartFile)
                     if(testPartPassed):

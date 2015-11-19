@@ -1,0 +1,2 @@
+SPI + MQTT
+This test runs with only mosquittoClient and SPI client modules enabled.

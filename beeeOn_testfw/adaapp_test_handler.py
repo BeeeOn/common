@@ -38,6 +38,7 @@ class AdaappTestHandler(i_segment_test_handler.ISegmentTestHandler):
         self.supportedTests = {}
         self.supportedTests['etc'] = self.copyConfigs
         self.supportedTests['sh'] = self.executeShell
+        self.supportedTests['var'] = self.copyVar
 
     def getSupportedTests(self):
         return self.supportedTests;
@@ -49,6 +50,10 @@ class AdaappTestHandler(i_segment_test_handler.ISegmentTestHandler):
         ls_dir = os.listdir(testFilePath);
         for file in ls_dir:
             copyfile(testFilePath+"/"+file, self.installDir+"/etc/beeeon/"+file);
+        return True
+
+    def copyVar(self, testFilePath):
+        copyfile(testFilePath+"/lib/beeeon/vs_paired.cnt", self.installDir+"/var/lib/beeeon/vs_paired.cnt");
         return True
 
     def executeShell(self, testFilePath):
