@@ -499,10 +499,20 @@
         <sensor id="2" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>0.0</min>
+                <max>160.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="3" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>-20.0</min>
+                <max>40.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <actuator id="4" type="0x02">
             <group>T:ZONE_1</group>
@@ -516,10 +526,20 @@
         <sensor id="65" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+            <constraints>
+                <min>10.0</min>
+                <max>110.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="5" type="0x02">
             <group>T:ZONE_1</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <constraints>
+                <min>20.0</min>
+                <max>120.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
 <!--
 		Currently unsupported:
@@ -683,10 +703,20 @@
         <sensor id="16" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>0.0</min>
+                <max>160.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="17" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>-20.0</min>
+                <max>40.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <actuator id="18" type="0x02">
             <group>T:ZONE_2</group>
@@ -700,10 +730,20 @@
         <sensor id="66" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+            <constraints>
+                <min>10.0</min>
+                <max>110.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="19" type="0x02">
             <group>T:ZONE_2</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <constraints>
+                <min>20.0</min>
+                <max>120.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
 <!--
             Currently unsupported, see zone 1...
@@ -862,10 +902,20 @@
         <sensor id="30" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>0.0</min>
+                <max>160.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="31" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>-20.0</min>
+                <max>40.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <actuator id="32" type="0x02">
             <group>T:ZONE_3</group>
@@ -879,10 +929,20 @@
         <sensor id="67" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+            <constraints>
+                <min>10.0</min>
+                <max>110.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="33" type="0x02">
             <group>T:ZONE_3</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <constraints>
+                <min>20.0</min>
+                <max>120.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
 <!--
             Currently unsupported, see zone 1...
@@ -1036,10 +1096,20 @@
         <sensor id="44" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>0.0</min>
+                <max>160.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="45" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
+            <constraints>
+                <min>-20.0</min>
+                <max>40.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <actuator id="46" type="0x02">
             <group>T:ZONE_4</group>
@@ -1053,10 +1123,20 @@
         <sensor id="68" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
+            <constraints>
+                <min>10.0</min>
+                <max>110.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
         <sensor id="47" type="0x02">
             <group>T:ZONE_4</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <constraints>
+                <min>20.0</min>
+                <max>120.0</max>
+                <step>0.5</step>
+            </constraints>
         </sensor>
 <!--
             Currently unsupported, see zone 1...
@@ -1170,22 +1250,47 @@
         <sensor id="58" type="0x02">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
+            <constraints>
+                <min>20.0</min>
+                <max>120.0</max>
+                <step>1.0</step>
+            </constraints>
         </sensor>
         <sensor id="59" type="0x02">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_OUTSIDE_TEMPERATURE</name>
+            <constraints>
+                <min>-50.0</min>
+                <max>60.0</max>
+                <step>1.0</step>
+            </constraints>
         </sensor>
         <sensor id="60" type="0x02">
             <group>T:BOILER</group>
             <name>T:MOD_AVERAGE_OUTSIDE_TEMPERATURE</name>
+            <constraints>
+                <min>-40.0</min>
+                <max>40.0</max>
+                <step>1.0</step>
+            </constraints>
         </sensor>
         <sensor id="61" type="0x03">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PERFORMANCE</name>
+            <constraints>
+                <min>0.0</min>
+                <max>100.0</max>
+                <step>1.0</step>
+            </constraints>
         </sensor>
         <sensor id="62" type="0x04">
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PRESSURE</name>
+            <constraints>
+                <min>0.0</min>
+                <max>10.0</max>
+                <step>0.02</step>
+            </constraints>
         </sensor>
         <sensor id="63" type="0x0B">
             <group>T:BOILER</group>
