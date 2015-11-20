@@ -435,6 +435,7 @@
     <manufacturer>T:MANUFACTURER_THERMONA</manufacturer>
     <modules>
         <actuator id="0" type="0x01">
+            <order>5</order>
             <group>T:ZONE_1</group>
             <name>T:MOD_BOILER_OPERATION_TYPE</name>
             <values name="T:VAL_BOILER_OPERATION_TYPE">
@@ -488,6 +489,7 @@
             </rules>
         </actuator>
         <actuator id="1" type="0x01">
+            <order>6</order>
             <group>T:ZONE_1</group>
             <name>T:MOD_BOILER_OPERATION_MODE</name>
             <values name="T:VAL_BOILER_OPERATION_MODE">
@@ -497,6 +499,7 @@
             </values>
         </actuator>
         <sensor id="2" type="0x02">
+            <order>1</order>
             <group>T:ZONE_1</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
             <constraints>
@@ -506,6 +509,7 @@
             </constraints>
         </sensor>
         <sensor id="3" type="0x02">
+            <order>0</order>
             <group>T:ZONE_1</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
             <constraints>
@@ -515,6 +519,7 @@
             </constraints>
         </sensor>
         <actuator id="4" type="0x02">
+            <order>4</order>
             <group>T:ZONE_1</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
@@ -524,6 +529,7 @@
             </constraints>
         </actuator>
         <sensor id="65" type="0x02">
+            <order>3</order>
             <group>T:ZONE_1</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
             <constraints>
@@ -533,6 +539,7 @@
             </constraints>
         </sensor>
         <sensor id="5" type="0x02">
+            <order>2</order>
             <group>T:ZONE_1</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
             <constraints>
@@ -604,6 +611,7 @@
         </actuator>
 -->
         <actuator id="11" type="0x01">
+            <order>7</order>
             <group>T:ZONE_1</group>
             <name>T:FROST_PROTECTION</name>
             <values name="T:VAL_FROST_PROTECTION" type="enum">
@@ -618,6 +626,7 @@
             </rules>
         </actuator>
         <actuator id="12" type="0x02">
+            <order>8</order>
             <group>T:ZONE_1</group>
             <name>T:FROST_PROTECTION_WATER_TEMPERATURE</name>
             <constraints>
@@ -627,6 +636,7 @@
             </constraints>
         </actuator>
         <actuator id="13" type="0x02">
+            <order>9</order>
             <group>T:ZONE_1</group>
             <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
@@ -639,6 +649,7 @@
 <!-- ##################################ZONA 2################################### -->
 
         <actuator id="14" type="0x01">
+            <order>5</order>
             <group>T:ZONE_2</group>
             <name>T:MOD_BOILER_OPERATION_TYPE</name>
             <values name="T:VAL_BOILER_OPERATION_TYPE">
@@ -692,6 +703,7 @@
             </rules>
         </actuator>
         <actuator id="15" type="0x01">
+            <order>6</order>
             <group>T:ZONE_2</group>
             <name>T:MOD_BOILER_OPERATION_MODE</name>
             <values name="T:VAL_BOILER_OPERATION_MODE">
@@ -701,6 +713,7 @@
             </values>
         </actuator>
         <sensor id="16" type="0x02">
+            <order>1</order>
             <group>T:ZONE_2</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
             <constraints>
@@ -710,6 +723,7 @@
             </constraints>
         </sensor>
         <sensor id="17" type="0x02">
+            <order>0</order>
             <group>T:ZONE_2</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
             <constraints>
@@ -719,6 +733,7 @@
             </constraints>
         </sensor>
         <actuator id="18" type="0x02">
+            <order>4</order>
             <group>T:ZONE_2</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
@@ -728,6 +743,7 @@
             </constraints>
         </actuator>
         <sensor id="66" type="0x02">
+            <order>3</order>
             <group>T:ZONE_2</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
             <constraints>
@@ -737,6 +753,7 @@
             </constraints>
         </sensor>
         <sensor id="19" type="0x02">
+            <order>2</order>
             <group>T:ZONE_2</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
             <constraints>
@@ -799,6 +816,7 @@
         </actuator>
 -->
         <actuator id="25" type="0x01">
+            <order>7</order>
             <group>T:ZONE_2</group>
             <name>T:FROST_PROTECTION</name>
             <values name="T:VAL_FROST_PROTECTION" type="switch">
@@ -813,6 +831,7 @@
             </rules>
         </actuator>
         <actuator id="26" type="0x02">
+            <order>8</order>
             <group>T:ZONE_2</group>
             <name>T:FROST_PROTECTION_WATER_TEMPERATURE</name>
             <constraints>
@@ -822,6 +841,7 @@
             </constraints>
         </actuator>
         <actuator id="27" type="0x02">
+            <order>9</order>
             <group>T:ZONE_2</group>
             <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
@@ -834,6 +854,7 @@
 <!-- ##################################ZONA 3################################### -->
 
         <actuator id="28" type="0x01">
+            <order>5</order>
             <group>T:ZONE_3</group>
             <name>T:MOD_BOILER_OPERATION_TYPE</name>
             <values name="T:VAL_BOILER_OPERATION_TYPE">
@@ -891,6 +912,7 @@
             </rules>
         </actuator>
         <actuator id="29" type="0x01">
+            <order>6</order>
             <group>T:ZONE_3</group>
             <name>T:MOD_BOILER_OPERATION_MODE</name>
             <values name="T:VAL_BOILER_OPERATION_MODE">
@@ -900,6 +922,7 @@
             </values>
         </actuator>
         <sensor id="30" type="0x02">
+            <order>1</order>
             <group>T:ZONE_3</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
             <constraints>
@@ -909,6 +932,7 @@
             </constraints>
         </sensor>
         <sensor id="31" type="0x02">
+            <order>0</order>
             <group>T:ZONE_3</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
             <constraints>
@@ -918,6 +942,7 @@
             </constraints>
         </sensor>
         <actuator id="32" type="0x02">
+            <order>4</order>
             <group>T:ZONE_3</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
@@ -927,6 +952,7 @@
             </constraints>
         </actuator>
         <sensor id="67" type="0x02">
+            <order>3</order>
             <group>T:ZONE_3</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
             <constraints>
@@ -936,6 +962,7 @@
             </constraints>
         </sensor>
         <sensor id="33" type="0x02">
+            <order>2</order>
             <group>T:ZONE_3</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
             <constraints>
@@ -998,6 +1025,7 @@
         </actuator>
 -->
         <actuator id="39" type="0x01">
+            <order>7</order>
             <group>T:ZONE_3</group>
             <name>T:FROST_PROTECTION</name>
             <values name="T:VAL_FROST_PROTECTION" type="switch">
@@ -1012,6 +1040,7 @@
             </rules>
         </actuator>
         <actuator id="40" type="0x02">
+            <order>8</order>
             <group>T:ZONE_3</group>
             <name>T:FROST_PROTECTION_WATER_TEMPERATURE</name>
             <constraints>
@@ -1021,6 +1050,7 @@
             </constraints>
         </actuator>
         <actuator id="41" type="0x02">
+            <order>9</order>
             <group>T:ZONE_3</group>
             <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
@@ -1033,6 +1063,7 @@
 <!-- ##################################ZONA 4################################### -->
 
         <actuator id="42" type="0x01">
+            <order>5</order>
             <group>T:ZONE_4</group>
             <name>T:MOD_BOILER_OPERATION_TYPE</name>
             <values name="T:VAL_BOILER_OPERATION_TYPE">
@@ -1085,6 +1116,7 @@
             </rules>
         </actuator>
         <actuator id="43" type="0x01">
+            <order>6</order>
             <group>T:ZONE_4</group>
             <name>T:MOD_BOILER_OPERATION_MODE</name>
             <values name="T:VAL_BOILER_OPERATION_MODE">
@@ -1094,6 +1126,7 @@
             </values>
         </actuator>
         <sensor id="44" type="0x02">
+            <order>1</order>
             <group>T:ZONE_4</group>
             <name>T:MOD_REQUESTED_ROOM_TEMPERATURE</name>
             <constraints>
@@ -1103,6 +1136,7 @@
             </constraints>
         </sensor>
         <sensor id="45" type="0x02">
+            <order>0</order>
             <group>T:ZONE_4</group>
             <name>T:MOD_CURRENT_ROOM_TEMPERATURE</name>
             <constraints>
@@ -1112,6 +1146,7 @@
             </constraints>
         </sensor>
         <actuator id="46" type="0x02">
+            <order>4</order>
             <group>T:ZONE_4</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_SET</name>
             <constraints>
@@ -1121,6 +1156,7 @@
             </constraints>
         </actuator>
         <sensor id="68" type="0x02">
+            <order>3</order>
             <group>T:ZONE_4</group>
             <name>T:MOD_REQUESTED_WATER_TEMPERATURE_READ</name>
             <constraints>
@@ -1130,6 +1166,7 @@
             </constraints>
         </sensor>
         <sensor id="47" type="0x02">
+            <order>2</order>
             <group>T:ZONE_4</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
             <constraints>
@@ -1192,6 +1229,7 @@
         </actuator>
 -->
         <actuator id="53" type="0x01">
+            <order>7</order>
             <group>T:ZONE_4</group>
             <name>T:FROST_PROTECTION</name>
             <values name="T:VAL_FROST_PROTECTION" type="switch">
@@ -1206,6 +1244,7 @@
             </rules>
         </actuator>
         <actuator id="54" type="0x02">
+            <order>8</order>
             <group>T:ZONE_4</group>
             <name>T:FROST_PROTECTION_WATER_TEMPERATURE</name>
             <constraints>
@@ -1215,6 +1254,7 @@
             </constraints>
         </actuator>
         <actuator id="55" type="0x02">
+            <order>9</order>
             <group>T:ZONE_4</group>
             <name>T:FROST_PROTECTION_THRESHOLD</name>
             <constraints>
@@ -1227,7 +1267,7 @@
 <!-- ##################################BOILER################################## -->
 
         <sensor id="56" type="0x01">
-            <order>0</order>
+            <order>6</order>
             <group>T:BOILER</group>
             <name>T:MOD_BOILER_STATUS</name>
             <values name="T:VAL_BOILER_STATUS">
@@ -1239,6 +1279,7 @@
             </values>
         </sensor>
         <sensor id="57" type="0x01">
+            <order>5</order>
             <group>T:BOILER</group>
             <name>T:MOD_BOILER_MODE</name>
             <values name="T:VAL_BOILER_MODE">
@@ -1248,6 +1289,7 @@
             </values>
         </sensor>
         <sensor id="58" type="0x02">
+            <order>0</order>
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_WATER_TEMPERATURE</name>
             <constraints>
@@ -1257,6 +1299,7 @@
             </constraints>
         </sensor>
         <sensor id="59" type="0x02">
+            <order>1</order>
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_OUTSIDE_TEMPERATURE</name>
             <constraints>
@@ -1266,6 +1309,7 @@
             </constraints>
         </sensor>
         <sensor id="60" type="0x02">
+            <order>2</order>
             <group>T:BOILER</group>
             <name>T:MOD_AVERAGE_OUTSIDE_TEMPERATURE</name>
             <constraints>
@@ -1275,6 +1319,7 @@
             </constraints>
         </sensor>
         <sensor id="61" type="0x03">
+            <order>4</order>
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PERFORMANCE</name>
             <constraints>
@@ -1284,6 +1329,7 @@
             </constraints>
         </sensor>
         <sensor id="62" type="0x04">
+            <order>3</order>
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_PRESSURE</name>
             <constraints>
@@ -1293,6 +1339,7 @@
             </constraints>
         </sensor>
         <sensor id="63" type="0x0B">
+            <order>7</order>
             <group>T:BOILER</group>
             <name>T:MOD_CURRENT_BOILER_ERROR</name>
         </sensor>
