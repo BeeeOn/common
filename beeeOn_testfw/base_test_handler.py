@@ -21,6 +21,7 @@ import ast
 from importlib import import_module
 import argparse
 import re
+import time
 #avoid python bytecode in import scripts
 sys.dont_write_bytecode = True
 from operator import attrgetter
@@ -47,6 +48,7 @@ class BaseTestHandler(i_segment_test_handler.ISegmentTestHandler):
         self.supportedTests['sql'] = self.processDb
         self.supportedTests['sqlresult'] = self.processDbResult
         self.supportedTests['py'] = self.processPythonScript
+        self.supportedTests['sleep'] = self.processSleep
 
     def getSupportedTests(self):
         return self.supportedTests
@@ -126,3 +128,11 @@ class BaseTestHandler(i_segment_test_handler.ISegmentTestHandler):
         os.chdir(workingDir)
 
         return moduleReturnValue
+
+    def processSleep(self, testFilePath):
+        sleepTime = utils.readFile(testFilePath)
+        try:
+            time.sleep(float(sleepTime)/1000.0)
+        except:
+            return False
+        return True
