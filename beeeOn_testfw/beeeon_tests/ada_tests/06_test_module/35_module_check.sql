@@ -1,0 +1,1 @@
+select count(*) from module where device_euid = x'10'::integer;

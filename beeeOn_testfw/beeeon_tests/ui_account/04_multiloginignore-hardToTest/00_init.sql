@@ -1,2 +1,0 @@
-INSERT INTO users(mail,password,given_name,family_name,gender, picture, facebook_id,google_id) VALUES 
-('test@beeeon.cz', 'beeeonPass1','tester', 'dummy', 'male', 'imgtest.beeeon.cz','face', 'google');

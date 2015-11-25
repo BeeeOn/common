@@ -32,6 +32,8 @@ HOST = '0.0.0.0'
 UI_PORT = 8811
 
 IGNORED_ATTRIBUTE = "UNKNOWN_ATTRIBUTE"
+SESSION_ATTRIBUTE = "SESSION_ATTRIBUTE"
+SESSION_ATTRIBUTE_REGEX = "SESSION\_ATTRIBUTE"
 
 class UiTestHandler(i_segment_test_handler.ISegmentTestHandler):
     def __init__(self):
@@ -39,6 +41,9 @@ class UiTestHandler(i_segment_test_handler.ISegmentTestHandler):
         self.lastSocketOutput = ""
         self.host = HOST
         self.port = UI_PORT
+
+        self.sessionMap = {}
+
         try:
             self.socket = utils.SecuredSocket(self.host, self.port)
         except:
@@ -55,12 +60,14 @@ class UiTestHandler(i_segment_test_handler.ISegmentTestHandler):
     def getSupportedTests(self):
         return self.supportedTests
 
-
+# send message to server
     def processInput(self, testFilePath):
-        #print "processInput", self.testFilePath
         input = utils.readFile(testFilePath)
+
         self.socket.write(input)
         self.lastSocketOutput = self.socket.read()
+
+        requestType = re.search('type="(.+?)"', input).group(1)
 
         return True
 

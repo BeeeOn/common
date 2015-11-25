@@ -29,8 +29,7 @@ import utils
 import xml_utils
 
 HOST = '0.0.0.0'
-ADA_PORT = 7080
-DB_CON_STRING = "dbname='home7' user='xvampo01' password='1234'"
+ADA_PORT = 8453
 
 class AdaTestHandler(i_segment_test_handler.ISegmentTestHandler):
 
@@ -40,11 +39,6 @@ class AdaTestHandler(i_segment_test_handler.ISegmentTestHandler):
         self.dbLastOutput = []
         self.host = HOST
         self.port = ADA_PORT
-        # can throw
-        self.socket = utils.SecuredSocket(self.host, self.port)
-
-        self.dbConn = psycopg2.connect(DB_CON_STRING)
-        self.dbCursor = self.dbConn.cursor()
 
         self.supportedTests = {}
         self.supportedTests['inputada'] = self.processInput
@@ -57,7 +51,13 @@ class AdaTestHandler(i_segment_test_handler.ISegmentTestHandler):
         print "hello fw"
 
     def processInput(self, testFilePath):
-        #print "processInput", self.testFilePath
+
+        try:
+            self.socket = utils.SecuredSocket(self.host, self.port)
+        except:
+            print utils.failure("FAIL: cannot connect to ada_server socket")
+            raise
+
         input = utils.readFile(testFilePath)
         self.socket.write(input)
         self.lastSocketOutput = self.socket.read()
