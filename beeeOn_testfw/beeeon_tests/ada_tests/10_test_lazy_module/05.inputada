@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adapter_server adapter_id="0x00000100" fw_version="v1.3-3-g2b068e4-dirty" 
+protocol_version="1.0" state="data" time="1448326060">
+     <device device_id="0x02" euid="0x00010">
+         <values count="2">
+             <value module_id="0x00">1200.00</value>
+         </values>
+     </device>
+</adapter_server>

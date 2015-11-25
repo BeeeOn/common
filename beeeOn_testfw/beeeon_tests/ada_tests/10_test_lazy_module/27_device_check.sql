@@ -1,0 +1,1 @@
+SELECT EXISTS ( select * from device where device_euid = x'10'::integer);
