@@ -4,6 +4,7 @@ import data.Device;
 import data.Devices;
 import data.Types;
 import data.module.Module;
+import data.module.Refresh;
 import generator.DevicesGenerator;
 
 import java.io.PrintWriter;
@@ -22,7 +23,7 @@ public class DbFormatter implements DevicesGenerator.IDevicesFormatter {
 			// List modules of this device
 			for (Module module : device.getModules()) {
 				//if module is signal (rssi)
-				if (module.getType().equals("0x09")) {
+				if (module instanceof Refresh) {
 					writer.println(String.format("\t\t\tWHEN %d THEN RETURN %d;",
 							device.getTypeId(),
 							module.getId()
