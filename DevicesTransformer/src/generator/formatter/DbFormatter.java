@@ -2,50 +2,40 @@ package generator.formatter;
 
 import data.Device;
 import data.Devices;
-import data.Type;
 import data.Types;
 import data.module.Module;
 import generator.DevicesGenerator;
 
 import java.io.PrintWriter;
-import java.util.Iterator;
 
-public class GateFormatter implements DevicesGenerator.IDevicesFormatter {
+public class DbFormatter implements DevicesGenerator.IDevicesFormatter {
 
 	@Override
 	public void formatDevices(PrintWriter writer, Devices devices, Types types) {
 
 		writer.print("CREATE OR REPLACE FUNCTION get_signal_module_id(device_type integer) RETURNS integer AS $$\n" +
-      "\tBEGIN" +
-      "\t\tCASE device_type"
-    );
+						"\tBEGIN\n" +
+						"\t\tCASE device_type\n"
+		);
 
-		Iterator<Device> it = devices.getDevices().iterator();
-		while (it.hasNext()) {
-			Device device = it.next();
-
+		for (Device device : devices.getDevices()) {
 			// List modules of this device
-			Iterator<Module> itModule = device.getModules().iterator();
-			while (itModule.hasNext()) {
-				Module module = itModule.next();
-
-        //if module is signal (rssi)
-        if(module.getType == "0x09")
-  				writer.println(String.format("WHEN %d THEN\n" +
-            "\tRETURN %d;",
-  						device.getTypeId(),
-  						module.getId(),
-  				));
+			for (Module module : device.getModules()) {
+				//if module is signal (rssi)
+				if (module.getType().equals("0x09")) {
+					writer.println(String.format("\t\t\tWHEN %d THEN RETURN %d;",
+							device.getTypeId(),
+							module.getId()
+					));
+				}
 			}
-			writer.println("");
 		}
-    writer.print("\t\t\tELSE" +
-      "\t\t\t\tRETURN null;" +
-      "\t\tEND CASE;" +
-      "\t\tRETURN null;" +
-      "\tEND;" +
-      "$$ LANGUAGE plpgsql;"
-    );
+		writer.print("\t\t\tELSE RETURN null;\n" +
+						"\t\tEND CASE;\n" +
+						"\t\tRETURN null;\n" +
+						"\tEND;\n" +
+						"$$ LANGUAGE plpgsql;"
+		);
 	}
 }
 

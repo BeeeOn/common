@@ -5,6 +5,7 @@ import data.Types;
 import generator.DevicesGenerator;
 import generator.LanguagesGenerator;
 import generator.formatter.AndroidFormatter;
+import generator.formatter.DbFormatter;
 import generator.formatter.GateFormatter;
 import generator.formatter.WebFormatter;
 import parser.DevicesParser;
@@ -31,6 +32,8 @@ public class Main {
 			generator.generateDevices(new GateFormatter(), "export/gate/", "device_table.h");
 			//Generate Webapp data
 			generator.generateDevices(new WebFormatter(), "export/webapp/", "devices.js");
+			//Generate Server's database data
+			generator.generateDevices(new DbFormatter(), "export/server/", "db.sql");
 			// Print data just to log
 			// generator.printDevices(System.out);
 		} else {
