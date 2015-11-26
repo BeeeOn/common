@@ -1,1 +1,1 @@
-select count(*) from module where device_euid = x'10'::integer;
+select count(*) from module where device_euid = x'10'::integer AND gateway_id = x'00000100'::integer;
