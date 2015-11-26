@@ -33,7 +33,7 @@ public class Main {
 			//Generate Webapp data
 			generator.generateDevices(new WebFormatter(), "export/webapp/", "devices.js");
 			//Generate Server's database data
-			generator.generateDevices(new DbFormatter(), "export/server/", "db.sql");
+			generator.generateDevices(new DbFormatter(), "export/server/", "db_triggers_functions.sql");
 			// Print data just to log
 			// generator.printDevices(System.out);
 		} else {
