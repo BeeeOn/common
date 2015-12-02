@@ -1,0 +1,1 @@
+Parts of this repository are licensed under different licences. See the LICENSE file in each subfolder.
